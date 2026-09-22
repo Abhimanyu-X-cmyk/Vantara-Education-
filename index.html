@@ -1,10 +1,260 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>VANTARA EDUCATION</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #080808;
+      color: white;
+    }
+
+    header {
+      background: #111;
+      padding: 25px 15px;
+      text-align: center;
+      border-bottom: 1px solid #333;
+    }
+
+    header h1 {
+      font-size: 32px;
+      letter-spacing: 2px;
+    }
+
+    header p {
+      color: #aaa;
+      margin-top: 8px;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 55px 20px;
+    }
+
+    .hero h2 {
+      font-size: 36px;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      color: #bbb;
+      font-size: 18px;
+      margin-bottom: 25px;
+    }
+
+    .vira {
+      background: #151515;
+      border: 1px solid #333;
+      border-radius: 18px;
+      padding: 25px;
+      max-width: 700px;
+      margin: 0 auto 40px;
+    }
+
+    .vira h2 {
+      margin-bottom: 10px;
+    }
+
+    .vira p {
+      color: #bbb;
+      margin-bottom: 18px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 12px 22px;
+      background: white;
+      color: black;
+      text-decoration: none;
+      border-radius: 10px;
+      font-weight: bold;
+      cursor: pointer;
+      border: none;
+    }
+
+    .section {
+      max-width: 1000px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .section h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      font-size: 28px;
+    }
+
+    .classes {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 15px;
+    }
+
+    .class-card {
+      background: #151515;
+      border: 1px solid #333;
+      border-radius: 14px;
+      padding: 25px 10px;
+      text-align: center;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .class-card:hover {
+      background: #222;
+      transform: translateY(-3px);
+    }
+
+    .subjects {
+      display: none;
+      margin-top: 25px;
+      background: #111;
+      border-radius: 15px;
+      padding: 25px;
+      border: 1px solid #333;
+    }
+
+    .subjects h3 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .subject-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 12px;
+    }
+
+    .subject {
+      background: #1c1c1c;
+      padding: 16px;
+      border-radius: 10px;
+      text-align: center;
+      border: 1px solid #333;
+    }
+
+    .writing {
+      max-width: 1000px;
+      margin: 50px auto;
+      padding: 30px 20px;
+    }
+
+    .writing-box {
+      background: #151515;
+      border: 1px solid #333;
+      border-radius: 18px;
+      padding: 30px;
+      text-align: center;
+    }
+
+    .writing-box p {
+      color: #bbb;
+      margin: 12px 0 20px;
+    }
+
+    footer {
+      margin-top: 50px;
+      padding: 25px;
+      text-align: center;
+      background: #111;
+      color: #777;
+    }
+
+    @media (max-width: 600px) {
+      .hero h2 {
+        font-size: 28px;
+      }
+
+      header h1 {
+        font-size: 26px;
+      }
+    }
+  </style>
 </head>
+
 <body>
-  <h1>Welcome to VANTARA EDUCATION</h1>
-  <p>Website is working!</p>
+
+<header>
+  <h1>VANTARA EDUCATION</h1>
+  <p>Learn. Explore. Grow.</p>
+</header>
+
+<section class="hero">
+  <h2>Welcome to VANTARA EDUCATION</h2>
+  <p>A learning platform for students from Class 6 to Class 12.</p>
+
+  <div class="vira">
+    <h2>🤖 Meet VIRA</h2>
+    <p>Your AI learning assistant for understanding concepts, solving doubts and learning better.</p>
+    <button class="button" onclick="alert('VIRA will be available soon!')">
+      Ask VIRA
+    </button>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Choose Your Class</h2>
+
+  <div class="classes">
+
+    <div class="class-card" onclick="showSubjects(6)">Class 6</div>
+    <div class="class-card" onclick="showSubjects(7)">Class 7</div>
+    <div class="class-card" onclick="showSubjects(8)">Class 8</div>
+    <div class="class-card" onclick="showSubjects(9)">Class 9</div>
+    <div class="class-card" onclick="showSubjects(10)">Class 10</div>
+    <div class="class-card" onclick="showSubjects(11)">Class 11</div>
+    <div class="class-card" onclick="showSubjects(12)">Class 12</div>
+
+  </div>
+
+  <div class="subjects" id="subjectsBox">
+    <h3 id="classTitle"></h3>
+
+    <div class="subject-list">
+      <div class="subject">📐 Mathematics</div>
+      <div class="subject">🔬 Science</div>
+      <div class="subject">📖 English</div>
+      <div class="subject">🌍 Social Science</div>
+      <div class="subject">💻 Computer</div>
+    </div>
+  </div>
+</section>
+
+<section class="writing">
+  <div class="writing-box">
+    <h2>✍️ Writing</h2>
+    <p>Improve your writing skills with VANTARA EDUCATION.</p>
+    <button class="button" onclick="alert('Writing section coming soon!')">
+      Open Writing
+    </button>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 VANTARA EDUCATION</p>
+</footer>
+
+<script>
+  function showSubjects(classNumber) {
+    document.getElementById("subjectsBox").style.display = "block";
+    document.getElementById("classTitle").innerText =
+      "Class " + classNumber + " Subjects";
+
+    document.getElementById("subjectsBox").scrollIntoView({
+      behavior: "smooth"
+    });
+  }
+</script>
+
 </body>
 </html>
