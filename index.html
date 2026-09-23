@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>VANTARA EDUCATION</title>
 
   <style>
@@ -10,71 +11,64 @@
       box-sizing: border-box;
       margin: 0;
       padding: 0;
+      font-family: Arial, sans-serif;
     }
 
     body {
-      font-family: Arial, sans-serif;
       background: #080808;
-      color: #f5f5f5;
-      line-height: 1.6;
+      color: white;
+      min-height: 100vh;
     }
 
     header {
       background: #111;
+      padding: 18px;
+      text-align: center;
       border-bottom: 1px solid #333;
-      padding: 18px 20px;
       position: sticky;
       top: 0;
-      z-index: 100;
+      z-index: 10;
     }
 
-    .nav {
-      max-width: 1100px;
-      margin: auto;
+    header h1 {
+      font-size: 28px;
+      letter-spacing: 2px;
+    }
+
+    header p {
+      color: #aaa;
+      margin-top: 5px;
+    }
+
+    nav {
       display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 15px;
-    }
-
-    .logo {
-      font-size: 24px;
-      font-weight: bold;
-      letter-spacing: 1px;
-    }
-
-    .nav-buttons {
-      display: flex;
+      justify-content: center;
       gap: 8px;
       flex-wrap: wrap;
+      margin-top: 15px;
     }
 
-    button,
-    .button {
-      background: #fff;
-      color: #000;
-      border: none;
-      padding: 10px 16px;
+    button {
+      background: #1c1c1c;
+      color: white;
+      border: 1px solid #444;
       border-radius: 8px;
+      padding: 10px 15px;
       cursor: pointer;
-      font-weight: bold;
     }
 
-    button:hover,
-    .button:hover {
-      opacity: 0.8;
+    button:hover {
+      background: #292929;
     }
 
     .container {
-      width: 92%;
       max-width: 1100px;
       margin: auto;
-      padding: 35px 0;
+      padding: 25px 15px;
     }
 
     .page {
       display: none;
-      min-height: 80vh;
     }
 
     .page.active {
@@ -83,42 +77,42 @@
 
     .hero {
       text-align: center;
-      padding: 70px 20px;
+      padding: 55px 20px;
     }
 
-    .hero h1 {
-      font-size: clamp(38px, 8vw, 72px);
+    .hero h2 {
+      font-size: 42px;
       margin-bottom: 15px;
     }
 
     .hero p {
       color: #bbb;
       font-size: 18px;
+      line-height: 1.6;
       max-width: 700px;
       margin: auto;
     }
 
-    .section-title {
-      margin: 35px 0 20px;
-      font-size: 28px;
-    }
-
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 18px;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 15px;
+      margin-top: 25px;
     }
 
     .card {
-      background: #121212;
-      border: 1px solid #303030;
-      border-radius: 14px;
-      padding: 22px;
-      margin-bottom: 20px;
+      background: #111;
+      border: 1px solid #333;
+      border-radius: 12px;
+      padding: 25px 15px;
+      text-align: center;
+      cursor: pointer;
+      transition: 0.2s;
     }
 
     .card:hover {
-      border-color: #777;
+      transform: translateY(-3px);
+      background: #181818;
     }
 
     .card h3 {
@@ -126,103 +120,115 @@
     }
 
     .card p {
-      color: #aaa;
+      color: #999;
+      font-size: 14px;
     }
 
-    .class-card,
-    .subject-card,
-    .chapter-card {
-      cursor: pointer;
-    }
-
-    .back-button {
+    .back {
       margin-bottom: 20px;
     }
 
-    .writing-area {
-      width: 100%;
-      min-height: 300px;
-      background: #0c0c0c;
-      color: white;
-      border: 1px solid #444;
-      border-radius: 10px;
-      padding: 15px;
-      resize: vertical;
-      font-size: 16px;
+    .section-title {
+      margin-top: 20px;
+      margin-bottom: 10px;
+      font-size: 25px;
     }
 
-    .writing-buttons {
-      display: flex;
-      gap: 10px;
-      margin-top: 12px;
-      flex-wrap: wrap;
+    .chapter-content {
+      background: #111;
+      border: 1px solid #333;
+      padding: 25px;
+      border-radius: 12px;
+      line-height: 1.7;
+      color: #ddd;
+    }
+
+    textarea,
+    input {
+      width: 100%;
+      background: #111;
+      color: white;
+      border: 1px solid #444;
+      border-radius: 8px;
+      padding: 12px;
+      margin-top: 10px;
+      outline: none;
+    }
+
+    textarea {
+      min-height: 250px;
+      resize: vertical;
+    }
+
+    .save-btn {
+      margin-top: 10px;
     }
 
     #chatBox {
-      height: 420px;
-      overflow-y: auto;
-      background: #080808;
+      background: #111;
       border: 1px solid #333;
-      border-radius: 10px;
+      border-radius: 12px;
       padding: 15px;
-      margin: 20px 0;
+      height: 400px;
+      overflow-y: auto;
+      margin-bottom: 12px;
     }
 
     .chat-message {
-      background: #151515;
-      border: 1px solid #2d2d2d;
+      background: #181818;
+      border: 1px solid #292929;
       padding: 12px;
-      border-radius: 10px;
+      border-radius: 8px;
       margin-bottom: 10px;
+      line-height: 1.5;
       white-space: pre-wrap;
       word-wrap: break-word;
     }
 
-    .vira-input {
+    .chat-input-row {
       display: flex;
-      gap: 10px;
+      gap: 8px;
     }
 
-    .vira-input input {
+    .chat-input-row input {
+      margin: 0;
       flex: 1;
-      background: #0c0c0c;
-      color: white;
-      border: 1px solid #444;
-      border-radius: 8px;
-      padding: 13px;
-      font-size: 16px;
-      outline: none;
+    }
+
+    .chat-input-row button {
+      margin-top: 10px;
+      white-space: nowrap;
+    }
+
+    .info {
+      background: #111;
+      border-left: 3px solid #777;
+      padding: 15px;
+      margin-top: 20px;
+      color: #bbb;
+      line-height: 1.6;
     }
 
     footer {
-      border-top: 1px solid #292929;
       text-align: center;
-      padding: 25px;
-      color: #888;
+      color: #777;
+      padding: 30px 15px;
       margin-top: 40px;
+      border-top: 1px solid #222;
     }
 
-    .tag {
-      display: inline-block;
-      border: 1px solid #444;
-      border-radius: 20px;
-      padding: 5px 12px;
-      color: #bbb;
-      margin-top: 10px;
-      font-size: 13px;
-    }
+    @media (max-width: 600px) {
+      .hero h2 {
+        font-size: 32px;
+      }
 
-    @media (max-width: 650px) {
-      .nav {
+      .chat-input-row {
         flex-direction: column;
       }
 
-      .vira-input {
-        flex-direction: column;
-      }
-
-      .hero {
-        padding: 45px 10px;
+      .chat-input-row button {
+        width: 100%;
+        margin-top: 0;
       }
     }
   </style>
@@ -231,298 +237,201 @@
 <body>
 
 <header>
-  <div class="nav">
-    <div class="logo">VANTARA EDUCATION</div>
+  <h1>VANTARA EDUCATION</h1>
+  <p>Learn. Understand. Grow.</p>
 
-    <div class="nav-buttons">
-      <button onclick="openPage('homePage')">Home</button>
-      <button onclick="openPage('classesPage')">Classes</button>
-      <button onclick="openPage('writingPage')">Writing</button>
-      <button onclick="openPage('viraPage')">🤖 VIRA</button>
-    </div>
-  </div>
+  <nav>
+    <button onclick="showPage('homePage')">Home</button>
+    <button onclick="showPage('classesPage')">Classes</button>
+    <button onclick="showPage('writingPage')">Writing</button>
+    <button onclick="showPage('viraPage')">VIRA AI</button>
+  </nav>
 </header>
 
+<div class="container">
 
-<!-- HOME -->
-<section id="homePage" class="page active">
-  <div class="hero">
-    <div class="container">
-      <h1>VANTARA EDUCATION</h1>
+  <!-- HOME -->
+  <section id="homePage" class="page active">
+
+    <div class="hero">
+      <h2>Welcome to VANTARA</h2>
 
       <p>
-        A digital learning platform for students from Classes 6 to 12.
-        Learn subjects, chapters, writing skills and interact with VIRA.
+        A simple learning platform for students of Classes 6 to 12.
+        Explore subjects, chapters, learning resources and ask VIRA,
+        your AI teacher.
       </p>
 
       <br>
 
-      <button onclick="openPage('classesPage')">
+      <button onclick="showPage('classesPage')">
         Explore Classes
       </button>
 
-      <button onclick="openPage('viraPage')">
+      <button onclick="showPage('viraPage')">
         Ask VIRA
       </button>
     </div>
-  </div>
 
-  <div class="container">
-    <h2 class="section-title">What VANTARA Offers</h2>
-
-    <div class="grid">
-      <div class="card">
-        <h3>📚 Classes 6–12</h3>
-        <p>Learning resources organised according to class.</p>
-      </div>
-
-      <div class="card">
-        <h3>🧮 Multiple Subjects</h3>
-        <p>Mathematics, Science, English, Social Science and more.</p>
-      </div>
-
-      <div class="card">
-        <h3>✍️ Writing</h3>
-        <p>Practice and save your own writing work.</p>
-      </div>
-
-      <div class="card">
-        <h3>🤖 VIRA</h3>
-        <p>An AI learning assistant powered by Gemini.</p>
-      </div>
+    <div class="info">
+      <b>VANTARA EDUCATION</b><br>
+      Learning resources for Classes 6–12 with an AI-powered learning
+      assistant called VIRA.
     </div>
-  </div>
-</section>
+
+  </section>
 
 
-<!-- CLASSES -->
-<section id="classesPage" class="page">
-  <div class="container">
+  <!-- CLASSES -->
+  <section id="classesPage" class="page">
 
-    <h2 class="section-title">Choose Your Class</h2>
+    <button class="back" onclick="showPage('homePage')">
+      ← Back
+    </button>
 
-    <div class="grid">
+    <h2>Choose Your Class</h2>
 
-      <div class="card class-card" onclick="openClass(6)">
-        <h3>Class 6</h3>
-        <p>Explore Class 6 subjects.</p>
-      </div>
+    <div id="classGrid" class="grid"></div>
 
-      <div class="card class-card" onclick="openClass(7)">
-        <h3>Class 7</h3>
-        <p>Explore Class 7 subjects.</p>
-      </div>
-
-      <div class="card class-card" onclick="openClass(8)">
-        <h3>Class 8</h3>
-        <p>Explore Class 8 subjects.</p>
-      </div>
-
-      <div class="card class-card" onclick="openClass(9)">
-        <h3>Class 9</h3>
-        <p>Explore Class 9 subjects.</p>
-      </div>
-
-      <div class="card class-card" onclick="openClass(10)">
-        <h3>Class 10</h3>
-        <p>Explore Class 10 subjects.</p>
-      </div>
-
-      <div class="card class-card" onclick="openClass(11)">
-        <h3>Class 11</h3>
-        <p>Explore Class 11 subjects.</p>
-      </div>
-
-      <div class="card class-card" onclick="openClass(12)">
-        <h3>Class 12</h3>
-        <p>Explore Class 12 subjects.</p>
-      </div>
-
-    </div>
-  </div>
-</section>
+  </section>
 
 
-<!-- SUBJECTS -->
-<section id="subjectsPage" class="page">
-  <div class="container">
+  <!-- SUBJECTS -->
+  <section id="subjectsPage" class="page">
 
-    <button class="back-button" onclick="openPage('classesPage')">
+    <button class="back" onclick="showPage('classesPage')">
       ← Back to Classes
     </button>
 
-    <h2 id="classTitle" class="section-title">
-      Subjects
-    </h2>
+    <h2 id="subjectsTitle">Subjects</h2>
 
-    <div class="grid">
+    <div id="subjectGrid" class="grid"></div>
 
-      <div class="card subject-card" onclick="openSubject('Mathematics')">
-        <h3>🧮 Mathematics</h3>
-        <p>Numbers, algebra, geometry and more.</p>
-      </div>
-
-      <div class="card subject-card" onclick="openSubject('Science')">
-        <h3>🔬 Science</h3>
-        <p>Physics, Chemistry, Biology and concepts.</p>
-      </div>
-
-      <div class="card subject-card" onclick="openSubject('English')">
-        <h3>📖 English</h3>
-        <p>Literature, grammar and writing.</p>
-      </div>
-
-      <div class="card subject-card" onclick="openSubject('Social Science')">
-        <h3>🌍 Social Science</h3>
-        <p>History, Geography, Civics and Economics.</p>
-      </div>
-
-      <div class="card subject-card" onclick="openSubject('Computer')">
-        <h3>💻 Computer</h3>
-        <p>Technology and computer fundamentals.</p>
-      </div>
-
-      <div class="card subject-card" onclick="openSubject('Hindi')">
-        <h3>🇮🇳 Hindi</h3>
-        <p>Literature, grammar and writing.</p>
-      </div>
-
-    </div>
-  </div>
-</section>
+  </section>
 
 
-<!-- CHAPTERS -->
-<section id="chaptersPage" class="page">
-  <div class="container">
+  <!-- CHAPTERS -->
+  <section id="chaptersPage" class="page">
 
-    <button class="back-button" onclick="openPage('subjectsPage')">
+    <button class="back" onclick="backToSubjects()">
       ← Back to Subjects
     </button>
 
-    <h2 id="subjectTitle" class="section-title">
-      Chapters
-    </h2>
+    <h2 id="chaptersTitle">Chapters</h2>
 
-    <div id="chapterList" class="grid"></div>
+    <div id="chapterGrid" class="grid"></div>
 
-  </div>
-</section>
+  </section>
 
 
-<!-- CHAPTER CONTENT -->
-<section id="chapterPage" class="page">
-  <div class="container">
+  <!-- CHAPTER CONTENT -->
+  <section id="chapterPage" class="page">
 
-    <button class="back-button" onclick="openPage('chaptersPage')">
+    <button class="back" onclick="backToChapters()">
       ← Back to Chapters
     </button>
 
-    <div class="card">
+    <h2 id="chapterTitle"></h2>
 
-      <h2 id="chapterTitle"></h2>
+    <div class="chapter-content">
 
-      <br>
+      <h3>Chapter Overview</h3>
 
-      <p id="chapterContent">
-        Chapter content will be added here.
+      <p style="margin-top:12px;">
+        This chapter will contain learning material, explanations,
+        examples, revision notes and other resources.
       </p>
 
       <br>
 
-      <span class="tag">
-        VANTARA EDUCATION
-      </span>
+      <h3>Learning with VIRA</h3>
 
-    </div>
-
-  </div>
-</section>
-
-
-<!-- WRITING -->
-<section id="writingPage" class="page">
-  <div class="container">
-
-    <h2 class="section-title">✍️ Writing</h2>
-
-    <div class="card">
-
-      <h3>Write and Save Your Work</h3>
+      <p style="margin-top:12px;">
+        You can ask VIRA questions related to this chapter.
+      </p>
 
       <br>
 
-      <textarea
-        id="writingBox"
-        class="writing-area"
-        placeholder="Start writing here..."
-      ></textarea>
-
-      <div class="writing-buttons">
-
-        <button onclick="saveWriting()">
-          Save
-        </button>
-
-        <button onclick="clearWriting()">
-          Clear
-        </button>
-
-      </div>
-
-      <p id="writingStatus" style="color:#aaa;margin-top:12px;"></p>
+      <button onclick="showPage('viraPage')">
+        Ask VIRA About This Topic
+      </button>
 
     </div>
 
-  </div>
-</section>
+  </section>
 
 
-<!-- VIRA -->
-<section id="viraPage" class="page">
-  <div class="container">
+  <!-- WRITING -->
+  <section id="writingPage" class="page">
 
-    <button class="back-button" onclick="openPage('homePage')">
-      ← Back to Home
+    <button class="back" onclick="showPage('homePage')">
+      ← Back
     </button>
 
-    <div class="card">
+    <h2>Writing</h2>
 
-      <h2>🤖 VIRA</h2>
+    <p style="color:#aaa; margin-top:8px;">
+      Write and save your notes, answers or ideas.
+    </p>
 
-      <p>
-        Your VANTARA AI learning assistant.
-      </p>
+    <textarea
+      id="writingArea"
+      placeholder="Start writing here..."
+    ></textarea>
 
-      <div id="chatBox">
+    <button class="save-btn" onclick="saveWriting()">
+      Save Writing
+    </button>
 
-        <div class="chat-message">
-          <b>VIRA:</b>
-          Hello! 👋 I'm VIRA, the AI teacher of VANTARA EDUCATION.
-          Ask me a study question.
-        </div>
+    <button class="save-btn" onclick="clearWriting()">
+      Clear
+    </button>
 
-      </div>
+    <p id="saveMessage" style="color:#aaa; margin-top:10px;"></p>
 
-      <div class="vira-input">
+  </section>
 
-        <input
-          id="userQuestion"
-          type="text"
-          placeholder="Ask VIRA a question..."
-          onkeydown="if(event.key === 'Enter') askVira()"
-        >
 
-        <button onclick="askVira()">
-          Ask
-        </button>
+  <!-- VIRA -->
+  <section id="viraPage" class="page">
 
+    <button class="back" onclick="showPage('homePage')">
+      ← Back
+    </button>
+
+    <h2>VIRA — AI Teacher</h2>
+
+    <p style="color:#aaa; margin-top:8px; margin-bottom:15px;">
+      Ask VIRA questions about your studies.
+    </p>
+
+    <div id="chatBox">
+
+      <div class="chat-message">
+        <b>VIRA:</b> Hello! I am VIRA, the AI teacher of
+        VANTARA EDUCATION. Ask me a question.
       </div>
 
     </div>
 
-  </div>
-</section>
+    <div class="chat-input-row">
+
+      <input
+        id="userQuestion"
+        type="text"
+        placeholder="Ask VIRA a question..."
+        onkeydown="if(event.key === 'Enter') askVira()"
+      >
+
+      <button onclick="askVira()">
+        Ask
+      </button>
+
+    </div>
+
+  </section>
+
+</div>
 
 
 <footer>
@@ -532,11 +441,11 @@
 
 <script>
 
-  /* ================================
-     PAGE NAVIGATION
-  ================================= */
+  /* =========================
+     BASIC PAGE SYSTEM
+  ========================= */
 
-  function openPage(pageId) {
+  function showPage(pageId) {
 
     const pages = document.querySelectorAll(".page");
 
@@ -557,158 +466,211 @@
   }
 
 
-  /* ================================
-     CLASS SELECTION
-  ================================= */
+  /* =========================
+     CLASS DATA
+  ========================= */
 
-  let selectedClass = null;
-  let selectedSubject = null;
+  const classes = [
+    "Class 6",
+    "Class 7",
+    "Class 8",
+    "Class 9",
+    "Class 10",
+    "Class 11",
+    "Class 12"
+  ];
 
-  function openClass(classNumber) {
+  const subjects = [
+    "Mathematics",
+    "Science",
+    "English",
+    "Social Science",
+    "Computer",
+    "Hindi"
+  ];
 
-    selectedClass = classNumber;
-
-    document.getElementById("classTitle").textContent =
-      "Class " + classNumber + " Subjects";
-
-    openPage("subjectsPage");
-  }
-
-
-  /* ================================
-     SUBJECT SELECTION
-  ================================= */
-
-  function openSubject(subject) {
-
-    selectedSubject = subject;
-
-    document.getElementById("subjectTitle").textContent =
-      "Class " + selectedClass + " — " + subject;
-
-    createChapters();
-
-    openPage("chaptersPage");
-  }
+  let selectedClass = "";
+  let selectedSubject = "";
 
 
-  /* ================================
-     CHAPTER LIST
-  ================================= */
+  /* =========================
+     LOAD CLASSES
+  ========================= */
 
-  function createChapters() {
+  function loadClasses() {
 
-    const chapterList =
-      document.getElementById("chapterList");
+    const grid = document.getElementById("classGrid");
 
-    chapterList.innerHTML = "";
+    grid.innerHTML = "";
 
-    const chapters = [
-      "Chapter 1",
-      "Chapter 2",
-      "Chapter 3",
-      "Chapter 4",
-      "Chapter 5",
-      "Chapter 6",
-      "Chapter 7",
-      "Chapter 8",
-      "Chapter 9",
-      "Chapter 10"
-    ];
-
-    chapters.forEach(function(chapter, index) {
+    classes.forEach(function(className) {
 
       const card = document.createElement("div");
 
-      card.className = "card chapter-card";
+      card.className = "card";
 
       card.innerHTML = `
-        <h3>${chapter}</h3>
-        <p>Open ${selectedSubject} ${chapter}.</p>
+        <h3>${className}</h3>
+        <p>View subjects</p>
       `;
 
       card.onclick = function() {
-        openChapter(chapter, index + 1);
+        openClass(className);
       };
 
-      chapterList.appendChild(card);
+      grid.appendChild(card);
 
     });
   }
 
 
-  /* ================================
-     CHAPTER PAGE
-  ================================= */
+  /* =========================
+     OPEN CLASS
+  ========================= */
 
-  function openChapter(chapterName, chapterNumber) {
+  function openClass(className) {
 
-    document.getElementById("chapterTitle").textContent =
-      "Class " + selectedClass +
-      " — " +
-      selectedSubject +
-      " — " +
-      chapterName;
+    selectedClass = className;
 
-    document.getElementById("chapterContent").textContent =
-      "This is the learning section for " +
-      selectedSubject +
-      " " +
-      chapterName +
-      ". Notes, explanations, examples, questions and other study material can be added here.";
+    document.getElementById("subjectsTitle").textContent =
+      className + " Subjects";
 
-    openPage("chapterPage");
+    const grid = document.getElementById("subjectGrid");
+
+    grid.innerHTML = "";
+
+    subjects.forEach(function(subject) {
+
+      const card = document.createElement("div");
+
+      card.className = "card";
+
+      card.innerHTML = `
+        <h3>${subject}</h3>
+        <p>View chapters</p>
+      `;
+
+      card.onclick = function() {
+        openSubject(subject);
+      };
+
+      grid.appendChild(card);
+
+    });
+
+    showPage("subjectsPage");
   }
 
 
-  /* ================================
+  /* =========================
+     OPEN SUBJECT
+  ========================= */
+
+  function openSubject(subject) {
+
+    selectedSubject = subject;
+
+    document.getElementById("chaptersTitle").textContent =
+      selectedClass + " • " + subject;
+
+    const grid = document.getElementById("chapterGrid");
+
+    grid.innerHTML = "";
+
+    for (let i = 1; i <= 10; i++) {
+
+      const card = document.createElement("div");
+
+      card.className = "card";
+
+      card.innerHTML = `
+        <h3>Chapter ${i}</h3>
+        <p>${subject}</p>
+      `;
+
+      card.onclick = function() {
+        openChapter(i);
+      };
+
+      grid.appendChild(card);
+
+    }
+
+    showPage("chaptersPage");
+  }
+
+
+  /* =========================
+     OPEN CHAPTER
+  ========================= */
+
+  function openChapter(chapterNumber) {
+
+    document.getElementById("chapterTitle").textContent =
+      selectedClass +
+      " • " +
+      selectedSubject +
+      " • Chapter " +
+      chapterNumber;
+
+    showPage("chapterPage");
+  }
+
+
+  function backToSubjects() {
+    showPage("subjectsPage");
+  }
+
+
+  function backToChapters() {
+    showPage("chaptersPage");
+  }
+
+
+  /* =========================
      WRITING
-  ================================= */
+  ========================= */
 
   function saveWriting() {
 
-    const writing =
-      document.getElementById("writingBox").value;
+    const text =
+      document.getElementById("writingArea").value;
 
     localStorage.setItem(
       "vantaraWriting",
-      writing
+      text
     );
 
-    document.getElementById("writingStatus").textContent =
-      "Your writing has been saved on this device.";
+    document.getElementById("saveMessage").textContent =
+      "Writing saved on this device.";
   }
 
 
   function clearWriting() {
 
-    document.getElementById("writingBox").value = "";
+    document.getElementById("writingArea").value = "";
 
-    localStorage.removeItem(
-      "vantaraWriting"
-    );
+    localStorage.removeItem("vantaraWriting");
 
-    document.getElementById("writingStatus").textContent =
+    document.getElementById("saveMessage").textContent =
       "Writing cleared.";
   }
 
 
-  window.addEventListener("load", function() {
+  function loadWriting() {
 
     const saved =
       localStorage.getItem("vantaraWriting");
 
     if (saved) {
-      document.getElementById("writingBox").value =
-        saved;
+      document.getElementById("writingArea").value = saved;
     }
+  }
 
-  });
 
-
-  /* ================================
+  /* =========================
      HTML SAFETY
-  ================================= */
+  ========================= */
 
   function escapeHTML(text) {
 
@@ -720,9 +682,9 @@
   }
 
 
-  /* ================================
-     VIRA — GEMINI AI
-  ================================= */
+  /* =========================
+     VIRA AI
+  ========================= */
 
   async function askVira() {
 
@@ -740,7 +702,7 @@
     }
 
 
-    /* Show user's question */
+    /* USER MESSAGE */
 
     const userMessage =
       document.createElement("div");
@@ -754,13 +716,10 @@
 
     chat.appendChild(userMessage);
 
-
-    /* Clear input */
-
     input.value = "";
 
 
-    /* Show loading */
+    /* LOADING MESSAGE */
 
     const loadingMessage =
       document.createElement("div");
@@ -798,45 +757,82 @@
         });
 
 
-      const data =
-        await response.json();
+      let data;
 
+      try {
+
+        data =
+          await response.json();
+
+      } catch (jsonError) {
+
+        data = {
+          error:
+            "The server returned an invalid response."
+        };
+
+      }
+
+
+      /* SERVER ERROR */
 
       if (!response.ok) {
 
-        console.error(data);
+        console.error(
+          "VIRA API ERROR:",
+          data
+        );
 
         loadingMessage.innerHTML =
-          "<b>VIRA:</b> Sorry, I couldn't answer right now.";
+          "<b>VIRA:</b> " +
+          escapeHTML(
+            data.error ||
+            "AI service error."
+          );
 
         return;
       }
 
 
-      const answer =
-        data.answer ||
-        "I couldn't generate an answer.";
-
+      /* SUCCESS */
 
       loadingMessage.innerHTML =
         "<b>VIRA:</b> " +
-        escapeHTML(answer);
+        escapeHTML(
+          data.answer ||
+          "I couldn't generate an answer."
+        );
 
 
     } catch (error) {
 
-      console.error(error);
+      console.error(
+        "VIRA CONNECTION ERROR:",
+        error
+      );
 
       loadingMessage.innerHTML =
-        "<b>VIRA:</b> I couldn't connect to the AI service.";
+        "<b>VIRA:</b> Connection error: " +
+        escapeHTML(
+          error.message ||
+          "Unable to connect to the AI service."
+        );
 
     }
 
 
     chat.scrollTop =
       chat.scrollHeight;
-
   }
+
+
+  /* =========================
+     START WEBSITE
+  ========================= */
+
+  loadClasses();
+
+  loadWriting();
 
 </script>
 
