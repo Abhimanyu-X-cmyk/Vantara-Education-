@@ -1,7 +1,0 @@
-{
-  "functions": {
-    "api/vira.js": {
-      "runtime": "nodejs24.x"
-    }
-  }
-}
