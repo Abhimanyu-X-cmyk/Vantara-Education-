@@ -1,11 +1,10 @@
-
 module.exports = async (req, res) => {
   try {
     const key = process.env.GEMINI_API_KEY;
 
     if (!key) {
       return res.status(500).json({
-        answer: "ERROR: GEMINI_API_KEY is missing in Vercel."
+        answer: "AI service error: GEMINI_API_KEY is missing."
       });
     }
 
@@ -22,7 +21,7 @@ module.exports = async (req, res) => {
             {
               parts: [
                 {
-                  text: "Reply with exactly: VIRA IS WORKING"
+                  text: "You are VIRA, the AI teacher of VANTARA EDUCATION. Answer the student's question clearly and simply."
                 }
               ]
             }
@@ -35,8 +34,7 @@ module.exports = async (req, res) => {
 
     if (!response.ok) {
       return res.status(500).json({
-        answer: "GEMINI ERROR: " +
-          (data.error?.message || JSON.stringify(data))
+        answer: "Gemini error: " + (data.error?.message || "Unknown Gemini error")
       });
     }
 
@@ -44,13 +42,12 @@ module.exports = async (req, res) => {
       data.candidates?.[0]?.content?.parts?.[0]?.text;
 
     return res.status(200).json({
-      answer: answer || "Gemini returned no text.",
-      reply: answer || "Gemini returned no text."
+      answer: answer || "Gemini returned no answer."
     });
 
   } catch (error) {
     return res.status(500).json({
-      answer: "SERVER ERROR: " + error.message
+      answer: "Server error: " + error.message
     });
   }
 };
