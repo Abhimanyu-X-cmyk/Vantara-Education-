@@ -1,22 +1,11 @@
+
 module.exports = async (req, res) => {
   try {
-    if (req.method !== "POST") {
-      return res.status(405).json({
-        answer: "Only POST requests are allowed."
-      });
-    }
+    const key = process.env.GEMINI_API_KEY;
 
-    const { question } = req.body || {};
-
-    if (!question) {
-      return res.status(400).json({
-        answer: "Please enter a question."
-      });
-    }
-
-    if (!process.env.GEMINI_API_KEY) {
+    if (!key) {
       return res.status(500).json({
-        answer: "GEMINI_API_KEY is missing from Vercel."
+        answer: "ERROR: GEMINI_API_KEY is missing in Vercel."
       });
     }
 
@@ -26,17 +15,14 @@ module.exports = async (req, res) => {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "x-goog-api-key": process.env.GEMINI_API_KEY
+          "x-goog-api-key": key
         },
         body: JSON.stringify({
           contents: [
             {
               parts: [
                 {
-                  text:
-                    "You are VIRA, the AI teacher of VANTARA EDUCATION. " +
-                    "Explain things clearly and simply for school students.\n\n" +
-                    "Student question: " + question
+                  text: "Reply with exactly: VIRA IS WORKING"
                 }
               ]
             }
@@ -49,8 +35,7 @@ module.exports = async (req, res) => {
 
     if (!response.ok) {
       return res.status(500).json({
-        answer:
-          "Gemini error: " +
+        answer: "GEMINI ERROR: " +
           (data.error?.message || JSON.stringify(data))
       });
     }
@@ -58,17 +43,14 @@ module.exports = async (req, res) => {
     const answer =
       data.candidates?.[0]?.content?.parts?.[0]?.text;
 
-    if (!answer) {
-      return res.status(500).json({
-        answer: "Gemini did not return an answer."
-      });
-    }
-
-    return res.status(200).json({ answer });
+    return res.status(200).json({
+      answer: answer || "Gemini returned no text.",
+      reply: answer || "Gemini returned no text."
+    });
 
   } catch (error) {
     return res.status(500).json({
-      answer: "Server error: " + error.message
+      answer: "SERVER ERROR: " + error.message
     });
   }
 };
