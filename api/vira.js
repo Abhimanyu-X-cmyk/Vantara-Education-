@@ -4,10 +4,16 @@ export default async function handler(req, res) {
   }
 
   try {
-    const { question } = req.body;
+    let body = req.body;
+
+    if (typeof body === "string") {
+      body = JSON.parse(body);
+    }
+
+    const question = body?.question;
 
     if (!question) {
-      return res.status(400).json({ error: "Question is required" });
+      return res.status(400).json({ error: "Question is missing" });
     }
 
     const response = await fetch(
@@ -19,17 +25,19 @@ export default async function handler(req, res) {
           "Content-Type": "application/json"
         },
         body: JSON.stringify({
-          systemInstruction: {
-            parts: [
-              {
-                text: "You are VIRA, the AI teacher of VANTARA EDUCATION. Explain concepts clearly and simply for students of Classes 6 to 12. For mathematics, show steps. For science and other subjects, explain concepts with examples. Be encouraging, accurate, and educational."
-              }
-            ]
-          },
           contents: [
             {
               role: "user",
-              parts: [{ text: question }]
+              parts: [
+                {
+                  text:
+                    "You are VIRA, the AI teacher of VANTARA EDUCATION. " +
+                    "Explain things clearly and simply for Classes 6 to 12. " +
+                    "For maths, show steps. For science, give simple examples. " +
+                    "Be accurate and encouraging.\n\nStudent question: " +
+                    question
+                }
+              ]
             }
           ]
         })
@@ -46,10 +54,13 @@ export default async function handler(req, res) {
 
     const answer =
       data.candidates?.[0]?.content?.parts?.[0]?.text ||
-      "VIRA couldn't generate an answer.";
+      "VIRA could not generate an answer.";
 
     return res.status(200).json({ answer });
+
   } catch (error) {
+    console.error(error);
+
     return res.status(500).json({
       error: "Server error"
     });
