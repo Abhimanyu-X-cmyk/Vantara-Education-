@@ -1,523 +1,901 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VANTARA EDUCATION</title>
 
-  <title>VANTARA EDUCATION</title>
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+body {
+  font-family: Arial, sans-serif;
+  background: #080808;
+  color: #ffffff;
+  min-height: 100vh;
+}
 
-    body {
-      font-family: Arial, sans-serif;
-      background: #090909;
-      color: #ffffff;
-      min-height: 100vh;
-    }
+header {
+  background: #111;
+  padding: 20px;
+  text-align: center;
+  border-bottom: 1px solid #333;
+}
 
-    header {
-      background: #111111;
-      border-bottom: 1px solid #292929;
-      padding: 18px 20px;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
+header h1 {
+  font-size: 28px;
+  letter-spacing: 2px;
+}
 
-    .header-content {
-      max-width: 1100px;
-      margin: auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 15px;
-    }
+header p {
+  color: #aaa;
+  margin-top: 6px;
+}
 
-    .logo {
-      font-size: 22px;
-      font-weight: bold;
-      letter-spacing: 1px;
-    }
+.container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 25px 15px;
+}
 
-    .tagline {
-      color: #aaaaaa;
-      font-size: 13px;
-    }
+.page {
+  display: none;
+}
 
-    main {
-      max-width: 1100px;
-      margin: auto;
-      padding: 25px 18px 50px;
-    }
+.page.active {
+  display: block;
+}
 
-    .page {
-      display: none;
-    }
+h2 {
+  margin-bottom: 20px;
+  font-size: 25px;
+}
 
-    .page.active {
-      display: block;
-    }
+h3 {
+  margin: 20px 0 12px;
+  color: #ddd;
+}
 
-    .hero {
-      text-align: center;
-      padding: 55px 15px 40px;
-    }
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 15px;
+}
 
-    .hero h1 {
-      font-size: 42px;
-      margin-bottom: 12px;
-    }
+button {
+  width: 100%;
+  padding: 16px;
+  border: 1px solid #333;
+  border-radius: 12px;
+  background: #151515;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.2s;
+}
 
-    .hero p {
-      color: #bdbdbd;
-      max-width: 650px;
-      margin: auto;
-      line-height: 1.6;
-    }
+button:hover {
+  background: #222;
+  transform: translateY(-2px);
+}
 
-    .section-title {
-      font-size: 28px;
-      margin-bottom: 20px;
-    }
+.back {
+  background: #222;
+  margin-bottom: 20px;
+}
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
-      gap: 15px;
-    }
+.chapter {
+  text-align: left;
+  padding: 15px;
+}
 
-    .card {
-      background: #151515;
-      border: 1px solid #292929;
-      border-radius: 14px;
-      padding: 24px 15px;
-      text-align: center;
-      cursor: pointer;
-      transition: 0.2s;
-    }
+.chapter-title {
+  font-size: 17px;
+}
 
-    .card:hover {
-      transform: translateY(-3px);
-      border-color: #555555;
-      background: #1b1b1b;
-    }
+.chapter-number {
+  color: #aaa;
+  font-size: 13px;
+}
 
-    .card h3 {
-      margin-bottom: 7px;
-    }
+.content-box {
+  background: #111;
+  border: 1px solid #292929;
+  padding: 20px;
+  border-radius: 14px;
+  line-height: 1.7;
+}
 
-    .card p {
-      color: #999999;
-      font-size: 13px;
-    }
+footer {
+  text-align: center;
+  color: #777;
+  padding: 30px 10px;
+  margin-top: 30px;
+  border-top: 1px solid #222;
+}
 
-    button {
-      background: #ffffff;
-      color: #000000;
-      border: none;
-      padding: 11px 18px;
-      border-radius: 9px;
-      cursor: pointer;
-      font-weight: bold;
-      margin: 5px;
-    }
+.small {
+  color: #999;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
 
-    button:hover {
-      opacity: 0.85;
-    }
+.section-title {
+  margin-top: 25px;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #333;
+}
 
-    .secondary {
-      background: #1b1b1b;
-      color: white;
-      border: 1px solid #333333;
-    }
+.home-btn {
+  background: #1c1c1c;
+}
 
-    .back-button {
-      margin-bottom: 20px;
-    }
+textarea {
+  width: 100%;
+  min-height: 200px;
+  background: #111;
+  color: white;
+  border: 1px solid #333;
+  border-radius: 10px;
+  padding: 15px;
+  resize: vertical;
+}
 
-    .content-box {
-      background: #121212;
-      border: 1px solid #292929;
-      border-radius: 14px;
-      padding: 25px;
-      line-height: 1.7;
-    }
+.save-btn {
+  margin-top: 10px;
+  background: #222;
+}
 
-    .content-box h2 {
-      margin-bottom: 12px;
-    }
+@media(max-width:600px) {
+  header h1 {
+    font-size: 23px;
+  }
 
-    .content-box p {
-      color: #c2c2c2;
-      margin-bottom: 12px;
-    }
+  h2 {
+    font-size: 21px;
+  }
 
-    textarea {
-      width: 100%;
-      min-height: 300px;
-      margin-top: 15px;
-      padding: 15px;
-      background: #0d0d0d;
-      color: white;
-      border: 1px solid #333333;
-      border-radius: 10px;
-      resize: vertical;
-      font-size: 15px;
-      font-family: Arial, sans-serif;
-    }
-
-    footer {
-      text-align: center;
-      border-top: 1px solid #252525;
-      padding: 25px;
-      color: #777777;
-      font-size: 13px;
-      margin-top: 40px;
-    }
-
-    .small-note {
-      color: #888888;
-      margin-bottom: 20px;
-    }
-
-    @media (max-width: 600px) {
-      .hero h1 {
-        font-size: 31px;
-      }
-
-      .section-title {
-        font-size: 23px;
-      }
-
-      .header-content {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-    }
-  </style>
+  button {
+    font-size: 15px;
+    padding: 14px;
+  }
+}
+</style>
 </head>
 
 <body>
 
 <header>
-  <div class="header-content">
-    <div class="logo">VANTARA EDUCATION</div>
-    <div class="tagline">Learn • Explore • Grow</div>
-  </div>
+  <h1>VANTARA EDUCATION</h1>
+  <p>Learn • Explore • Grow</p>
 </header>
 
-<main>
+<div class="container">
 
-  <!-- HOME -->
-  <section id="home" class="page active">
+<!-- HOME -->
+<div id="home" class="page active">
+  <h2>Welcome to VANTARA EDUCATION</h2>
+  <p class="small">Select your class to continue.</p>
 
-    <div class="hero">
-      <h1>VANTARA EDUCATION</h1>
-      <p>
-        A learning platform for students from Classes 6 to 12.
-        Explore subjects, chapters and learning resources in one place.
-      </p>
-    </div>
-
-    <h2 class="section-title">Choose Your Class</h2>
-
-    <div class="grid">
-
-      <div class="card" onclick="openClass(6)">
-        <h3>Class 6</h3>
-        <p>Start Learning</p>
-      </div>
-
-      <div class="card" onclick="openClass(7)">
-        <h3>Class 7</h3>
-        <p>Start Learning</p>
-      </div>
-
-      <div class="card" onclick="openClass(8)">
-        <h3>Class 8</h3>
-        <p>Start Learning</p>
-      </div>
-
-      <div class="card" onclick="openClass(9)">
-        <h3>Class 9</h3>
-        <p>Start Learning</p>
-      </div>
-
-      <div class="card" onclick="openClass(10)">
-        <h3>Class 10</h3>
-        <p>Start Learning</p>
-      </div>
-
-      <div class="card" onclick="openClass(11)">
-        <h3>Class 11</h3>
-        <p>Start Learning</p>
-      </div>
-
-      <div class="card" onclick="openClass(12)">
-        <h3>Class 12</h3>
-        <p>Start Learning</p>
-      </div>
-
-    </div>
-
-    <br><br>
-
-    <div class="card" onclick="showPage('writing')">
-      <h3>✍️ Writing</h3>
-      <p>Write and save your notes</p>
-    </div>
-
-  </section>
+  <div class="grid">
+    <button onclick="openClass(6)">Class 6</button>
+    <button onclick="openClass(7)">Class 7</button>
+    <button onclick="openClass(8)">Class 8</button>
+    <button onclick="openClass(9)">Class 9</button>
+    <button onclick="openClass(10)">Class 10</button>
+    <button onclick="openClass(11)">Class 11</button>
+    <button onclick="openClass(12)">Class 12</button>
+  </div>
+</div>
 
 
-  <!-- CLASS PAGE -->
-  <section id="classPage" class="page">
+<!-- CLASS PAGE -->
+<div id="classPage" class="page">
+  <button class="back" onclick="showPage('home')">← Back</button>
 
-    <button class="secondary back-button" onclick="showPage('home')">
-      ← Back
-    </button>
+  <h2 id="classTitle"></h2>
+  <p class="small">Select a subject.</p>
 
-    <h2 id="classTitle" class="section-title"></h2>
+  <div id="subjectButtons" class="grid"></div>
+</div>
 
-    <p class="small-note">
-      Choose a subject to continue.
+
+<!-- SST SELECTION -->
+<div id="sstPage" class="page">
+  <button class="back" onclick="openClass(selectedClass)">← Back</button>
+
+  <h2>Social Science</h2>
+  <p class="small">Choose a section.</p>
+
+  <div id="sstOptions" class="grid"></div>
+</div>
+
+
+<!-- GENERIC SUBJECT PAGE -->
+<div id="subjectPage" class="page">
+  <button class="back" onclick="openClass(selectedClass)">← Back</button>
+
+  <h2 id="subjectTitle"></h2>
+  <div id="subjectContent"></div>
+</div>
+
+
+<!-- CHAPTER PAGE -->
+<div id="chapterPage" class="page">
+  <button class="back" onclick="goBack()">← Back</button>
+
+  <h2 id="chapterTitle"></h2>
+
+  <div class="content-box">
+    <p>
+      Study material for this chapter will be added here.
     </p>
-
-    <div class="grid">
-
-      <div class="card" onclick="openSubject('Mathematics')">
-        <h3>Mathematics</h3>
-        <p>Maths</p>
-      </div>
-
-      <div class="card" onclick="openSubject('Science')">
-        <h3>Science</h3>
-        <p>Physics • Chemistry • Biology</p>
-      </div>
-
-      <div class="card" onclick="openSubject('English')">
-        <h3>English</h3>
-        <p>Language & Literature</p>
-      </div>
-
-      <div class="card" onclick="openSubject('Social Science')">
-        <h3>Social Science</h3>
-        <p>History • Geography • Civics</p>
-      </div>
-
-      <div class="card" onclick="openSubject('Computer')">
-        <h3>Computer</h3>
-        <p>Technology & Computing</p>
-      </div>
-
-      <div class="card" onclick="openSubject('Hindi')">
-        <h3>Hindi</h3>
-        <p>भाषा एवं साहित्य</p>
-      </div>
-
-    </div>
-
-  </section>
+  </div>
+</div>
 
 
-  <!-- SUBJECT PAGE -->
-  <section id="subjectPage" class="page">
+<!-- WRITING PAGE -->
+<div id="writingPage" class="page">
+  <button class="back" onclick="showPage('home')">← Back</button>
 
-    <button class="secondary back-button" onclick="showPage('classPage')">
-      ← Back
-    </button>
+  <h2>Writing</h2>
 
-    <h2 id="subjectTitle" class="section-title"></h2>
-
-    <p class="small-note">
-      Select a chapter.
-    </p>
-
-    <div id="chapterGrid" class="grid"></div>
-
-  </section>
-
-
-  <!-- CHAPTER PAGE -->
-  <section id="chapterPage" class="page">
-
-    <button class="secondary back-button" onclick="showPage('subjectPage')">
-      ← Back
-    </button>
-
-    <div class="content-box">
-
-      <h2 id="chapterTitle"></h2>
-
-      <p>
-        This chapter is ready for learning resources.
-      </p>
-
-      <p>
-        Notes, PDFs, videos and other study material can be added here
-        as VANTARA EDUCATION grows.
-      </p>
-
-      <button onclick="alert('Learning resources will be added soon.')">
-        📚 Study Resources
-      </button>
-
-    </div>
-
-  </section>
-
-
-  <!-- WRITING -->
-  <section id="writing" class="page">
-
-    <button class="secondary back-button" onclick="showPage('home')">
-      ← Back
-    </button>
-
-    <h2 class="section-title">✍️ Writing</h2>
-
-    <p class="small-note">
-      Write your ideas, notes or study material here.
-      Your writing is saved on this device.
-    </p>
-
+  <div class="content-box">
     <textarea id="writingArea"
-      placeholder="Start writing here..."></textarea>
+      placeholder="Write your notes or answers here..."></textarea>
 
-    <br>
-
-    <button onclick="saveWriting()">Save</button>
-
-    <button class="secondary" onclick="clearWriting()">
-      Clear
-    </button>
-
-    <p id="saveMessage" class="small-note"></p>
-
-  </section>
-
-</main>
+    <button class="save-btn" onclick="saveWriting()">Save</button>
+  </div>
+</div>
 
 
 <footer>
-  © 2026 VANTARA EDUCATION • Learning for Everyone
+  © 2026 VANTARA EDUCATION
 </footer>
+
+</div>
 
 
 <script>
 
-  let selectedClass = "";
-  let selectedSubject = "";
+let selectedClass = null;
+let currentSubject = null;
+let previousPage = "classPage";
 
-  function showPage(pageId) {
-
-    document.querySelectorAll(".page").forEach(page => {
-      page.classList.remove("active");
-    });
-
-    document.getElementById(pageId).classList.add("active");
-
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
-    });
-  }
+const classes = {
+  6: ["Mathematics", "Science", "English", "Social Science", "AI", "Hindi"],
+  7: ["Mathematics", "Science", "English", "Social Science", "AI", "Hindi"],
+  8: ["Mathematics", "Science", "English", "Social Science", "AI", "Hindi"],
+  9: ["Mathematics", "Science", "English", "Social Science", "AI", "Hindi"],
+  10: ["Mathematics", "Science", "English", "Social Science", "AI", "Hindi"],
+  11: ["Mathematics", "Physics", "Chemistry", "Biology", "English", "Social Science", "AI", "Hindi"],
+  12: ["Mathematics", "Physics", "Chemistry", "Biology", "English", "Social Science", "AI", "Hindi"]
+};
 
 
-  function openClass(classNumber) {
+/* =========================
+   CLASS 10 MATHEMATICS
+========================= */
 
-    selectedClass = classNumber;
+const class10Maths = [
+  "Real Numbers",
+  "Polynomials",
+  "Pair of Linear Equations in Two Variables",
+  "Quadratic Equations",
+  "Arithmetic Progressions",
+  "Triangles",
+  "Coordinate Geometry",
+  "Introduction to Trigonometry",
+  "Some Applications of Trigonometry",
+  "Circles",
+  "Constructions",
+  "Areas Related to Circles",
+  "Surface Areas and Volumes",
+  "Statistics",
+  "Probability"
+];
 
-    document.getElementById("classTitle").textContent =
-      "Class " + classNumber;
 
-    showPage("classPage");
-  }
+/* =========================
+   CLASS 10 SCIENCE
+========================= */
+
+const class10Science = [
+  "Chemical Reactions and Equations",
+  "Acids, Bases and Salts",
+  "Metals and Non-metals",
+  "Carbon and Its Compounds",
+  "Periodic Classification of Elements",
+  "Life Processes",
+  "Control and Coordination",
+  "How Do Organisms Reproduce?",
+  "Heredity and Evolution",
+  "Light Reflection and Refraction",
+  "The Human Eye and Colourful World",
+  "Electricity",
+  "Magnetic Effects of Electric Current",
+  "Our Environment"
+];
 
 
-  function openSubject(subject) {
+/* =========================
+   CLASS 10 AI
+========================= */
 
-    selectedSubject = subject;
+const class10AI = [
 
-    document.getElementById("subjectTitle").textContent =
-      selectedSubject + " — Class " + selectedClass;
+  "Part A: Employability Skills (10 Marks)",
 
-    const chapterGrid = document.getElementById("chapterGrid");
+  "Communication Skills-II",
+  "Self-management Skills-II",
+  "Information and Communication Technology (ICT) Skills-II",
+  "Entrepreneurial Skills-II",
+  "Green Skills-II",
 
-    chapterGrid.innerHTML = "";
+  "Part B: Subject-Specific Skills (40 Marks)",
 
-    for (let i = 1; i <= 10; i++) {
+  "Revisiting AI Project Cycle & Ethical Frameworks for AI",
+  "Advanced Concepts of Modeling in AI (Includes Machine Learning & Deep Learning)",
+  "Evaluating Models (Includes Confusion Matrix, Accuracy, Precision, Recall)",
+  "Statistical Data",
+  "Computer Vision",
+  "Natural Language Processing (NLP)",
+  "Advance Python"
+];
 
-      const card = document.createElement("div");
 
-      card.className = "card";
+/* =========================
+   CLASS 10 HINDI
+========================= */
 
-      card.innerHTML = `
-        <h3>Chapter ${i}</h3>
-        <p>${selectedSubject}</p>
-      `;
+const hindi10A = {
 
-      card.onclick = function() {
-        openChapter(i);
+  "क्षितिज भाग-2 (Kshitij Part 2)": {
+
+    "काव्य खंड (Poetry)": [
+      "सूरदास – पद",
+      "तुलसीदास – राम-लक्ष्मण-परशुराम संवाद",
+      "जयशंकर प्रसाद – आत्मकथ्य",
+      "सूर्यकांत त्रिपाठी 'निराला' – उत्साह, अट नहीं रही है",
+      "नागार्जुन – यह दंतुरित मुस्कान, फसल",
+      "मंगलेश डबराल – संगतकार"
+    ],
+
+    "गद्य खंड (Prose)": [
+      "स्वयं प्रकाश – नेताजी का चश्मा",
+      "रामवृक्ष बेनीपुरी – बालगोबिन भगत",
+      "यशपाल – लखनवी अंदाज़",
+      "सर्वेश्वर दयाल सक्सेना – मानवीय करुणा की दिव्य चमक",
+      "मन्नू भंडारी – एक कहानी यह भी",
+      "यतीन्द्र मिश्र – नौबतखाने में इबादत",
+      "भदंत आनंद कौसल्यायन – संस्कृति"
+    ]
+  },
+
+  "कृतिका भाग-2 (Kritika Part 2)": [
+    "शिवपूजन सहाय – माता का आँचल",
+    "कमलेश्वर – जॉर्ज पंचम की नाक",
+    "मधु कांकरिया – साना-साना हाथ जोड़ि...",
+    "शिवप्रसाद मिश्र 'रुद्र' – एही ठैयाँ झुलनी हेरानी हो रामा!",
+    "अज्ञेय – मैं क्यों लिखता हूँ?"
+  ]
+};
+
+
+const hindi10B = {
+
+  "स्पर्श भाग-2 (Sparsh Part 2)": {
+
+    "पद्य खंड (Poetry)": [
+      "कबीर – साखी",
+      "मीरा – पद",
+      "मैथिलीशरण गुप्त – मनुष्यताअ",
+      "सुमित्रानंदन पंत – पर्वत प्रदेश में पावस",
+      "वीरेन डंगवाल – तोप",
+      "कैफ़ी आज़मी – कर चले हम फ़िदा",
+      "रवीन्द्रनाथ ठाकुर – आत्मत्राण"
+    ],
+
+    "गद्य खंड (Prose)": [
+      "प्रेमचंद – बड़े भाई साहब",
+      "सीताराम सेकसरिया – डायरी का एक पन्ना",
+      "लीलाधर मंडलोई – ततँरा-वामीरो कथाअ",
+      "निदा फ़ाज़ली – अब कहाँ दूसरे के दुख से दुखी होने वाले",
+      "प्रहलाद अग्रवाल – तीसरी कसम के शिल्पकार शैलेंद्र",
+      "अंतोन चेखव – गिरगिट",
+      "रवींद्र केलेकर – पतझड़ में टूटी पत्तियाँ (गिन्निया का सोना)",
+      "हबीब तनवीर – कारतूस"
+    ]
+  },
+
+  "संचयन भाग-2 (Sanchayan Part 2)": [
+    "मिथिलेश्वर – हरिहर काका",
+    "गुरदयाल सिंह – सपनों के-से दिन",
+    "राही मासूम रज़ा – टोपी शुक्ला"
+  ]
+};
+
+
+/* =========================
+   CLASS 9 MATHEMATICS
+========================= */
+
+const class9MathOld = [
+  "Number Systems",
+  "Polynomials",
+  "Linear Equations in Two Variables",
+  "Coordinate Geometry",
+  "Introduction to Euclid’s Geometry",
+  "Lines and Angles",
+  "Triangles",
+  "Quadrilaterals",
+  "Circles",
+  "Heron’s Formula",
+  "Surface Areas and Volumes",
+  "Statistics"
+];
+
+const class9MathNew1 = [
+  "Orienting Yourself: The Use of Coordinates",
+  "Introduction to Linear Polynomials",
+  "The World of Numbers",
+  "Exploring Algebraic Identities",
+  "I'm Up and Down, and Round and Round (Circles)",
+  "Measuring Space: Perimeter and Area",
+  "The Mathematics of Maybe: Introduction to Probability",
+  "Predicting What Comes Next: Exploring Sequences and Progressions"
+];
+
+const class9MathNew2 = [
+  "Propositions and their Converses",
+  "How Quantities Combine: Understanding Data",
+  "The World of Algorithms",
+  "Quadrilaterals",
+  "Two Variables, One Line",
+  "Math of Space: Surface Area and Volume"
+];
+
+
+/* =========================
+   CLASS 9 SCIENCE
+========================= */
+
+const class9ScienceNew = [
+  "Exploration: Entering the World of Secondary Science",
+  "Cell: The Building Block of Life",
+  "Functional Tissues",
+  "Describing Motion Around Us",
+  "Exploring Mixtures and their Separation",
+  "Structure of the Atom",
+  "Atoms and Molecules",
+  "Gravitation",
+  "Work, Energy, and Power",
+  "Sound and Wave Motion",
+  "Diversity in the Living World",
+  "Reproduction and Continuity of Life",
+  "Our Environment and Natural Resources"
+];
+
+const class9PhysicsOld = [
+  "Motion (Chapter 8)",
+  "Force and Laws of Motion (Chapter 9)",
+  "Gravitation (Chapter 10)",
+  "Work and Energy (Chapter 11)",
+  "Sound (Chapter 12)"
+];
+
+const class9ChemistryOld = [
+  "Matter",
+  "Purity of Matter",
+  "Atoms and Molecules",
+  "Atomic Structure"
+];
+
+const class9BiologyOld = [
+  "The Fundamental Unit of Life (Cells) — Chapter 5",
+  "Tissues — Chapter 6",
+  "Diversity in Living Organisms — Chapter 7",
+  "Why Do We Fall Ill? — Chapter 13",
+  "Natural Resources — Chapter 14",
+  "Improvement in Food Resources — Chapter 15"
+];
+
+
+/* =========================
+   CLASS 9 SST
+========================= */
+
+const class9HistoryOld = [
+  "The French Revolution",
+  "Socialism in Europe and the Russian Revolution",
+  "Nazism and the Rise of Hitler",
+  "Forest Society and Colonialism",
+  "Pastoralists in the Modern World",
+  "Peasants and Farmers",
+  "History and Sport: The Story of Cricket",
+  "Clothing: A Social History"
+];
+
+const class9GeographyOld = [
+  "India – Size and Location",
+  "Physical Features of India",
+  "Drainage (Rivers and Lakes)",
+  "Climate",
+  "Natural Vegetation and Wildlife",
+  "Population"
+];
+
+const class9CivicsOld = [
+  "Democracy in the Contemporary World",
+  "What is Democracy? Why Democracy?",
+  "Constitutional Design",
+  "Electoral Politics",
+  "Working of Institutions",
+  "Democratic Rights"
+];
+
+const class9EconomicsOld = [
+  "The Story of Village Palampur",
+  "People as Resource",
+  "Poverty as a Challenge",
+  "Food Security in India"
+];
+
+const class9SSTNew1 = [
+  "Understanding Social Science",
+  "Shaping of the Earth's Surface",
+  "Atmosphere and Climate",
+  "Early Humans and Beginning of Civilisation",
+  "State and Society up to 1000 CE",
+  "Democracy",
+  "Elections",
+  "Building Blocks in Economics: The Problem of Choice",
+  "The Price Puzzle: What Drives the Market",
+  "Oceans and Life",
+  "Life on Earth",
+  "Resistance and Resilience (1000 CE–1700 CE)",
+  "India and the World-I (1900 BCE–1200 CE)",
+  "Authority",
+  "From Ideas to Startups",
+  "Smart Ways to Manage Your Finances"
+];
+
+
+/* =========================
+   CLASS 9 ENGLISH
+========================= */
+
+const class9EnglishNew = [
+  "Chapter 1: How I Taught My Grandmother to Read / Bharat Our Land",
+  "Chapter 2: The Pot Maker / Gifts of Grace: Honouring Our Vocations",
+  "Chapter 3: Winds of Change / Canvas of Soil",
+  "Chapter 4: Vitamin-M / I Cannot Remember My Mother",
+  "Chapter 5: The World of Limitless Possibilities / Nine Gold Medals",
+  "Chapter 6: Twin Melodies / A Friend Found in Music",
+  "Chapter 8: Follow That Dream / Believe in Yourself"
+];
+
+const class9BeehiveProse = [
+  "Chapter 1: The Fun They Had",
+  "Chapter 2: The Sound of Music (I. Evelyn Glennie, II. Bismillah Khan)",
+  "Chapter 3: The Little Girl",
+  "Chapter 4: A Truly Beautiful Mind",
+  "Chapter 5: The Snake and the Mirror",
+  "Chapter 6: My Childhood",
+  "Chapter 7: Packing",
+  "Chapter 8: Reach for the Top (I. Santosh Yadav, II. Maria Sharapova)",
+  "Chapter 9: The Bond of Love",
+  "Chapter 10: Kathmandu",
+  "Chapter 11: If I Were You"
+];
+
+const class9BeehivePoetry = [
+  "The Road Not Taken",
+  "Wind",
+  "Rain on the Roof",
+  "The Lake Isle of Innisfree",
+  "A Legend of the Northland",
+  "No Men Are Foreign",
+  "The Duck and the Kangaroo (Removed in later rationalised editions)",
+  "On Killing a Tree",
+  "The Snake Trying",
+  "A Slumber Did My Spirit Seal"
+];
+
+const class9Moments = [
+  "Chapter 1: The Lost Child",
+  "Chapter 2: The Adventures of Toto",
+  "Chapter 3: Iswaran the Storyteller",
+  "Chapter 4: In the Kingdom of Fools",
+  "Chapter 5: The Happy Prince",
+  "Chapter 6: Weathering the Storm in Ersama",
+  "Chapter 7: The Last Leaf",
+  "Chapter 8: A House Is Not a Home",
+  "Chapter 9: The Accidental Tourist (Removed in later rationalised editions)",
+  "Chapter 10: The Beggar"
+];
+
+
+/* =========================
+   CLASS 9 HINDI
+========================= */
+
+const class9HindiNew = [
+  "अध्याय 1: दो बैलों की कथा",
+  "अध्याय 2: क्या लिखूँ?",
+  "अध्याय 3: संवादहीन",
+  "अध्याय 4: ऐसी भी बातें होती हैं",
+  "अध्याय 5: आखिरी चट्टान तक",
+  "अध्याय 6: रीढ़ की हड्डी",
+  "अध्याय 7: मैं और मेरा देश",
+  "अध्याय 8: रैदास के पद",
+  "अध्याय 9: राम-परशुराम-लक्ष्मण संवाद",
+  "अध्याय 10: भारति, जय, विजयकरे!",
+  "अध्याय 11: झाँसी की रानी",
+  "अध्याय 12: घर की याद"
+];
+
+const class9KshitijProse = [
+  "अध्याय 1: दो बैलों की कथा (प्रेमचंद)",
+  "अध्याय 2: ल्हासा की ओर (राहुल सांकृत्यायन)",
+  "अध्याय 3: उपभोक्तावाद की संस्कृति (श्यामाचरण दुबे)",
+  "अध्याय 4: साँवले सपनों की याद (जाबिर हुसैन)",
+  "अध्याय 5: नाना साहब की पुत्री देवी मैना को भस्म कर दिया गया (चपला देवी)",
+  "अध्याय 6: प्रेमचंद के फटे जूते (हरिशंकर परसाई)",
+  "अध्याय 7: मेरे बचपन के दिन (महादेवी वर्मा)",
+  "अध्याय 8: एक कुत्ता और एक मैना (हजारीप्रसाद द्विवेदी)"
+];
+
+const class9KshitijPoetry = [
+  "अध्याय 9: साखियाँ एवं सबद (कबीर)",
+  "अध्याय 10: वाख (ललद्यद)",
+  "अध्याय 11: सवैये (रसखान)",
+  "अध्याय 12: कैदी और कोकिला (माखनलाल चतुर्वेदी)",
+  "अध्याय 13: ग्राम श्री (सुमित्रानंदन पंत)",
+  "अध्याय 14: चंद्रगहना से लौटती बेर (केदारनाथ अग्रवाल)",
+  "अध्याय 15: मेघ आए (सर्वेश्वर दयाल सक्सेना)",
+  "अध्याय 16: यमराज की दिशा (चंद्रकांत देवताले)",
+  "अध्याय 17: बच्चे काम पर जा रहे हैं (राजेश जोशी)"
+];
+
+const class9Kritika = [
+  "अध्याय 1: इस जल प्रलय में (फणीश्वरनाथ रेणु)",
+  "अध्याय 2: मेरे संग की औरतें (मृदुला गर्ग)",
+  "अध्याय 3: रीढ़ की हड्डी (जगदीश चंद्र माथुर)",
+  "अध्याय 4: माटी वाली (विद्यासागर नौटियाल)",
+  "अध्याय 5: किस तरह आखिरकार मैं हिंदी में आया (शमशेर बहादुर सिंह)"
+];
+
+
+/* =========================
+   CLASS 9 AI
+========================= */
+
+const class9AI = [
+  "Chapter 1: Introduction to Computer Systems",
+  "Chapter 2: Computer Components and Hardware",
+  "Chapter 3: Types of Software",
+  "Chapter 4: Computer Networking and Multimedia",
+  "Chapter 5: Cyber Safety",
+  "Chapter 6: Working with a Word Processor",
+  "Chapter 7: Working with Presentation Software",
+  "Chapter 8: Working with Spreadsheets"
+];
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+function showPage(id) {
+
+  document.querySelectorAll(".page").forEach(page => {
+    page.classList.remove("active");
+  });
+
+  document.getElementById(id).classList.add("active");
+
+  window.scrollTo(0, 0);
+}
+
+
+function openClass(classNumber) {
+
+  selectedClass = classNumber;
+
+  document.getElementById("classTitle").textContent =
+    "Class " + classNumber;
+
+  const box = document.getElementById("subjectButtons");
+
+  box.innerHTML = "";
+
+  classes[classNumber].forEach(subject => {
+
+    const button = document.createElement("button");
+
+    button.textContent = subject;
+
+    if (subject === "Social Science") {
+      button.onclick = openSST;
+    } else {
+      button.onclick = () => openSubject(subject);
+    }
+
+    box.appendChild(button);
+  });
+
+  showPage("classPage");
+}
+
+
+/* =========================
+   SST
+========================= */
+
+function openSST() {
+
+  if (selectedClass >= 9 && selectedClass <= 12) {
+
+    const box = document.getElementById("sstOptions");
+
+    box.innerHTML = "";
+
+    ["History", "Geography", "Civics", "Economics"].forEach(subject => {
+
+      const button = document.createElement("button");
+
+      button.textContent = subject;
+
+      button.onclick = () => {
+
+        let chapters = [];
+
+        if (selectedClass === 9) {
+
+          if (subject === "History") chapters = class9HistoryOld;
+          if (subject === "Geography") chapters = class9GeographyOld;
+          if (subject === "Civics") chapters = class9CivicsOld;
+          if (subject === "Economics") chapters = class9EconomicsOld;
+
+        } else {
+
+          chapters = Array.from(
+            {length: 10},
+            (_, i) => "Chapter " + (i + 1)
+          );
+
+        }
+
+        openChapterList(
+          subject,
+          chapters
+        );
       };
 
-      chapterGrid.appendChild(card);
+      box.appendChild(button);
+    });
+
+    showPage("sstPage");
+
+  } else {
+
+    openSubject("Social Science");
+
+  }
+}
+
+
+/* =========================
+   SUBJECT HANDLER
+========================= */
+
+function openSubject(subject) {
+
+  currentSubject = subject;
+  previousPage = "classPage";
+
+  /* CLASS 9 SPECIAL SUBJECTS */
+
+  if (selectedClass === 9) {
+
+    if (subject === "Mathematics") {
+      openClass9Math();
+      return;
     }
 
-    showPage("subjectPage");
-  }
-
-
-  function openChapter(chapterNumber) {
-
-    document.getElementById("chapterTitle").textContent =
-      selectedSubject +
-      " — Chapter " +
-      chapterNumber;
-
-    showPage("chapterPage");
-  }
-
-
-  function saveWriting() {
-
-    const text = document.getElementById("writingArea").value;
-
-    localStorage.setItem("vantaraWriting", text);
-
-    document.getElementById("saveMessage").textContent =
-      "Saved successfully on this device.";
-  }
-
-
-  function clearWriting() {
-
-    document.getElementById("writingArea").value = "";
-
-    localStorage.removeItem("vantaraWriting");
-
-    document.getElementById("saveMessage").textContent =
-      "Writing cleared.";
-  }
-
-
-  window.onload = function() {
-
-    const savedText = localStorage.getItem("vantaraWriting");
-
-    if (savedText) {
-      document.getElementById("writingArea").value = savedText;
+    if (subject === "Science") {
+      openClass9Science();
+      return;
     }
 
-  };
+    if (subject === "English") {
+      openClass9English();
+      return;
+    }
 
-</script>
+    if (subject === "Hindi") {
+      openClass9Hindi();
+      return;
+    }
 
-</body>
-</html>
+    if (subject === "AI") {
+      openChapterList(subject, class9AI);
+      return;
+    }
+  }
+
+
+  /* CLASS 10 SPECIAL SUBJECTS */
+
+  if (selectedClass === 10) {
+
+    if (subject === "Mathematics") {
+      openChapterList(subject, class10Maths);
+      return;
+    }
+
+    if (subject === "Science") {
+      openChapterList(subject, class10Science);
+      return;
+    }
+
+    if (subject === "AI") {
+      openChapterList(subject, class10AI);
+      return;
+    }
+
+    if (subject === "Hindi") {
+      openClass10Hindi();
+      return;
+    }
+  }
+
+
+  /* GENERIC */
+
+  const chapters = Array.from(
+    {length: 10},
+    (_, i) => "Chapter " + (i + 1)
+  );
+
+  openChapterList(subject, chapters);
+}
+
+
+/* =========================
+   CHAPTER LIST
+========================= */
+
+function openChapterList(title, chapters) {
+
+  currentSubject = title;
+  previousPage = "classPage";
+
+  document.getElementById("subjectTitle").textContent = title;
+
+  const box = document.getElementById("subjectContent");
+
+  box.innerHTML = "";
+
+  chapters.forEach((chapter, index) => {
+
+    const button = document.createElement("button");
+
+    button.className = "chapter";
+
+    button.innerHTML = `
+      <span class="chapter-number">
+        ${index + 1}
+      </span><br>
+      <span class="chapter-title">
+        ${chapter}
+      </span>
+    `;
+
+    button.onclick =
