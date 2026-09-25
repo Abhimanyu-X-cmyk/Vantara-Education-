@@ -2,175 +2,82 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>VANTARA EDUCATION</title>
 
 <style>
 :root{
-  --bg:#0b0b0f;
-  --card:#15151c;
-  --card2:#1c1c25;
-  --text:#f5f5f7;
-  --muted:#a7a7b2;
-  --accent:#8b5cf6;
-  --border:#292934;
+--bg:#0b0b0f;
+--card:#15151c;
+--card2:#1c1c25;
+--text:#f5f5f7;
+--muted:#a7a7b2;
+--accent:#8b5cf6;
+--border:#292934;
 }
-
-*{
-  box-sizing:border-box;
-}
-
+*{box-sizing:border-box}
 body{
-  margin:0;
-  background:var(--bg);
-  color:var(--text);
-  font-family:Arial,Helvetica,sans-serif;
+margin:0;background:var(--bg);color:var(--text);
+font-family:Arial,Helvetica,sans-serif
 }
-
 header{
-  padding:22px 16px;
-  text-align:center;
-  border-bottom:1px solid var(--border);
-  position:sticky;
-  top:0;
-  background:rgba(11,11,15,.96);
-  z-index:5;
+padding:22px 16px;text-align:center;
+border-bottom:1px solid var(--border);
+position:sticky;top:0;
+background:rgba(11,11,15,.96);
+z-index:5
 }
-
-header h1{
-  margin:0;
-  font-size:28px;
-}
-
-header p{
-  margin:6px 0 0;
-  color:var(--muted);
-}
-
-main{
-  max-width:1100px;
-  margin:auto;
-  padding:20px;
-}
-
-.page{
-  display:none;
-}
-
-.page.active{
-  display:block;
-}
-
-h2{
-  margin-top:0;
-}
-
-.subtitle{
-  color:var(--muted);
-  margin-bottom:20px;
-}
-
+header h1{margin:0;font-size:28px}
+header p{margin:6px 0 0;color:var(--muted)}
+main{max-width:1100px;margin:auto;padding:20px}
+.page{display:none}
+.page.active{display:block}
+h2{margin-top:0}
+.subtitle{color:var(--muted);margin-bottom:20px}
 .grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
-  gap:12px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
+gap:12px
 }
-
 button{
-  width:100%;
-  border:1px solid var(--border);
-  background:var(--card);
-  color:var(--text);
-  padding:15px;
-  border-radius:12px;
-  text-align:left;
-  font-size:15px;
-  cursor:pointer;
+width:100%;border:1px solid var(--border);
+background:var(--card);color:var(--text);
+padding:15px;border-radius:12px;
+text-align:left;font-size:15px;cursor:pointer
 }
-
-button:hover{
-  background:var(--card2);
-  border-color:var(--accent);
-}
-
+button:hover{background:var(--card2);border-color:var(--accent)}
 .back{
-  width:auto;
-  background:transparent;
-  margin-bottom:16px;
-  padding:9px 14px;
+width:auto;background:transparent;
+margin-bottom:16px;padding:9px 14px
 }
-
-.section-title{
-  margin:25px 0 10px;
-  color:#d7c8ff;
-}
-
-.chapter{
-  display:flex;
-  align-items:center;
-  gap:10px;
-}
-
-.chapter span{
-  flex:1;
-}
-
+.chapter{display:flex;align-items:center;gap:10px}
+.chapter span{flex:1}
 .video-box{
-  margin-top:20px;
-  background:var(--card);
-  padding:16px;
-  border-radius:14px;
-  border:1px solid var(--border);
+margin-top:20px;background:var(--card);
+padding:16px;border-radius:14px;
+border:1px solid var(--border)
 }
-
 .video-box iframe{
-  width:100%;
-  height:420px;
-  border:0;
-  border-radius:10px;
+width:100%;height:420px;border:0;border-radius:10px
 }
-
 .video-placeholder{
-  padding:35px;
-  text-align:center;
-  color:var(--muted);
-  border:1px dashed var(--border);
-  border-radius:10px;
+padding:35px;text-align:center;
+color:var(--muted);
+border:1px dashed var(--border);
+border-radius:10px
 }
-
-.small{
-  font-size:13px;
-  color:var(--muted);
-}
-
+.small{font-size:13px;color:var(--muted)}
 .badge{
-  display:inline-block;
-  padding:5px 9px;
-  border-radius:20px;
-  background:#241b38;
-  color:#d9c8ff;
-  font-size:12px;
-  margin-bottom:10px;
+display:inline-block;padding:5px 9px;
+border-radius:20px;background:#241b38;
+color:#d9c8ff;font-size:12px;
+margin-bottom:10px
 }
-
-footer{
-  text-align:center;
-  color:var(--muted);
-  padding:30px 15px;
-}
-
+footer{text-align:center;color:var(--muted);padding:30px 15px}
 @media(max-width:600px){
-  main{
-    padding:14px;
-  }
-
-  header h1{
-    font-size:23px;
-  }
-
-  .video-box iframe{
-    height:230px;
-  }
+main{padding:14px}
+header h1{font-size:23px}
+.video-box iframe{height:230px}
 }
 </style>
 </head>
@@ -178,1372 +85,1071 @@ footer{
 <body>
 
 <header>
-  <h1>VANTARA EDUCATION</h1>
-  <p>Classes 8–10 • Learning Resources</p>
+<h1>VANTARA EDUCATION</h1>
+<p>Classes 8–10 • Learning Resources</p>
 </header>
 
 <main>
 
-<!-- HOME -->
 <section id="home" class="page active">
-
-  <h2>Choose Class</h2>
-
-  <p class="subtitle">
-    Select a class to explore subjects and books.
-  </p>
-
-  <div class="grid" id="classGrid"></div>
-
+<h2>Choose Class</h2>
+<p class="subtitle">Select a class to explore subjects and books.</p>
+<div class="grid" id="classGrid"></div>
 </section>
 
-
-<!-- SUBJECT PAGE -->
 <section id="subjectPage" class="page">
-
-  <button class="back" onclick="goBack()">← Back</button>
-
-  <span class="badge" id="classBadge"></span>
-
-  <h2 id="subjectTitle"></h2>
-
-  <p class="subtitle">
-    Choose a subject.
-  </p>
-
-  <div class="grid" id="subjectGrid"></div>
-
+<button class="back" onclick="goBack()">← Back</button>
+<span class="badge" id="classBadge"></span>
+<h2 id="subjectTitle"></h2>
+<p class="subtitle">Choose a subject.</p>
+<div class="grid" id="subjectGrid"></div>
 </section>
 
-
-<!-- BOOK PAGE -->
 <section id="bookPage" class="page">
-
-  <button class="back" onclick="goBack()">← Back</button>
-
-  <span class="badge" id="bookBadge"></span>
-
-  <h2 id="bookTitle"></h2>
-
-  <p class="subtitle" id="bookSubtitle"></p>
-
-  <div class="grid" id="bookGrid"></div>
-
+<button class="back" onclick="goBack()">← Back</button>
+<span class="badge" id="bookBadge"></span>
+<h2 id="bookTitle"></h2>
+<p class="subtitle" id="bookSubtitle"></p>
+<div class="grid" id="bookGrid"></div>
 </section>
 
-
-<!-- CHAPTER PAGE -->
 <section id="chapterPage" class="page">
-
-  <button class="back" onclick="goBack()">← Back</button>
-
-  <span class="badge" id="chapterBadge"></span>
-
-  <h2 id="chapterTitle"></h2>
-
-  <p class="subtitle" id="chapterSubtitle"></p>
-
-  <div id="chapterContent"></div>
-
+<button class="back" onclick="goBack()">← Back</button>
+<span class="badge" id="chapterBadge"></span>
+<h2 id="chapterTitle"></h2>
+<p class="subtitle" id="chapterSubtitle"></p>
+<div id="chapterContent"></div>
 </section>
 
 </main>
 
-
-<footer>
-  © VANTARA EDUCATION
-</footer>
-
+<footer>© VANTARA EDUCATION</footer>
 
 <script>
 
-/* =========================================================
-   VANTARA EDUCATION
-   CLASS 8
-========================================================= */
+const DATA={
+8:{
 
-const DATA = {
-
-8: {
-
-"Mathematics": {
-
+"Mathematics":{
 type:"books",
-
 options:{
-
 "NEW BOOK":{
-
 "Part 1":[
-
 "A Square and A Cube",
-
 "Power Play",
-
 "A Story of Numbers",
-
 "Quadrilaterals",
-
 "Number Play",
-
 "We Distribute, Yet Things Multiply",
-
 "Proportional Reasoning - 1"
-
 ],
-
 "Part 2":[
-
 "Fractions in Disguise (Percentages & Applications)",
-
 "The Baudhayana-Pythagoras Theorem",
-
 "Proportional Reasoning-2",
-
 "Exploring Some Geometric Themes (3D Geometry & Fractals)",
-
 "Tales by Dots and Lines (Statistics, Mean, & Median)",
-
 "Algebra Play",
-
 "Area"
-
 ]
-
 },
-
 "OLD BOOK":[
-
 "Rational Numbers",
-
 "Linear Equations in One Variable",
-
 "Understanding Quadrilaterals",
-
 "Practical Geometry",
-
 "Data Handling",
-
 "Squares and Square Roots",
-
 "Cubes and Cube Roots",
-
 "Comparing Quantities",
-
 "Algebraic Expressions and Identities",
-
 "Visualising Solid Shapes",
-
 "Mensuration",
-
 "Exponents and Powers",
-
 "Direct and Inverse Proportions",
-
 "Factorisation",
-
 "Introduction to Graphs",
-
 "Playing with Numbers"
-
 ]
-
 }
-
 },
-
-
-/* =========================================================
-   CLASS 8 SCIENCE
-========================================================= */
 
 "Science":{
-
 type:"books",
-
 options:{
-
 "NEW BOOK":[
-
 "Exploring the Investigative World of Science",
-
 "The Invisible Living World: Beyond Our Naked Eye",
-
 "Health: The Ultimate Treasure",
-
 "Electricity: Magnetic and Heating Effects",
-
 "Exploring Forces",
-
 "Pressure, Winds, Storms, and Cyclones",
-
 "Particulate Nature of Matter",
-
 "Nature of Matter: Elements, Compounds, and Mixtures",
-
 "The Amazing World of Solutes, Solvents, and Solutions",
-
 "Light: Mirrors and Lenses",
-
 "Keeping Time with the Skies",
-
 "How Nature Works in Harmony",
-
 "Our Home: Earth, a Unique Life Sustaining Planet"
-
 ],
-
 "OLD BOOK":[
-
 "Exploring the Investigative World of Science",
-
 "Parts of an Organism—Cell and its Structure",
-
 "Microorganisms: Friend and Foe",
-
 "Combustion and Flame",
-
 "Conservation of Plants and Animals",
-
 "Force and Pressure",
-
 "Friction",
-
 "Sound",
-
 "Chemical Effects of Electric Current",
-
 "Some Natural Phenomena",
-
 "Light",
-
 "Earth: Its Dynamics and Internal Structures",
-
 "Stars and the Solar System"
-
 ]
-
 }
-
 },
-
-
-/* =========================================================
-   CLASS 8 SST
-========================================================= */
 
 "SST":{
-
 type:"books",
-
 options:{
-
 "NEW BOOK":{
-
 "Part 1":[
-
 "India’s Geographical Location and Physical Features",
-
 "Land, Soil, and Water Resources",
-
 "Dynamic Earth: Movements and Landforms",
-
 "The Tapestry of Ancient Indian Civilisations",
-
 "Medieval Transitions and Society",
-
 "Colonial Impact and Economic Disruptions",
-
 "Understanding Governance and the Indian Constitution",
-
 "Secularism and the Judiciary"
-
 ],
-
 "Part 2":{
-
 "Theme A — India & the World: Land & People":[
-
 "Chapter 1: World Geography: Some Glimpses"
-
 ],
-
 "Theme B — Tapestry of the Past":[
-
 "Chapter 2: India’s Long Road to Independence"
-
 ],
-
 "Theme C — Our Cultural Heritage & Traditions":[
-
 "Chapter 3: A Journey Through Indian Architecture"
-
 ],
-
 "Theme D — Governance and Democracy":[
-
 "Chapter 4: The Role of the Judiciary in Our Society",
-
 "Chapter 5: Citizenship: Rights and Duties"
-
 ],
-
 "Theme E — Economic Life Around Us":[
-
 "Chapter 6: Dynamics of Population",
-
 "Chapter 7: India’s Urban Landscape",
-
 "Chapter 8: Cultural Currents: 13th to 17th Centuries"
-
 ]
-
 }
-
 },
-
 
 "OLD NCERT":{
-
 "History":[
-
 "Chapter 1: How, When and Where",
-
 "Chapter 2: From Trade to Territory (The Company Establishes Power)",
-
 "Chapter 3: Ruling the Countryside",
-
 "Chapter 4: Tribals, Dikus and the Vision of a Golden Age",
-
 "Chapter 5: When People Rebel (1857 and After)",
-
 "Chapter 6: Weavers, Iron Smelters and Factory Owners",
-
 "Chapter 7: Civilising the \"Native\", Educating the Nation",
-
 "Chapter 8: Women, Caste and Reform",
-
 "Chapter 9: The Making of the National Movement: 1870s–1947",
-
 "Chapter 10: India After Independence"
-
 ],
-
 "Geography":[
-
 "Chapter 1: Resources",
-
 "Chapter 2: Land, Soil, Water, Natural Vegetation and Wildlife Resources",
-
 "Chapter 3: Mineral and Power Resources",
-
 "Chapter 4: Agriculture",
-
 "Chapter 5: Industries",
-
 "Chapter 6: Human Resources"
-
 ],
-
 "Civics":{
-
 "Unit 1 — The Indian Constitution and Secularism":[
-
 "Chapter 1: The Indian Constitution",
-
 "Chapter 2: Understanding Secularism"
-
 ],
-
 "Unit 2 — Parliament and the Making of Laws":[
-
 "Chapter 3: Why do we need a Parliament?",
-
 "Chapter 4: Understanding Laws"
-
 ],
-
 "Unit 3 — The Judiciary":[
-
 "Chapter 5: Judiciary",
-
 "Chapter 6: Understanding Our Criminal Justice System"
-
 ],
-
 "Unit 4 — Social Justice and the Marginalised":[
-
 "Chapter 7: Understanding Marginalisation",
-
 "Chapter 8: Confronting Marginalisation"
-
 ],
-
 "Unit 5 — Economic Presence of the Government":[
-
 "Chapter 9: Public Facilities",
-
 "Chapter 10: Law and Social Justice"
-
 ]
-
 }
-
 }
-
 }
-
 },
-
-
-/* =========================================================
-   CLASS 8 HINDI
-========================================================= */
 
 "Hindi":{
-
 type:"books",
-
 options:{
-
 "NEW BOOK":[
-
 "स्वदेश (कविता)",
-
 "दो गौरैया (कहानी)",
-
 "एक आशीर्वाद (कविता)",
-
 "हरिद्वार (पत्र)",
-
 "कबीर के दोहे",
-
 "एक टोकरी भर मिट्टी (कहानी)",
-
 "मत बाँधो (कविता)",
-
 "नए मेहमान (एकांकी)",
-
 "आदमी का अनुपात (कविता)",
-
 "तरुण के स्वप्न (उद्बोधन)"
-
 ],
-
 "OLD BOOK":{
-
 "वसंत भाग-3":[
-
 "अध्याय 1: ध्वनि (कविता)",
-
 "अध्याय 2: लाख की चूड़ियाँ (कहानी)",
-
 "अध्याय 3: बस की यात्रा (व्यंग्य)",
-
 "अध्याय 4: दीवानों की हस्ती (कविता)",
-
 "अध्याय 5: चिट्ठियों की अनूठी दुनिया (निबंध)",
-
 "अध्याय 6: भगवान के डाकिए (कविता)",
-
 "अध्याय 7: क्या निराश हुआ जाए (निबंध)",
-
 "अध्याय 8: यह सबसे कठिन समय नहीं (कविता)",
-
 "अध्याय 9: कबीर की साखियाँ (साखियाँ)",
-
 "अध्याय 10: कामचोर (कहानी)",
-
 "अध्याय 11: जब सिनेमा ने बोलना सीखा (निबंध)",
-
 "अध्याय 12: सुदामा चरित (कविता)",
-
 "अध्याय 13: जहाँ पहिया है (रिपोर्ताज)",
-
 "अध्याय 14: अकबरी लोटा (कहानी)",
-
 "अध्याय 15: सूरदास के पद (कविता)",
-
 "अध्याय 16: पानी की कहानी (निबंध)",
-
 "अध्याय 17: बाज और साँप (कहानी)",
-
 "अध्याय 18: टोपी (कहानी)"
-
 ],
-
 "भारत की खोज":[
-
 "अध्याय 1: अहमनगर का किला",
-
 "अध्याय 2: तलाश",
-
 "अध्याय 3: सिंधु घाटी सभ्यता",
-
 "अध्याय 4: युगों का दौर",
-
 "अध्याय 5: नयी समस्याएँ",
-
 "अध्याय 6: अंतिम दौर - एक",
-
 "अध्याय 7: अंतिम दौर - दो",
-
 "अध्याय 8: तनाव",
-
 "अध्याय 9: दो पृष्ठभूमियाँ - भारतीय और अंग्रेजी"
-
 ]
-
 }
-
 }
-
 },
-
-
-/* =========================================================
-   CLASS 8 ENGLISH
-========================================================= */
 
 "English":{
-
 type:"books",
-
 options:{
-
 "NEW BOOK":{
-
 "Unit 1: Wit and Wisdom":[
-
 "The Wit that Won Hearts",
-
 "A Concrete Example",
-
 "Wisdom Paves the Way"
-
 ],
-
 "Unit 2: Values and Dispositions":[
-
 "A Tale of Valour: Major Somnath Sharma and the Battle of Badgam",
-
 "Somebody's Mother",
-
 "Verghese Kurien-I Too Had A Dream"
-
 ],
-
 "Unit 3: Mystery and Magic":[
-
 "The Case of the Fifth Word",
-
 "The Magic Brush of Dreams",
-
 "Spectacular Wonders"
-
 ],
-
 "Unit 4: Environment":[
-
 "The Cherry Tree",
-
 "Harvest Hymn",
-
 "Waiting for the Rain"
-
 ],
-
 "Unit 5: Science and Curiosity":[
-
 "Feathered Friend",
-
 "Magnifying Glass",
-
 "Bibha Chowdhuri: The Beam of Light that Lit the Path for Women in Indian Science"
-
 ]
-
 },
-
 "OLD BOOK":{
-
 "Honeydew — Prose":[
-
 "Chapter 1: The Best Christmas Present in the World",
-
 "Chapter 2: The Tsunami",
-
 "Chapter 3: Glimpses of the Past",
-
 "Chapter 4: Bepin Choudhury's Lapse of Memory",
-
 "Chapter 5: The Summit Within",
-
 "Chapter 6: This is Jody's Fawn",
-
 "Chapter 7: A Visit to Cambridge",
-
 "Chapter 8: A Short Monsoon Diary",
-
 "Chapter 9: The Great Stone Face - I",
-
 "Chapter 10: The Great Stone Face - II"
-
 ],
-
 "Honeydew — Poetry":[
-
 "The Ant and the Cricket",
-
 "Geography Lesson",
-
 "Macavity - The Mystery Cat",
-
 "The Last Bargain",
-
 "The School Boy",
-
 "The Duck and the Kangaroo",
-
 "When I Set Out For Lyonnesse",
-
 "On the Grasshopper and Cricket"
-
 ],
-
 "It So Happened":[
-
 "Chapter 1: How the Camel got his hump",
-
 "Chapter 2: Children At Work",
-
 "Chapter 3: The Selfish Giant",
-
 "Chapter 4: The Treasure Within",
-
 "Chapter 5: Princess September",
-
 "Chapter 6: The Fight",
-
 "Chapter 7: The Open Window",
-
 "Chapter 8: Jalebi",
-
 "Chapter 9: The Comet - I",
-
 "Chapter 10: The Comet - II"
-
 ]
-
 }
-
 }
-
 }
 
 },
-
-
-/* =========================================================
-   CLASS 9
-========================================================= */
-
 9:{
 
 "Mathematics":{
-
 type:"books",
-
 options:{
-
 "NEW BOOK":{
-
 "Part 1":[
-
 "Orienting Yourself: The Use of Coordinates",
-
 "Introduction to Linear Polynomials",
-
 "The World of Numbers",
-
 "Exploring Algebraic Identities",
-
 "I'm Up and Down, and Round and Round (Circles)",
-
 "Measuring Space: Perimeter and Area",
-
 "The Mathematics of Maybe: Introduction to Probability",
-
 "Predicting What Comes Next: Exploring Sequences and Progressions"
-
 ],
-
 "Part 2":[
-
 "Propositions and their Converses",
-
 "How Quantities Combine: Understanding Data",
-
 "The World of Algorithms",
-
 "Quadrilaterals",
-
 "Two Variables, One Line",
-
 "Math of Space: Surface Area and Volume"
-
 ]
-
 },
-
 "OLD BOOK":[
-
 "Number Systems",
-
 "Polynomials",
-
 "Linear Equations in Two Variables",
-
 "Coordinate Geometry",
-
 "Introduction to Euclid’s Geometry",
-
 "Lines and Angles",
-
 "Triangles",
-
 "Quadrilaterals",
-
 "Circles",
-
-"Heron’s Formula",
-
+"Heron's Formula",
 "Surface Areas and Volumes",
-
 "Statistics"
-
 ]
-
 }
-
 },
-
 
 "Science":{
-
 type:"books",
-
 options:{
-
 "NEW BOOK":[
-
 "Exploration: Entering the World of Secondary Science",
-
 "Cell: The Building Block of Life",
-
 "Functional Tissues",
-
 "Describing Motion Around Us",
-
 "Exploring Mixtures and their Separation",
-
 "Structure of the Atom",
-
 "Atoms and Molecules",
-
 "Gravitation",
-
 "Work, Energy, and Power",
-
 "Sound and Wave Motion",
-
 "Diversity in the Living World",
-
 "Reproduction and Continuity of Life",
-
 "Our Environment and Natural Resources"
-
 ],
-
 "OLD BOOK":{
-
 "Physics":[
-
 "Motion (Chapter 8)",
-
 "Force and Laws of Motion (Chapter 9)",
-
 "Gravitation (Chapter 10)",
-
 "Work and Energy (Chapter 11)",
-
 "Sound (Chapter 12)"
-
 ],
-
 "Chemistry":[
-
 "Matter",
-
 "Purity of Matter",
-
 "Atoms and Molecules",
-
 "Atomic Structure"
-
 ],
-
 "Biology":[
-
 "The Fundamental Unit of Life (Cells) — Chapter 5",
-
 "Tissues — Chapter 6",
-
 "Diversity in Living Organisms — Chapter 7",
-
 "Why Do We Fall Ill? — Chapter 13",
-
 "Natural Resources — Chapter 14",
-
 "Improvement in Food Resources — Chapter 15"
-
 ]
-
 }
-
 }
-
 },
-
 
 "SST":{
-
 type:"books",
-
 options:{
-
 "NEW BOOK":{
-
 "Part 1":[
-
 "Understanding Social Science",
-
 "Shaping of the Earth's Surface",
-
 "Atmosphere and Climate",
-
 "Early Humans and Beginning of Civilisation",
-
 "State and Society up to 1000 CE",
-
 "Democracy",
-
 "Elections",
-
 "Building Blocks in Economics: The Problem of Choice",
-
 "The Price Puzzle: What Drives the Market",
-
 "Oceans and Life",
-
 "Life on Earth",
-
 "Resistance and Resilience (1000 CE–1700 CE)",
-
 "India and the World-I (1900 BCE–1200 CE)",
-
 "Authority",
-
 "From Ideas to Startups",
-
 "Smart Ways to Manage Your Finances"
-
 ],
-
 "Part 2":[]
-
 },
-
 "OLD BOOK":{
-
 "History":[
-
 "The French Revolution",
-
 "Socialism in Europe and the Russian Revolution",
-
 "Nazism and the Rise of Hitler",
-
 "Forest Society and Colonialism",
-
 "Pastoralists in the Modern World",
-
 "Peasants and Farmers",
-
 "History and Sport: The Story of Cricket",
-
 "Clothing: A Social History"
-
 ],
-
 "Geography":[
-
 "India – Size and Location",
-
 "Physical Features of India",
-
 "Drainage (Rivers and Lakes)",
-
 "Climate",
-
 "Natural Vegetation and Wildlife",
-
 "Population"
-
 ],
-
 "Civics":[
-
 "Democracy in the Contemporary World",
-
 "What is Democracy? Why Democracy?",
-
 "Constitutional Design",
-
 "Electoral Politics",
-
 "Working of Institutions",
-
 "Democratic Rights"
-
 ],
-
 "Economics":[
-
 "The Story of Village Palampur",
-
 "People as Resource",
-
 "Poverty as a Challenge",
-
 "Food Security in India"
-
 ]
-
 }
-
 }
-
 },
-
 
 "English":{
-
 type:"books",
-
 options:{
-
 "NEW BOOK":[
-
 "How I Taught My Grandmother to Read / Bharat Our Land",
-
 "The Pot Maker / Gifts of Grace: Honouring Our Vocations",
-
 "Winds of Change / Canvas of Soil",
-
 "Vitamin-M / I Cannot Remember My Mother",
-
 "The World of Limitless Possibilities / Nine Gold Medals",
-
 "Twin Melodies / A Friend Found in Music",
-
 "Follow That Dream / Believe in Yourself"
-
 ],
-
 "OLD BOOK":{
-
 "Beehive — Prose":[
-
 "The Fun They Had",
-
 "The Sound of Music (I. Evelyn Glennie, II. Bismillah Khan)",
-
 "The Little Girl",
-
 "A Truly Beautiful Mind",
-
 "The Snake and the Mirror",
-
 "My Childhood",
-
 "Packing",
-
 "Reach for the Top (I. Santosh Yadav, II. Maria Sharapova)",
-
 "The Bond of Love",
-
 "Kathmandu",
-
 "If I Were You"
-
 ],
-
 "Beehive — Poetry":[
-
 "The Road Not Taken",
-
 "Wind",
-
 "Rain on the Roof",
-
 "The Lake Isle of Innisfree",
-
 "A Legend of the Northland",
-
 "No Men Are Foreign",
-
 "The Duck and the Kangaroo",
-
 "On Killing a Tree",
-
 "The Snake Trying",
-
 "A Slumber Did My Spirit Seal"
-
 ],
-
 "Moments":[
-
 "The Lost Child",
-
 "The Adventures of Toto",
-
 "Iswaran the Storyteller",
-
 "In the Kingdom of Fools",
-
 "The Happy Prince",
-
 "Weathering the Storm in Ersama",
-
 "The Last Leaf",
-
-"A House Is Not a Home",
-
+"A House Is Not A Home",
 "The Accidental Tourist",
-
 "The Beggar"
-
 ]
-
 }
-
 }
-
 },
-
 
 "Hindi":{
-
 type:"books",
-
 options:{
-
 "NEW BOOK":[
-
 "दो बैलों की कथा",
-
 "क्या लिखूँ?",
-
 "संवादहीन",
-
 "ऐसी भी बातें होती हैं",
-
 "आखिरी चट्टान तक",
-
 "रीढ़ की हड्डी",
-
 "मैं और मेरा देश",
-
 "रैदास के पद",
-
 "राम-परशुराम-लक्ष्मण संवाद",
-
 "भारति, जय, विजयकरे!",
-
 "झाँसी की रानी",
-
 "घर की याद"
-
 ],
-
 "OLD BOOK":{
-
 "क्षितिज भाग-1":[
-
 "दो बैलों की कथा",
-
 "ल्हासा की ओर",
-
 "उपभोक्तावाद की संस्कृति",
-
 "साँवले सपनों की याद",
-
 "नाना साहब की पुत्री देवी मैना को भस्म कर दिया गया",
-
 "प्रेमचंद के फटे जूते",
-
 "मेरे बचपन के दिन",
-
 "एक कुत्ता और एक मैना",
-
 "साखियाँ एवं सबद",
-
 "वाख",
-
 "सवैये",
-
 "कैदी और कोकिला",
-
 "ग्राम श्री",
-
 "चंद्रगहना से लौटती बेर",
-
 "मेघ आए",
-
 "यमराज की दिशा",
-
 "बच्चे काम पर जा रहे हैं"
-
 ],
-
 "कृतिका भाग-1":[
-
 "इस जल प्रलय में",
-
 "मेरे संग की औरतें",
-
 "रीढ़ की हड्डी",
-
 "माटी वाली",
-
 "किस तरह आखिरकार मैं हिंदी में आया"
-
 ]
-
 }
+}
+},
 
+"AI":{
+type:"groups",
+options:{
+"AI — Computer Skills":[
+"Introduction to Computer Systems",
+"Computer Components and Hardware",
+"Types of Software",
+"Computer Networking and Multimedia",
+"Cyber Safety",
+"Working with a Word Processor",
+"Working with Presentation Software",
+"Working with Spreadsheets"
+]
+}
 }
 
 },
-
-
-/* =========================================================
-   CLASS 10
-========================================================= */
-
 10:{
 
 "Mathematics":{
-
 type:"list",
-
 options:{
-
 "CHAPTERS":[
-
 "Real Numbers",
-
 "Polynomials",
-
 "Pair of Linear Equations in Two Variables",
-
 "Quadratic Equations",
-
 "Arithmetic Progressions",
-
 "Triangles",
-
 "Coordinate Geometry",
-
 "Introduction to Trigonometry",
-
 "Some Applications of Trigonometry",
-
 "Circles",
-
 "Constructions",
-
 "Areas Related to Circles",
-
 "Surface Areas and Volumes",
-
 "Statistics",
-
 "Probability"
-
 ]
-
 }
-
 },
-
 
 "Science":{
-
 type:"list",
-
 options:{
-
 "CHAPTERS":[
-
 "Chemical Reactions and Equations",
-
 "Acids, Bases and Salts",
-
 "Metals and Non-metals",
-
 "Carbon and Its Compounds",
-
 "Periodic Classification of Elements",
-
 "Life Processes",
-
 "Control and Coordination",
-
 "How Do Organisms Reproduce?",
-
 "Heredity and Evolution",
-
 "Light Reflection and Refraction",
-
 "The Human Eye and Colourful World",
-
 "Electricity",
-
 "Magnetic Effects of Electric Current",
-
 "Our Environment"
-
 ]
-
 }
-
 },
-
 
 "Social Science":{
-
 type:"groups",
-
 options:{
-
 "History":[],
-
 "Geography":[],
-
 "Civics":[],
-
 "Economics":[]
+}
+},
+
+"Hindi":{
+type:"groups",
+options:{
+"Course A":{
+"क्षितिज भाग-2":[
+"सूरदास – पद",
+"तुलसीदास – राम-लक्ष्मण-परशुराम संवाद",
+"जयशंकर प्रसाद – आत्मकथ्य",
+"सूर्यकांत त्रिपाठी 'निराला' – उत्साह, अट नहीं रही है",
+"नागार्जुन – यह दंतुरित मुस्कान, फसल",
+"मंगलेश डबराल – संगतकार",
+"स्वयं प्रकाश – नेताजी का चश्मा",
+"रामवृक्ष बेनीपुरी – बालगोबिन भगत",
+"यशपाल – लखनवी अंदाज़",
+"सर्वेश्वर दयाल सक्सेना – मानवीय करुणा की दिव्य चमक",
+"मन्नू भंडारी – एक कहानी यह भी",
+"यतीन्द्र मिश्र – नौबतखाने में इबादत",
+"भदंत आनंद कौसल्यायन – संस्कृति"
+],
+"कृतिका भाग-2":[
+"माता का आँचल",
+"जॉर्ज पंचम की नाक",
+"साना-साना हाथ जोड़ि...",
+"एही ठैयाँ झुलनी हेरानी हो रामा!",
+"मैं क्यों लिखता हूँ?"
+]
+},
+"Course B":{
+"स्पर्श भाग-2":[
+"कबीर – साखी",
+"मीरा – पद",
+"मैथिलीशरण गुप्त – मनुष्यता",
+"सुमित्रानंदन पंत – पर्वत प्रदेश में पावस",
+"वीरेन डंगवाल – तोप",
+"कैफ़ी आज़मी – कर चले हम फ़िदा",
+"रवीन्द्रनाथ ठाकुर – आत्मत्राण",
+"प्रेमचंद – बड़े भाई साहब",
+"सीताराम सेकसरिया – डायरी का एक पन्ना",
+"लीलाधर मंडलोई – ततँरा-वामीरो कथा",
+"निदा फ़ाज़ली – अब कहाँ दूसरे के दुख से दुखी होने वाले",
+"प्रहलाद अग्रवाल – तीसरी कसम के शिल्पकार शैलेंद्र",
+"अंतोन चेखव – गिरगिट",
+"रवींद्र केलेकर – पतझड़ में टूटी पत्तियाँ (गिन्निया का सोना)",
+"हबीब तनवीर – कारतूस"
+],
+"संचयन भाग-2":[
+"हरिहर काका",
+"सपनों के-से दिन",
+"टोपी शुक्ला"
+]
+}
+}
+},
+
+"AI":{
+type:"groups",
+options:{
+"Part A — Employability Skills":[
+"Communication Skills-II",
+"Self-management Skills-II",
+"Information and Communication Technology (ICT) Skills-II",
+"Entrepreneurial Skills-II",
+"Green Skills-II"
+],
+"Part B — Subject-Specific Skills":[
+"Revisiting AI Project Cycle & Ethical Frameworks for AI",
+"Advanced Concepts of Modeling in AI (Includes Machine Learning & Deep Learning)",
+"Evaluating Models (Includes Confusion Matrix, Accuracy, Precision, Recall)",
+"Statistical Data",
+"Computer Vision",
+"Natural Language Processing (NLP)",
+"Advance Python"
+]
+}
+}
 
 }
 
-},
+};
 
 
-"Hindi":{
+/* =========================
+   NAVIGATION
+========================= */
 
-type:"groups",
+const state={
+history:[],
+currentClass:null,
+currentSubject:null
+};
 
-options:{
+function $(id){
+return document.getElementById(id);
+}
 
-"Course A":{
+function showPage(id){
+document.querySelectorAll(".page")
+.forEach(p=>p.classList.remove("active"));
 
-"क्षितिज भाग-2":[
+$(id).classList.add("active");
+}
 
-"सूरदास – पद",
+function home(){
+state.history=[];
+state.currentClass=null;
+state.currentSubject=null;
+showPage("home");
+}
 
-"तुलसीदास – राम-लक्ष्मण-परशुराम संवाद",
+function goBack(){
+const previous=state.history.pop();
 
-"जयशंकर प्रसाद – आत्मकथ्य",
+if(previous){
+previous();
+}else{
+home();
+}
+}
 
-"सूर्यकांत त्रिपाठी 'निराला' – उत्साह, अट नहीं रही है",
 
-"नागार्जुन – यह दंतुरित मुस्कान, फसल",
+/* =========================
+   CLASS
+========================= */
 
-"मंगलेश डबराल – संगतकार",
+function openClass(classNumber){
 
-"स्वयं प्रकाश – नेताजी का चश्मा",
+state.history.push(home);
+state.currentClass=classNumber;
 
-"रामवृक्ष बेनीपुरी – बालगोबिन भगत",
+$("classBadge").textContent="Class "+classNumber;
+$("subjectTitle").textContent="Class "+classNumber+" — Subjects";
 
-"यशपाल – लखनवी अंदाज़",
+const grid=$("subjectGrid");
+grid.innerHTML="";
 
-"सर्वेश्वर दयाल सक्सेना – मानवीय करुणा की दिव्य चमक",
+Object.keys(DATA[classNumber]).forEach(subject=>{
 
-"मन्नू भंडारी – एक कहानी यह भी",
+const button=document.createElement("button");
+button.textContent=subject;
 
-"यतीन्द्र मिश्र – नौबतखाने में इबादत",
+button.onclick=()=>{
+openSubject(subject);
+};
 
-"भदंत आनंद कौसल्यायन – संस्कृति"
+grid.appendChild(button);
 
-],
+});
 
-"कृतिका भाग-2":[
+showPage("subjectPage");
+}
 
-"माता का आँचल",
 
-"जॉर्ज पंचम की नाक",
+/* =========================
+   SUBJECT
+========================= */
 
-"साना-साना हाथ जोड़ि...",
+function openSubject(subject){
 
-"एही ठैयाँ झुलनी हेरानी हो रामा!",
+state.history.push(
+()=>openClass(state.currentClass)
+);
 
-"मैं क्यों लिखता हूँ?"
+state.currentSubject=subject;
 
-]
+const data=DATA[state.currentClass][subject];
 
-},
+$("bookBadge").textContent=
+"Class "+state.currentClass+" • "+subject;
 
-"Course B":{
+$("bookTitle").textContent=subject;
 
-"स्पर्श भाग-2":[
+$("bookSubtitle").textContent=
+"Choose the available book, part, unit, theme, or section.";
 
-"कबीर – साखी",
+renderNode(data.options);
 
-"मीरा – पद",
+showPage("bookPage");
+}
 
-"मैथिलीशरण गुप्त – मनुष्यताअ",
 
-"सुमित्रानंदन पंत – पर्वत प्रदेश में पावस",
+/* =========================
+   RENDER NODE
+========================= */
 
-"वीरेन डंगवाल – तोप",
+function renderNode(node){
 
-"कैफ़ी आज़मी – कर चले हम फ़िदा",
+const grid=$("bookGrid");
+grid.innerHTML="";
 
-"रवीन्द्रनाथ ठाकुर – आत्मत्राण",
+Object.keys(node).forEach(key=>{
 
-"प्रेमचंद – बड़े भाई साहब",
+const button=document.createElement("button");
 
-"सीताराम सेकसरिया – डायरी का एक पन्ना",
+button.textContent=key;
 
-"लीलाधर मंडलोई – ततँरा-वामीरो कथा",
+button.onclick=()=>{
+openNode(key,node[key]);
+};
 
-"निदा फ़ाज़ली – अब कहाँ दूसरे के दुख से दुखी होने वाले",
+grid.appendChild(button);
 
-"प्रहलाद अग्रवाल – तीसरी कसम के शिल्पकार शैलेंद्र",
+});
+}
 
-"अंतोन चेखव – गिरगिट",
 
-"रवींद्र केलेकर – पतझड़ में टूटी पत्तियाँ (गिन्निया का सोना)",
+/* =========================
+   OPEN NODE
+========================= */
 
-"हबीब तनवीर – कारतूस"
+function openNode(label,value){
 
-],
+state.history.push(
+()=>{
+$("bookTitle").textContent=state.currentSubject;
 
-"संचयन भाग-2":[
+renderNode(
+DATA[state.currentClass]
+[state.currentSubject].options
+);
 
-"हरिहर काका",
+showPage("bookPage");
+}
+);
 
-"सपनों के-से दिन",
+if(Array.isArray(value)){
+
+openChapters(label,value);
+
+}else{
+
+$("bookTitle").textContent=label;
+
+$("bookSubtitle").textContent=
+"Choose a chapter or next section.";
+
+renderNode(value);
+
+showPage("bookPage");
+}
+
+}
+
+
+/* =========================
+   CHAPTERS
+========================= */
+
+function openChapters(group,chapters){
+
+$("chapterBadge").textContent=
+"Class "+state.currentClass+" • "+state.currentSubject;
+
+$("chapterTitle").textContent=group;
+
+$("chapterSubtitle").textContent=
+"Select a chapter.";
+
+const box=$("chapterContent");
+box.innerHTML="";
+
+if(chapters.length===0){
+
+const empty=document.createElement("div");
+
+empty.className="video-placeholder";
+
+empty.innerHTML=
+"<strong>Content coming soon</strong><br>"+
+"<span class='small'>Chapters will be added here.</span>";
+
+box.appendChild(empty);
+
+}else{
+
+chapters.forEach(chapter=>{
+
+const button=document.createElement("button");
+
+button.className="chapter";
+
+const span=document.createElement("span");
+
+span.textContent=chapter;
+
+button.appendChild(span);
+
+button.onclick=()=>{
+openChapter(chapter);
+};
+
+box.appendChild(button);
+
+const space=document.createElement("div");
+
+space.style.height="8px";
+
+box.appendChild(space);
+
+});
+
+}
+
+showPage("chapterPage");
+}
+
+
+/* =========================
+   VIDEOS
+========================= */
+
+const VIDEOS={};
+
+
+/* =========================
+   CHAPTER PAGE
+========================= */
+
+function openChapter(chapter){
+
+state.history.push(
+()=>showPage("chapterPage")
+);
+
+$("chapterBadge").textContent=
+"Class "+state.currentClass+" • "+state.currentSubject;
+
+$("chapterTitle").textContent=chapter;
+
+$("chapterSubtitle").textContent=
+"Learning resources for this chapter.";
+
+const box=$("chapterContent");
+box.innerHTML="";
+
+const videoBox=document.createElement("div");
+
+videoBox.className="video-box";
+
+const heading=document.createElement("h3");
+
+heading.textContent="🎥 Video Lecture";
+
+videoBox.appendChild(heading);
+
+const key=
+state.currentClass+"|"+
+state.currentSubject+"|"+
+chapter;
+
+const videoId=VIDEOS[key];
+
+if(videoId){
+
+const iframe=document.createElement("iframe");
+
+iframe.src=
+"https://www.youtube.com/embed/"+videoId;
+
+iframe.title="VANTARA Education Lecture";
+
+iframe.allowFullscreen=true;
+
+iframe.setAttribute(
+"allow",
+"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+);
+
+videoBox.appendChild(iframe);
+
+}else{
+
+const placeholder=document.createElement("div");
+
+placeholder.className="video-placeholder";
+
+placeholder.innerHTML=
+"<strong>Video not added yet</strong><br>"+
+"<span class='small'>"+
+"Video resources will be added here."
++"</span>";
+
+videoBox.appendChild(placeholder);
+
+}
+
+box.appendChild(videoBox);
+}
+
+
+/* =========================
+   INITIALIZE
+========================= */
+
+(function init(){
+
+const grid=$("classGrid");
+
+[8,9,10].forEach(classNumber=>{
+
+const button=document.createElement("button");
+
+button.textContent="Class "+classNumber;
+
+button.onclick=()=>{
+openClass(classNumber);
+};
+
+grid.appendChild(button);
+
+});
+
+})();
+</script>
+
+</body>
+</html>
