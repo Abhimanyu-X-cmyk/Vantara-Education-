@@ -1,2512 +1,559 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>VANTARA EDUCATION</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-:root{
---bg:#0b0b0f;
---card:#15151c;
---card2:#1c1c25;
---text:#f5f5f7;
---muted:#a7a7b2;
---accent:#8b5cf6;
---border:#292934;
-}
+  <title>Vantara Education | Learn • Explore • Achieve</title>
 
-*{
-box-sizing:border-box
-}
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
 
-body{
-margin:0;
-background:var(--bg);
-color:var(--text);
-font-family:Arial,Helvetica,sans-serif
-}
+    body {
+      background: #050505;
+      color: white;
+      line-height: 1.6;
+    }
 
-/* =========================
-   HEADER
-========================= */
+    header {
+      background: #0b0b0b;
+      border-bottom: 1px solid #222;
+      padding: 18px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
 
-header{
-padding:16px;
-border-bottom:1px solid var(--border);
-position:sticky;
-top:0;
-background:rgba(11,11,15,.97);
-z-index:20;
-display:flex;
-align-items:center;
-justify-content:center;
-}
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
 
-header h1{
-margin:0;
-font-size:26px;
-}
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 22px;
+      font-size: 14px;
+    }
 
-header p{
-margin:5px 0 0;
-color:var(--muted);
-font-size:13px;
-}
+    nav a:hover {
+      color: #00e5ff;
+    }
 
-/* MENU BUTTON */
+    .hero {
+      min-height: 85vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 40px 7%;
+      background:
+        radial-gradient(circle at top, #14202a, #050505 60%);
+    }
 
-.menu-btn{
-position:absolute;
-left:14px;
-top:13px;
-width:45px;
-height:42px;
-padding:0;
-border-radius:10px;
-text-align:center;
-font-size:24px;
-background:var(--card);
-border:1px solid var(--border);
-}
+    .hero h1 {
+      font-size: clamp(42px, 8vw, 80px);
+      margin-bottom: 10px;
+    }
 
-/* =========================
-   SIDE MENU
-========================= */
+    .hero h1 span {
+      color: #00e5ff;
+    }
 
-.side-menu{
-position:fixed;
-left:-310px;
-top:0;
-width:300px;
-height:100vh;
-background:#101016;
-border-right:1px solid var(--border);
-z-index:50;
-padding:20px 15px;
-overflow-y:auto;
-transition:left .25s ease;
-box-shadow:10px 0 30px rgba(0,0,0,.35);
-}
+    .hero p {
+      color: #bbb;
+      font-size: 18px;
+      max-width: 650px;
+      margin: auto;
+    }
 
-.side-menu.open{
-left:0;
-}
+    .buttons {
+      margin-top: 30px;
+    }
 
-.menu-title{
-font-size:20px;
-font-weight:bold;
-margin:5px 5px 18px;
-}
+    .btn {
+      display: inline-block;
+      padding: 13px 24px;
+      margin: 6px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      background: #00e5ff;
+      color: #000;
+    }
 
-.menu-subtitle{
-color:var(--muted);
-font-size:12px;
-margin:0 5px 15px;
-}
+    .btn.secondary {
+      background: transparent;
+      border: 1px solid #444;
+      color: white;
+    }
 
-.menu-item{
-display:block;
-width:100%;
-margin:7px 0;
-padding:13px 14px;
-border-radius:10px;
-background:var(--card);
-border:1px solid var(--border);
-color:var(--text);
-font-size:14px;
-text-align:left;
-}
+    section {
+      padding: 70px 7%;
+    }
 
-.menu-item:hover{
-background:var(--card2);
-border-color:var(--accent);
-}
+    .section-title {
+      text-align: center;
+      font-size: 34px;
+      margin-bottom: 10px;
+    }
 
-.menu-divider{
-height:1px;
-background:var(--border);
-margin:15px 5px;
-}
+    .section-subtitle {
+      text-align: center;
+      color: #999;
+      margin-bottom: 40px;
+    }
 
-/* DARK OVERLAY */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 20px;
+    }
 
-.menu-overlay{
-display:none;
-position:fixed;
-inset:0;
-background:rgba(0,0,0,.65);
-z-index:40;
-}
+    .card {
+      background: #101010;
+      border: 1px solid #222;
+      border-radius: 18px;
+      padding: 28px;
+      transition: 0.3s;
+    }
 
-.menu-overlay.active{
-display:block;
-}
+    .card:hover {
+      transform: translateY(-6px);
+      border-color: #00e5ff;
+    }
 
-/* =========================
-   MAIN
-========================= */
+    .card .icon {
+      font-size: 40px;
+      margin-bottom: 15px;
+    }
 
-main{
-max-width:1100px;
-margin:auto;
-padding:20px;
-}
+    .card h3 {
+      margin-bottom: 10px;
+      font-size: 21px;
+    }
 
-.page{
-display:none;
-}
+    .card p {
+      color: #aaa;
+      font-size: 14px;
+    }
 
-.page.active{
-display:block;
-}
+    .card a {
+      display: inline-block;
+      margin-top: 18px;
+      color: #00e5ff;
+      text-decoration: none;
+      font-weight: bold;
+    }
 
-h2{
-margin-top:0;
-}
+    /* OLYMPIAD HUB */
 
-.subtitle{
-color:var(--muted);
-margin-bottom:20px;
-}
+    .olympiad {
+      background:
+        radial-gradient(circle at center, #162400, #050505 65%);
+    }
 
-.grid{
-display:grid;
-grid-template-columns:
-repeat(auto-fit,minmax(210px,1fr));
-gap:12px;
-}
+    .olympiad-box {
+      max-width: 1100px;
+      margin: auto;
+      padding: 45px 25px;
+      border: 1px solid #263d00;
+      border-radius: 25px;
+      text-align: center;
+      background: rgba(10, 15, 5, 0.8);
+    }
 
-/* =========================
-   BUTTONS
-========================= */
+    .olympiad-box h2 {
+      font-size: 42px;
+      color: #b7ff00;
+      margin-bottom: 10px;
+    }
 
-button{
-width:100%;
-border:1px solid var(--border);
-background:var(--card);
-color:var(--text);
-padding:15px;
-border-radius:12px;
-text-align:left;
-font-size:15px;
-cursor:pointer;
-}
+    .olympiad-box p {
+      color: #bbb;
+      max-width: 700px;
+      margin: auto;
+    }
 
-button:hover{
-background:var(--card2);
-border-color:var(--accent);
-}
+    .olympiad-grid {
+      margin-top: 35px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 15px;
+    }
 
-.back{
-width:auto;
-background:transparent;
-margin-bottom:16px;
-padding:9px 14px;
-}
+    .olympiad-item {
+      background: #111;
+      padding: 20px;
+      border-radius: 15px;
+      border: 1px solid #292929;
+    }
 
-/* =========================
-   CHAPTERS
-========================= */
+    .olympiad-item h3 {
+      color: #b7ff00;
+      margin-bottom: 5px;
+    }
 
-.chapter{
-display:flex;
-align-items:center;
-gap:10px;
-}
+    /* VIRA */
 
-.chapter span{
-flex:1;
-}
+    .vira {
+      background: linear-gradient(135deg, #080018, #050505);
+    }
 
-/* =========================
-   PROGRAM CARDS
-========================= */
+    .vira-box {
+      max-width: 900px;
+      margin: auto;
+      text-align: center;
+      padding: 45px 25px;
+      border-radius: 25px;
+      border: 1px solid #3b176d;
+      background: #0c0615;
+    }
 
-.program-card{
-padding:18px;
-}
+    .vira-box h2 {
+      font-size: 40px;
+      color: #c77dff;
+    }
 
-.program-icon{
-font-size:25px;
-margin-bottom:8px;
-}
+    .vira-box p {
+      color: #aaa;
+      margin: 15px auto;
+      max-width: 650px;
+    }
 
-.program-title{
-font-size:17px;
-font-weight:bold;
-margin-bottom:6px;
-}
+    /* CTA */
 
-.program-description{
-font-size:13px;
-color:var(--muted);
-line-height:1.5;
-}
+    .cta {
+      text-align: center;
+      background: #0a0a0a;
+    }
 
-/* =========================
-   VIDEO
-========================= */
+    .cta h2 {
+      font-size: 38px;
+      margin-bottom: 12px;
+    }
 
-.video-box{
-margin-top:20px;
-background:var(--card);
-padding:16px;
-border-radius:14px;
-border:1px solid var(--border);
-}
+    .cta p {
+      color: #999;
+      margin-bottom: 20px;
+    }
 
-.video-box iframe{
-width:100%;
-height:420px;
-border:0;
-border-radius:10px;
-}
+    footer {
+      border-top: 1px solid #222;
+      padding: 30px 7%;
+      text-align: center;
+      color: #777;
+      font-size: 13px;
+    }
 
-.video-placeholder{
-padding:35px;
-text-align:center;
-color:var(--muted);
-border:1px dashed var(--border);
-border-radius:10px;
-}
+    footer strong {
+      color: white;
+    }
 
-/* =========================
-   OTHER
-========================= */
+    @media (max-width: 700px) {
 
-.small{
-font-size:13px;
-color:var(--muted);
-}
+      header {
+        padding: 15px 5%;
+      }
 
-.badge{
-display:inline-block;
-padding:5px 9px;
-border-radius:20px;
-background:#241b38;
-color:#d9c8ff;
-font-size:12px;
-margin-bottom:10px;
-}
+      nav a {
+        margin-left: 8px;
+        font-size: 12px;
+      }
 
-.info-box{
-background:var(--card);
-border:1px solid var(--border);
-border-radius:14px;
-padding:20px;
-line-height:1.6;
-}
+      section {
+        padding: 55px 5%;
+      }
 
-footer{
-text-align:center;
-color:var(--muted);
-padding:30px 15px;
-}
+      .hero {
+        min-height: 75vh;
+      }
 
-/* =========================
-   MOBILE
-========================= */
+      .olympiad-box h2 {
+        font-size: 32px;
+      }
 
-@media(max-width:600px){
-
-main{
-padding:14px;
-}
-
-header h1{
-font-size:21px;
-}
-
-header p{
-font-size:11px;
-}
-
-.side-menu{
-width:285px;
-}
-
-.video-box iframe{
-height:230px;
-}
-
-.grid{
-grid-template-columns:1fr;
-}
-
-}
-</style>
+      .vira-box h2 {
+        font-size: 32px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- =========================
-     SIDE MENU
-========================= -->
+  <!-- HEADER -->
 
-<div id="menuOverlay"
-     class="menu-overlay"
-     onclick="closeMenu()">
-</div>
+  <header>
+    <div class="logo">VANTARA EDUCATION</div>
 
-<aside id="sideMenu" class="side-menu">
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#olympiad">Olympiad</a>
+      <a href="#classes">Classes</a>
+      <a href="#resources">Resources</a>
+    </nav>
+  </header>
 
-<div class="menu-title">
-VANTARA EDUCATION
-</div>
 
-<p class="menu-subtitle">
-Explore learning, skills, challenges and student programs.
-</p>
+  <!-- HERO -->
 
-<button class="menu-item" onclick="menuHome()">
-🏠 Home
-</button>
+  <section class="hero" id="home">
 
-<button class="menu-item" onclick="menuLearningHub()">
-📚 Learning Hub
-</button>
+    <div>
 
-<div class="menu-divider"></div>
+      <h1>
+        Vantara <span>Education</span>
+      </h1>
 
-<button class="menu-item" onclick="openProgram('skills')">
-🚀 Skill Labs
-</button>
+      <p>
+        A learning platform for school education, Olympiads,
+        study resources, practice and exploration.
+      </p>
 
-<button class="menu-item" onclick="openProgram('challenge')">
-🧠 Challenge Arena
-</button>
+      <div class="buttons">
 
-<button class="menu-item" onclick="openProgram('research')">
-🔬 Research Program
-</button>
+        <a class="btn" href="#olympiad">
+          Explore Olympiad Hub
+        </a>
 
-<button class="menu-item" onclick="openProgram('ideas')">
-💡 Idea-to-Project
-</button>
+        <a class="btn secondary" href="#classes">
+          Explore Learning
+        </a>
 
-<button class="menu-item" onclick="openProgram('league')">
-🏆 Student League
-</button>
+      </div>
 
-<button class="menu-item" onclick="openProgram('communication')">
-🎤 Communication Lab
-</button>
+    </div>
 
-<button class="menu-item" onclick="openProgram('career')">
-🧭 Career Explorer
-</button>
+  </section>
 
-<button class="menu-item" onclick="openProgram('reading')">
-📖 Reading & Knowledge Club
-</button>
 
-<button class="menu-item" onclick="openProgram('build')">
-🛠️ Build Week
-</button>
+  <!-- OLYMPIAD HUB -->
 
-<button class="menu-item" onclick="openProgram('realworld')">
-🌱 Real-World Problems
-</button>
+  <section class="olympiad" id="olympiad">
 
-<div class="menu-divider"></div>
+    <div class="olympiad-box">
 
-<button class="menu-item" onclick="openProgram('portfolio')">
-📁 Student Portfolio
-</button>
+      <h2>🏆 Olympiad Hub</h2>
 
-<button class="menu-item" onclick="openProgram('about')">
-ℹ️ About VANTARA
-</button>
+      <p>
+        Prepare, practise and explore Olympiad learning
+        with Vantara Education.
+      </p>
 
-</aside>
+      <div class="olympiad-grid">
 
+        <div class="olympiad-item">
+          <h3>IOQM</h3>
+          <p>Mathematical problem solving</p>
+        </div>
 
-<!-- =========================
-     HEADER
-========================= -->
+        <div class="olympiad-item">
+          <h3>IMO</h3>
+          <p>International Mathematics Olympiad</p>
+        </div>
 
-<header>
+        <div class="olympiad-item">
+          <h3>Science</h3>
+          <p>Explore Science Olympiad preparation</p>
+        </div>
 
-<button class="menu-btn"
-        onclick="toggleMenu()"
-        aria-label="Open menu">
-☰
-</button>
+        <div class="olympiad-item">
+          <h3>More</h3>
+          <p>More Olympiad opportunities coming</p>
+        </div>
 
-<div>
-<h1>VANTARA EDUCATION</h1>
-<p>Classes 8–10 • Learning Resources</p>
-</div>
+      </div>
 
-</header>
+      <div class="buttons">
 
+        <a class="btn" href="#">
+          Enter Olympiad Hub
+        </a>
 
-<main>
+      </div>
 
-<!-- =========================
-     HOME
-========================= -->
+    </div>
 
-<section id="home" class="page active">
+  </section>
 
-<h2>Welcome to VANTARA EDUCATION</h2>
 
-<p class="subtitle">
-Learning resources, practical skills, challenges and student development.
-</p>
+  <!-- CLASSES -->
 
-<div class="grid">
+  <section id="classes">
 
-<button onclick="menuLearningHub()">
-📚 <strong>Learning Hub</strong><br>
-<span class="small">
-Explore Classes 8–10 and their subjects.
-</span>
-</button>
+    <h2 class="section-title">
+      📚 Classes & Subjects
+    </h2>
+
+    <p class="section-subtitle">
+      Explore learning resources for different classes and subjects.
+    </p>
+
+    <div class="cards">
+
+      <div class="card">
+        <div class="icon">🔢</div>
+        <h3>Mathematics</h3>
+        <p>
+          Concepts, practice and problem-solving resources.
+        </p>
+        <a href="#">Explore →</a>
+      </div>
+
+      <div class="card">
+        <div class="icon">🔬</div>
+        <h3>Science</h3>
+        <p>
+          Understand concepts through structured learning.
+        </p>
+        <a href="#">Explore →</a>
+      </div>
+
+      <div class="card">
+        <div class="icon">🌍</div>
+        <h3>Social Science</h3>
+        <p>
+          History, Geography, Civics and Economics.
+        </p>
+        <a href="#">Explore →</a>
+      </div>
 
-<button onclick="openProgram('skills')">
-🚀 <strong>Skill Labs</strong><br>
-<span class="small">
-Build useful real-world skills.
-</span>
-</button>
+      <div class="card">
+        <div class="icon">📖</div>
+        <h3>Languages</h3>
+        <p>
+          English, Hindi and other language resources.
+        </p>
+        <a href="#">Explore →</a>
+      </div>
 
-<button onclick="openProgram('challenge')">
-🧠 <strong>Challenge Arena</strong><br>
-<span class="small">
-Take part in academic and creative challenges.
-</span>
-</button>
+    </div>
 
-<button onclick="openProgram('research')">
-🔬 <strong>Research Program</strong><br>
-<span class="small">
-Learn how to explore and present research.
-</span>
-</button>
+  </section>
 
-</div>
 
-</section>
+  <!-- RESOURCES -->
 
+  <section id="resources">
 
-<!-- =========================
-     LEARNING HUB / CLASS PAGE
-========================= -->
+    <h2 class="section-title">
+      📖 Study Resources
+    </h2>
 
-<section id="learningPage" class="page">
+    <p class="section-subtitle">
+      Learn with organised and accessible educational resources.
+    </p>
 
-<button class="back" onclick="home()">
-← Back
-</button>
+    <div class="cards">
 
-<h2>📚 Learning Hub</h2>
+      <div class="card">
+        <div class="icon">📝</div>
+        <h3>Revision Notes</h3>
+        <p>
+          Quick revision material for important concepts.
+        </p>
+        <a href="#">View Resources →</a>
+      </div>
 
-<p class="subtitle">
-Choose your class to explore subjects and learning resources.
-</p>
+      <div class="card">
+        <div class="icon">📚</div>
+        <h3>Study Modules</h3>
+        <p>
+          Structured modules designed for learning.
+        </p>
+        <a href="#">View Modules →</a>
+      </div>
 
-<div class="grid" id="classGrid"></div>
+      <div class="card">
+        <div class="icon">🎥</div>
+        <h3>Video Learning</h3>
+        <p>
+          Educational videos and concept explanations.
+        </p>
+        <a href="#">Watch →</a>
+      </div>
 
-</section>
+      <div class="card">
+        <div class="icon">❓</div>
+        <h3>Practice</h3>
+        <p>
+          Practise questions and strengthen your concepts.
+        </p>
+        <a href="#">Practise →</a>
+      </div>
 
+    </div>
 
-<!-- =========================
-     SUBJECT PAGE
-========================= -->
+  </section>
 
-<section id="subjectPage" class="page">
 
-<button class="back" onclick="goBack()">
-← Back
-</button>
+  <!-- VIRA -->
 
-<span class="badge" id="classBadge"></span>
+  <section class="vira">
 
-<h2 id="subjectTitle"></h2>
+    <div class="vira-box">
 
-<p class="subtitle">
-Choose a subject.
-</p>
+      <h2>🤖 VIRA</h2>
 
-<div class="grid" id="subjectGrid"></div>
+      <p>
+        VIRA is a student-help assistant from Vantara Education,
+        designed to help students understand questions and learning concepts.
+      </p>
 
-</section>
+      <a class="btn" href="#">
+        Explore VIRA
+      </a>
 
+    </div>
 
-<!-- =========================
-     BOOK PAGE
-========================= -->
+  </section>
 
-<section id="bookPage" class="page">
 
-<button class="back" onclick="goBack()">
-← Back
-</button>
+  <!-- CTA -->
 
-<span class="badge" id="bookBadge"></span>
+  <section class="cta">
 
-<h2 id="bookTitle"></h2>
+    <h2>Start Your Learning Journey</h2>
 
-<p class="subtitle" id="bookSubtitle"></p>
+    <p>
+      Learn • Explore • Practise • Achieve
+    </p>
 
-<div class="grid" id="bookGrid"></div>
+    <a class="btn" href="#olympiad">
+      Explore Vantara Education
+    </a>
 
-</section>
+  </section>
 
 
-<!-- =========================
-     CHAPTER PAGE
-========================= -->
+  <!-- FOOTER -->
 
-<section id="chapterPage" class="page">
+  <footer>
 
-<button class="back" onclick="goBack()">
-← Back
-</button>
+    <p>
+      <strong>VANTARA EDUCATION</strong>
+    </p>
 
-<span class="badge" id="chapterBadge"></span>
+    <p>
+      Learn • Explore • Achieve
+    </p>
 
-<h2 id="chapterTitle"></h2>
+    <p>
+      © 2026 Vantara Education. All Rights Reserved.
+    </p>
 
-<p class="subtitle" id="chapterSubtitle"></p>
+  </footer>
 
-<div id="chapterContent"></div>
-
-</section>
-
-
-<!-- =========================
-     PROGRAM PAGE
-========================= -->
-
-<section id="programPage" class="page">
-
-<button class="back" onclick="goBack()">
-← Back
-</button>
-
-<span class="badge">
-VANTARA PROGRAM
-</span>
-
-<h2 id="programTitle"></h2>
-
-<p class="subtitle" id="programSubtitle"></p>
-
-<div id="programContent"></div>
-
-</section>
-
-
-<!-- =========================
-     ABOUT PAGE
-========================= -->
-
-<section id="aboutPage" class="page">
-
-<button class="back" onclick="home()">
-← Back
-</button>
-
-<span class="badge">
-ABOUT VANTARA
-</span>
-
-<h2>ℹ️ About VANTARA EDUCATION</h2>
-
-<div class="info-box">
-
-<p>
-<strong>VANTARA EDUCATION</strong> is a student-focused learning
-platform designed to combine academic learning with practical
-skills, creativity, research and real-world projects.
-</p>
-
-<p>
-The platform aims to provide students with learning resources
-while also helping them develop skills beyond textbooks.
-</p>
-
-<p>
-More features and programs will be added as VANTARA grows.
-</p>
-
-</div>
-
-</section>
-
-
-<!-- =========================
-     PORTFOLIO PAGE
-========================= -->
-
-<section id="portfolioPage" class="page">
-
-<button class="back" onclick="home()">
-← Back
-</button>
-
-<span class="badge">
-STUDENT PORTFOLIO
-</span>
-
-<h2>📁 Student Portfolio</h2>
-
-<p class="subtitle">
-A place to showcase learning, projects, achievements and skills.
-</p>
-
-<div class="info-box">
-
-<h3>What can be included?</h3>
-
-<p>📚 Academic achievements</p>
-<p>🏆 Competitions and awards</p>
-<p>💡 Projects and ideas</p>
-<p>🔬 Research work</p>
-<p>🚀 Skills and certifications</p>
-<p>🎤 Presentations and communication activities</p>
-
-</div>
-
-</section>
-
-
-</main>
-
-
-<footer>
-© VANTARA EDUCATION
-</footer>
-<script>
-
-const DATA={
-
-/* =====================================================
-   CLASS 8
-===================================================== */
-
-8:{
-
-"Mathematics":{
-type:"books",
-options:{
-
-"NEW BOOK":{
-"Part 1":[
-"A Square and A Cube",
-"Power Play",
-"A Story of Numbers",
-"Quadrilaterals",
-"Number Play",
-"We Distribute, Yet Things Multiply",
-"Proportional Reasoning - 1"
-],
-
-"Part 2":[
-"Fractions in Disguise (Percentages & Applications)",
-"The Baudhayana-Pythagoras Theorem",
-"Proportional Reasoning-2",
-"Exploring Some Geometric Themes (3D Geometry & Fractals)",
-"Tales by Dots and Lines (Statistics, Mean, & Median)",
-"Algebra Play",
-"Area"
-]
-},
-
-"OLD BOOK":[
-"Rational Numbers",
-"Linear Equations in One Variable",
-"Understanding Quadrilaterals",
-"Practical Geometry",
-"Data Handling",
-"Squares and Square Roots",
-"Cubes and Cube Roots",
-"Comparing Quantities",
-"Algebraic Expressions and Identities",
-"Visualising Solid Shapes",
-"Mensuration",
-"Exponents and Powers",
-"Direct and Inverse Proportions",
-"Factorisation",
-"Introduction to Graphs",
-"Playing with Numbers"
-]
-
-}
-},
-
-
-"Science":{
-type:"books",
-options:{
-
-"NEW BOOK":[
-"Exploring the Investigative World of Science",
-"The Invisible Living World: Beyond Our Naked Eye",
-"Health: The Ultimate Treasure",
-"Electricity: Magnetic and Heating Effects",
-"Exploring Forces",
-"Pressure, Winds, Storms, and Cyclones",
-"Particulate Nature of Matter",
-"Nature of Matter: Elements, Compounds, and Mixtures",
-"The Amazing World of Solutes, Solvents, and Solutions",
-"Light: Mirrors and Lenses",
-"Keeping Time with the Skies",
-"How Nature Works in Harmony",
-"Our Home: Earth, a Unique Life Sustaining Planet"
-],
-
-"OLD BOOK":[
-"Exploring the Investigative World of Science",
-"Parts of an Organism—Cell and its Structure",
-"Microorganisms: Friend and Foe",
-"Combustion and Flame",
-"Conservation of Plants and Animals",
-"Force and Pressure",
-"Friction",
-"Sound",
-"Chemical Effects of Electric Current",
-"Some Natural Phenomena",
-"Light",
-"Earth: Its Dynamics and Internal Structures",
-"Stars and the Solar System"
-]
-
-}
-},
-
-
-"SST":{
-type:"books",
-options:{
-
-"NEW BOOK":{
-
-"Part 1":[
-"India’s Geographical Location and Physical Features",
-"Land, Soil, and Water Resources",
-"Dynamic Earth: Movements and Landforms",
-"The Tapestry of Ancient Indian Civilisations",
-"Medieval Transitions and Society",
-"Colonial Impact and Economic Disruptions",
-"Understanding Governance and the Indian Constitution",
-"Secularism and the Judiciary"
-],
-
-"Part 2":{
-
-"Theme A — India & the World: Land & People":[
-"Chapter 1: World Geography: Some Glimpses"
-],
-
-"Theme B — Tapestry of the Past":[
-"Chapter 2: India’s Long Road to Independence"
-],
-
-"Theme C — Our Cultural Heritage & Traditions":[
-"Chapter 3: A Journey Through Indian Architecture"
-],
-
-"Theme D — Governance and Democracy":[
-"Chapter 4: The Role of the Judiciary in Our Society",
-"Chapter 5: Citizenship: Rights and Duties"
-],
-
-"Theme E — Economic Life Around Us":[
-"Chapter 6: Dynamics of Population",
-"Chapter 7: India’s Urban Landscape",
-"Chapter 8: Cultural Currents: 13th to 17th Centuries"
-]
-
-}
-
-},
-
-"OLD NCERT":{
-
-"History":[
-"Chapter 1: How, When and Where",
-"Chapter 2: From Trade to Territory (The Company Establishes Power)",
-"Chapter 3: Ruling the Countryside",
-"Chapter 4: Tribals, Dikus and the Vision of a Golden Age",
-"Chapter 5: When People Rebel (1857 and After)",
-"Chapter 6: Weavers, Iron Smelters and Factory Owners",
-"Chapter 7: Civilising the \"Native\", Educating the Nation",
-"Chapter 8: Women, Caste and Reform",
-"Chapter 9: The Making of the National Movement: 1870s–1947",
-"Chapter 10: India After Independence"
-],
-
-"Geography":[
-"Chapter 1: Resources",
-"Chapter 2: Land, Soil, Water, Natural Vegetation and Wildlife Resources",
-"Chapter 3: Mineral and Power Resources",
-"Chapter 4: Agriculture",
-"Chapter 5: Industries",
-"Chapter 6: Human Resources"
-],
-
-"Civics":{
-
-"Unit 1 — The Indian Constitution and Secularism":[
-"Chapter 1: The Indian Constitution",
-"Chapter 2: Understanding Secularism"
-],
-
-"Unit 2 — Parliament and the Making of Laws":[
-"Chapter 3: Why do we need a Parliament?",
-"Chapter 4: Understanding Laws"
-],
-
-"Unit 3 — The Judiciary":[
-"Chapter 5: Judiciary",
-"Chapter 6: Understanding Our Criminal Justice System"
-],
-
-"Unit 4 — Social Justice and the Marginalised":[
-"Chapter 7: Understanding Marginalisation",
-"Chapter 8: Confronting Marginalisation"
-],
-
-"Unit 5 — Economic Presence of the Government":[
-"Chapter 9: Public Facilities",
-"Chapter 10: Law and Social Justice"
-]
-
-}
-
-}
-
-}
-},
-
-
-"Hindi":{
-type:"books",
-options:{
-
-"NEW BOOK":[
-"स्वदेश (कविता)",
-"दो गौरैया (कहानी)",
-"एक आशीर्वाद (कविता)",
-"हरिद्वार (पत्र)",
-"कबीर के दोहे",
-"एक टोकरी भर मिट्टी (कहानी)",
-"मत बाँधो (कविता)",
-"नए मेहमान (एकांकी)",
-"आदमी का अनुपात (कविता)",
-"तरुण के स्वप्न (उद्बोधन)"
-],
-
-"OLD BOOK":{
-
-"वसंत भाग-3":[
-"अध्याय 1: ध्वनि (कविता)",
-"अध्याय 2: लाख की चूड़ियाँ (कहानी)",
-"अध्याय 3: बस की यात्रा (व्यंग्य)",
-"अध्याय 4: दीवानों की हस्ती (कविता)",
-"अध्याय 5: चिट्ठियों की अनूठी दुनिया (निबंध)",
-"अध्याय 6: भगवान के डाकिए (कविता)",
-"अध्याय 7: क्या निराश हुआ जाए (निबंध)",
-"अध्याय 8: यह सबसे कठिन समय नहीं (कविता)",
-"अध्याय 9: कबीर की साखियाँ (साखियाँ)",
-"अध्याय 10: कामचोर (कहानी)",
-"अध्याय 11: जब सिनेमा ने बोलना सीखा (निबंध)",
-"अध्याय 12: सुदामा चरित (कविता)",
-"अध्याय 13: जहाँ पहिया है (रिपोर्ताज)",
-"अध्याय 14: अकबरी लोटा (कहानी)",
-"अध्याय 15: सूरदास के पद (कविता)",
-"अध्याय 16: पानी की कहानी (निबंध)",
-"अध्याय 17: बाज और साँप (कहानी)",
-"अध्याय 18: टोपी (कहानी)"
-],
-
-"भारत की खोज":[
-"अध्याय 1: अहमनगर का किला",
-"अध्याय 2: तलाश",
-"अध्याय 3: सिंधु घाटी सभ्यता",
-"अध्याय 4: युगों का दौर",
-"अध्याय 5: नयी समस्याएँ",
-"अध्याय 6: अंतिम दौर - एक",
-"अध्याय 7: अंतिम दौर - दो",
-"अध्याय 8: तनाव",
-"अध्याय 9: दो पृष्ठभूमियाँ - भारतीय और अंग्रेजी"
-]
-
-}
-
-}
-},
-
-
-"English":{
-type:"books",
-options:{
-
-"NEW BOOK":{
-
-"Unit 1: Wit and Wisdom":[
-"The Wit that Won Hearts",
-"A Concrete Example",
-"Wisdom Paves the Way"
-],
-
-"Unit 2: Values and Dispositions":[
-"A Tale of Valour: Major Somnath Sharma and the Battle of Badgam",
-"Somebody's Mother",
-"Verghese Kurien-I Too Had A Dream"
-],
-
-"Unit 3: Mystery and Magic":[
-"The Case of the Fifth Word",
-"The Magic Brush of Dreams",
-"Spectacular Wonders"
-],
-
-"Unit 4: Environment":[
-"The Cherry Tree",
-"Harvest Hymn",
-"Waiting for the Rain"
-],
-
-"Unit 5: Science and Curiosity":[
-"Feathered Friend",
-"Magnifying Glass",
-"Bibha Chowdhuri: The Beam of Light that Lit the Path for Women in Indian Science"
-]
-
-},
-
-"OLD BOOK":{
-
-"Honeydew — Prose":[
-"Chapter 1: The Best Christmas Present in the World",
-"Chapter 2: The Tsunami",
-"Chapter 3: Glimpses of the Past",
-"Chapter 4: Bepin Choudhury's Lapse of Memory",
-"Chapter 5: The Summit Within",
-"Chapter 6: This is Jody's Fawn",
-"Chapter 7: A Visit to Cambridge",
-"Chapter 8: A Short Monsoon Diary",
-"Chapter 9: The Great Stone Face - I",
-"Chapter 10: The Great Stone Face - II"
-],
-
-"Honeydew — Poetry":[
-"The Ant and the Cricket",
-"Geography Lesson",
-"Macavity - The Mystery Cat",
-"The Last Bargain",
-"The School Boy",
-"The Duck and the Kangaroo",
-"When I Set Out For Lyonnesse",
-"On the Grasshopper and Cricket"
-],
-
-"It So Happened":[
-"Chapter 1: How the Camel got his hump",
-"Chapter 2: Children At Work",
-"Chapter 3: The Selfish Giant",
-"Chapter 4: The Treasure Within",
-"Chapter 5: Princess September",
-"Chapter 6: The Fight",
-"Chapter 7: The Open Window",
-"Chapter 8: Jalebi",
-"Chapter 9: The Comet - I",
-"Chapter 10: The Comet - II"
-]
-
-}
-
-}
-}
-
-},
-
-
-/* =====================================================
-   CLASS 9
-===================================================== */
-
-9:{
-
-"Mathematics":{
-type:"books",
-options:{
-
-"NEW BOOK":{
-
-"Part 1":[
-"Orienting Yourself: The Use of Coordinates",
-"Introduction to Linear Polynomials",
-"The World of Numbers",
-"Exploring Algebraic Identities",
-"I'm Up and Down, and Round and Round (Circles)",
-"Measuring Space: Perimeter and Area",
-"The Mathematics of Maybe: Introduction to Probability",
-"Predicting What Comes Next: Exploring Sequences and Progressions"
-],
-
-"Part 2":[
-"Propositions and their Converses",
-"How Quantities Combine: Understanding Data",
-"The World of Algorithms",
-"Quadrilaterals",
-"Two Variables, One Line",
-"Math of Space: Surface Area and Volume"
-]
-
-},
-
-"OLD BOOK":[
-"Number Systems",
-"Polynomials",
-"Linear Equations in Two Variables",
-"Coordinate Geometry",
-"Introduction to Euclid’s Geometry",
-"Lines and Angles",
-"Triangles",
-"Quadrilaterals",
-"Circles",
-"Heron's Formula",
-"Surface Areas and Volumes",
-"Statistics"
-]
-
-}
-},
-
-
-"Science":{
-type:"books",
-options:{
-
-"NEW BOOK":[
-"Exploration: Entering the World of Secondary Science",
-"Cell: The Building Block of Life",
-"Functional Tissues",
-"Describing Motion Around Us",
-"Exploring Mixtures and their Separation",
-"Structure of the Atom",
-"Atoms and Molecules",
-"Gravitation",
-"Work, Energy, and Power",
-"Sound and Wave Motion",
-"Diversity in the Living World",
-"Reproduction and Continuity of Life",
-"Our Environment and Natural Resources"
-],
-
-"OLD BOOK":{
-
-"Physics":[
-"Motion (Chapter 8)",
-"Force and Laws of Motion (Chapter 9)",
-"Gravitation (Chapter 10)",
-"Work and Energy (Chapter 11)",
-"Sound (Chapter 12)"
-],
-
-"Chemistry":[
-"Matter",
-"Purity of Matter",
-"Atoms and Molecules",
-"Atomic Structure"
-],
-
-"Biology":[
-"The Fundamental Unit of Life (Cells) — Chapter 5",
-"Tissues — Chapter 6",
-"Diversity in Living Organisms — Chapter 7",
-"Why Do We Fall Ill? — Chapter 13",
-"Natural Resources — Chapter 14",
-"Improvement in Food Resources — Chapter 15"
-]
-
-}
-
-}
-},
-
-
-"SST":{
-type:"books",
-options:{
-
-"NEW BOOK":{
-
-"Part 1":[
-"Understanding Social Science",
-"Shaping of the Earth's Surface",
-"Atmosphere and Climate",
-"Early Humans and Beginning of Civilisation",
-"State and Society up to 1000 CE",
-"Democracy",
-"Elections",
-"Building Blocks in Economics: The Problem of Choice",
-"The Price Puzzle: What Drives the Market",
-"Oceans and Life",
-"Life on Earth",
-"Resistance and Resilience (1000 CE–1700 CE)",
-"India and the World-I (1900 BCE–1200 CE)",
-"Authority",
-"From Ideas to Startups",
-"Smart Ways to Manage Your Finances"
-],
-
-"Part 2":[]
-},
-
-"OLD BOOK":{
-
-"History":[
-"The French Revolution",
-"Socialism in Europe and the Russian Revolution",
-"Nazism and the Rise of Hitler",
-"Forest Society and Colonialism",
-"Pastoralists in the Modern World",
-"Peasants and Farmers",
-"History and Sport: The Story of Cricket",
-"Clothing: A Social History"
-],
-
-"Geography":[
-"India – Size and Location",
-"Physical Features of India",
-"Drainage (Rivers and Lakes)",
-"Climate",
-"Natural Vegetation and Wildlife",
-"Population"
-],
-
-"Civics":[
-"Democracy in the Contemporary World",
-"What is Democracy? Why Democracy?",
-"Constitutional Design",
-"Electoral Politics",
-"Working of Institutions",
-"Democratic Rights"
-],
-
-"Economics":[
-"The Story of Village Palampur",
-"People as Resource",
-"Poverty as a Challenge",
-"Food Security in India"
-]
-
-}
-
-}
-},
-
-
-"English":{
-type:"books",
-options:{
-
-"NEW BOOK":[
-"How I Taught My Grandmother to Read / Bharat Our Land",
-"The Pot Maker / Gifts of Grace: Honouring Our Vocations",
-"Winds of Change / Canvas of Soil",
-"Vitamin-M / I Cannot Remember My Mother",
-"The World of Limitless Possibilities / Nine Gold Medals",
-"Twin Melodies / A Friend Found in Music",
-"Follow That Dream / Believe in Yourself"
-],
-
-"OLD BOOK":{
-
-"Beehive — Prose":[
-"The Fun They Had",
-"The Sound of Music (I. Evelyn Glennie, II. Bismillah Khan)",
-"The Little Girl",
-"A Truly Beautiful Mind",
-"The Snake and the Mirror",
-"My Childhood",
-"Packing",
-"Reach for the Top (I. Santosh Yadav, II. Maria Sharapova)",
-"The Bond of Love",
-"Kathmandu",
-"If I Were You"
-],
-
-"Beehive — Poetry":[
-"The Road Not Taken",
-"Wind",
-"Rain on the Roof",
-"The Lake Isle of Innisfree",
-"A Legend of the Northland",
-"No Men Are Foreign",
-"The Duck and the Kangaroo",
-"On Killing a Tree",
-"The Snake Trying",
-"A Slumber Did My Spirit Seal"
-],
-
-"Moments":[
-"The Lost Child",
-"The Adventures of Toto",
-"Iswaran the Storyteller",
-"In the Kingdom of Fools",
-"The Happy Prince",
-"Weathering the Storm in Ersama",
-"The Last Leaf",
-"A House Is Not A Home",
-"The Accidental Tourist",
-"The Beggar"
-]
-
-}
-
-}
-},
-
-
-"Hindi":{
-type:"books",
-options:{
-
-"NEW BOOK":[
-"दो बैलों की कथा",
-"क्या लिखूँ?",
-"संवादहीन",
-"ऐसी भी बातें होती हैं",
-"आखिरी चट्टान तक",
-"रीढ़ की हड्डी",
-"मैं और मेरा देश",
-"रैदास के पद",
-"राम-परशुराम-लक्ष्मण संवाद",
-"भारति, जय, विजयकरे!",
-"झाँसी की रानी",
-"घर की याद"
-],
-
-"OLD BOOK":{
-
-"क्षितिज भाग-1":[
-"दो बैलों की कथा",
-"ल्हासा की ओर",
-"उपभोक्तावाद की संस्कृति",
-"साँवले सपनों की याद",
-"नाना साहब की पुत्री देवी मैना को भस्म कर दिया गया",
-"प्रेमचंद के फटे जूते",
-"मेरे बचपन के दिन",
-"एक कुत्ता और एक मैना",
-"साखियाँ एवं सबद",
-"वाख",
-"सवैये",
-"कैदी और कोकिला",
-"ग्राम श्री",
-"चंद्रगहना से लौटती बेर",
-"मेघ आए",
-"यमराज की दिशा",
-"बच्चे काम पर जा रहे हैं"
-],
-
-"कृतिका भाग-1":[
-"इस जल प्रलय में",
-"मेरे संग की औरतें",
-"रीढ़ की हड्डी",
-"माटी वाली",
-"किस तरह आखिरकार मैं हिंदी में आया"
-]
-
-}
-
-}
-},
-
-
-"AI":{
-type:"groups",
-options:{
-
-"AI — Computer Skills":[
-"Introduction to Computer Systems",
-"Computer Components and Hardware",
-"Types of Software",
-"Computer Networking and Multimedia",
-"Cyber Safety",
-"Working with a Word Processor",
-"Working with Presentation Software",
-"Working with Spreadsheets"
-]
-
-}
-
-}
-
-},
-
-
-/* =====================================================
-   CLASS 10
-===================================================== */
-
-10:{
-
-"Mathematics":{
-type:"list",
-options:{
-
-"CHAPTERS":[
-"Real Numbers",
-"Polynomials",
-"Pair of Linear Equations in Two Variables",
-"Quadratic Equations",
-"Arithmetic Progressions",
-"Triangles",
-"Coordinate Geometry",
-"Introduction to Trigonometry",
-"Some Applications of Trigonometry",
-"Circles",
-"Constructions",
-"Areas Related to Circles",
-"Surface Areas and Volumes",
-"Statistics",
-"Probability"
-]
-
-}
-},
-
-
-"Science":{
-type:"list",
-options:{
-
-"CHAPTERS":[
-"Chemical Reactions and Equations",
-"Acids, Bases and Salts",
-"Metals and Non-metals",
-"Carbon and Its Compounds",
-"Periodic Classification of Elements",
-"Life Processes",
-"Control and Coordination",
-"How Do Organisms Reproduce?",
-"Heredity and Evolution",
-"Light Reflection and Refraction",
-"The Human Eye and Colourful World",
-"Electricity",
-"Magnetic Effects of Electric Current",
-"Our Environment"
-]
-
-}
-},
-
-
-"Social Science":{
-type:"groups",
-options:{
-
-"History":[],
-"Geography":[],
-"Civics":[],
-"Economics":[]
-
-}
-},
-
-
-"Hindi":{
-type:"groups",
-options:{
-
-"Course A":{
-
-"क्षितिज भाग-2":[
-"सूरदास – पद",
-"तुलसीदास – राम-लक्ष्मण-परशुराम संवाद",
-"जयशंकर प्रसाद – आत्मकथ्य",
-"सूर्यकांत त्रिपाठी 'निराला' – उत्साह, अट नहीं रही है",
-"नागार्जुन – यह दंतुरित मुस्कान, फसल",
-"मंगलेश डबराल – संगतकार",
-"स्वयं प्रकाश – नेताजी का चश्मा",
-"रामवृक्ष बेनीपुरी – बालगोबिन भगत",
-"यशपाल – लखनवी अंदाज़",
-"सर्वेश्वर दयाल सक्सेना – मानवीय करुणा की दिव्य चमक",
-"मन्नू भंडारी – एक कहानी यह भी",
-"यतीन्द्र मिश्र – नौबतखाने में इबादत",
-"भदंत आनंद कौसल्यायन – संस्कृति"
-],
-
-"कृतिका भाग-2":[
-"माता का आँचल",
-"जॉर्ज पंचम की नाक",
-"साना-साना हाथ जोड़ि...",
-"एही ठैयाँ झुलनी हेरानी हो रामा!",
-"मैं क्यों लिखता हूँ?"
-]
-
-},
-
-"Course B":{
-
-"स्पर्श भाग-2":[
-"कबीर – साखी",
-"मीरा – पद",
-"मैथिलीशरण गुप्त – मनुष्यता",
-"सुमित्रानंदन पंत – पर्वत प्रदेश में पावस",
-"वीरेन डंगवाल – तोप",
-"कैफ़ी आज़मी – कर चले हम फ़िदा",
-"रवीन्द्रनाथ ठाकुर – आत्मत्राण",
-"प्रेमचंद – बड़े भाई साहब",
-"सीताराम सेकसरिया – डायरी का एक पन्ना",
-"लीलाधर मंडलोई – ततँरा-वामीरो कथा",
-"निदा फ़ाज़ली – अब कहाँ दूसरे के दुख से दुखी होने वाले",
-"प्रहलाद अग्रवाल – तीसरी कसम के शिल्पकार शैलेंद्र",
-"अंतोन चेखव – गिरगिट",
-"रवींद्र केलेकर – पतझड़ में टूटी पत्तियाँ (गिन्निया का सोना)",
-"हबीब तनवीर – कारतूस"
-],
-
-"संचयन भाग-2":[
-"हरिहर काका",
-"सपनों के-से दिन",
-"टोपी शुक्ला"
-]
-
-}
-
-}
-},
-
-
-"AI":{
-type:"groups",
-options:{
-
-"Part A — Employability Skills":[
-"Communication Skills-II",
-"Self-management Skills-II",
-"Information and Communication Technology (ICT) Skills-II",
-"Entrepreneurial Skills-II",
-"Green Skills-II"
-],
-
-"Part B — Subject-Specific Skills":[
-"Revisiting AI Project Cycle & Ethical Frameworks for AI",
-"Advanced Concepts of Modeling in AI (Includes Machine Learning & Deep Learning)",
-"Evaluating Models (Includes Confusion Matrix, Accuracy, Precision, Recall)",
-"Statistical Data",
-"Computer Vision",
-"Natural Language Processing (NLP)",
-"Advance Python"
-]
-
-}
-
-}
-
-}
-
-};
-
-
-/* =====================================================
-   END OF DATA
-=====================================================
-
-   PART 3 WILL CONTINUE HERE WITH:
-   - Programs
-   - Program content
-   - Navigation
-   - Menu functions
-   - Chapter/video functions
-   - Initialization
-
-===================================================== */
-/* =====================================================
-   VANTARA PROGRAMS
-===================================================== */
-
-const PROGRAMS={
-
-skills:{
-title:"🚀 Skill Labs",
-subtitle:"Build practical skills that can help you learn, create and solve real-world problems.",
-content:`
-<div class="grid">
-
-<div class="info-box program-card">
-<div class="program-icon">💻</div>
-<div class="program-title">Coding</div>
-<div class="program-description">
-Learn programming through small practical projects and activities.
-</div>
-</div>
-
-<div class="info-box program-card">
-<div class="program-icon">🤖</div>
-<div class="program-title">Artificial Intelligence</div>
-<div class="program-description">
-Understand AI concepts, responsible AI and practical applications.
-</div>
-</div>
-
-<div class="info-box program-card">
-<div class="program-icon">🎤</div>
-<div class="program-title">Communication</div>
-<div class="program-description">
-Improve speaking, explaining and presentation skills.
-</div>
-</div>
-
-<div class="info-box program-card">
-<div class="program-icon">💰</div>
-<div class="program-title">Financial Skills</div>
-<div class="program-description">
-Learn basic concepts of saving, budgeting and responsible money management.
-</div>
-</div>
-
-<div class="info-box program-card">
-<div class="program-icon">🔎</div>
-<div class="program-title">Research Skills</div>
-<div class="program-description">
-Learn how to find information, evaluate sources and present findings.
-</div>
-</div>
-
-</div>
-`
-},
-
-challenge:{
-title:"🧠 Challenge Arena",
-subtitle:"Take part in academic, logical and creative challenges.",
-content:`
-<div class="info-box">
-
-<h3>Weekly Challenge Categories</h3>
-
-<p>➗ Mathematics Challenge</p>
-<p>🔬 Science Challenge</p>
-<p>🧩 Logic Challenge</p>
-<p>💻 Coding Challenge</p>
-<p>✍️ Writing Challenge</p>
-
-<hr style="border-color:var(--border)">
-
-<p class="small">
-New challenges can be added here regularly.
-Students can use this section to practise beyond their normal lessons.
-</p>
-
-</div>
-`
-},
-
-research:{
-title:"🔬 Research Program",
-subtitle:"Learn how to turn curiosity into structured research.",
-content:`
-<div class="info-box">
-
-<h3>Research Path</h3>
-
-<p><strong>1. Choose a Question</strong><br>
-Start with something you genuinely want to understand.</p>
-
-<p><strong>2. Explore Information</strong><br>
-Collect information from reliable sources.</p>
-
-<p><strong>3. Analyse</strong><br>
-Compare information and identify useful findings.</p>
-
-<p><strong>4. Create</strong><br>
-Prepare a report, presentation, model or demonstration.</p>
-
-<p><strong>5. Present</strong><br>
-Share your research and explain what you discovered.</p>
-
-</div>
-`
-},
-
-ideas:{
-title:"💡 Idea-to-Project",
-subtitle:"Turn an interesting idea into a practical project.",
-content:`
-<div class="info-box">
-
-<h3>From Idea to Project</h3>
-
-<p>💭 <strong>Idea</strong> — What would you like to create?</p>
-
-<p>🎯 <strong>Problem</strong> — What problem does it solve?</p>
-
-<p>📝 <strong>Plan</strong> — What materials, skills or knowledge are needed?</p>
-
-<p>🛠️ <strong>Build</strong> — Create your first version.</p>
-
-<p>🧪 <strong>Test</strong> — Find problems and improve it.</p>
-
-<p>🚀 <strong>Showcase</strong> — Present your finished project.</p>
-
-</div>
-`
-},
-
-league:{
-title:"🏆 Student League",
-subtitle:"A future-ready system for tracking learning, achievements and participation.",
-content:`
-<div class="info-box">
-
-<h3>Student Progress</h3>
-
-<p>⭐ Points for completing activities</p>
-<p>🏅 Badges for achievements</p>
-<p>🎯 Challenge participation</p>
-<p>🔬 Research projects</p>
-<p>💡 Project submissions</p>
-<p>🏆 Competition achievements</p>
-
-<hr style="border-color:var(--border)">
-
-<p class="small">
-Leaderboard and student accounts can be connected in a future version.
-</p>
-
-</div>
-`
-},
-
-communication:{
-title:"🎤 Communication Lab",
-subtitle:"Develop confident communication and presentation skills.",
-content:`
-<div class="grid">
-
-<div class="info-box program-card">
-<div class="program-icon">🎙️</div>
-<div class="program-title">Public Speaking</div>
-<div class="program-description">
-Practise speaking clearly and confidently.
-</div>
-</div>
-
-<div class="info-box program-card">
-<div class="program-icon">🗣️</div>
-<div class="program-title">Debate</div>
-<div class="program-description">
-Learn how to organise arguments and communicate respectfully.
-</div>
-</div>
-
-<div class="info-box program-card">
-<div class="program-icon">📊</div>
-<div class="program-title">Presentation</div>
-<div class="program-description">
-Learn how to explain ideas using effective presentations.
-</div>
-</div>
-
-<div class="info-box program-card">
-<div class="program-icon">📖</div>
-<div class="program-title">Storytelling</div>
-<div class="program-description">
-Develop creativity and expression through storytelling.
-</div>
-</div>
-
-<div class="info-box program-card">
-<div class="program-icon">💼</div>
-<div class="program-title">Interview Skills</div>
-<div class="program-description">
-Practise answering questions and presenting yourself clearly.
-</div>
-</div>
-
-</div>
-`
-},
-
-career:{
-title:"🧭 Career Explorer",
-subtitle:"Explore career areas, skills, education pathways and project ideas.",
-content:`
-<div class="grid">
-
-<div class="info-box program-card">
-<div class="program-icon">💻</div>
-<div class="program-title">Technology</div>
-<div class="program-description">
-Programming, software, AI, cybersecurity and related fields.
-</div>
-</div>
-
-<div class="info-box program-card">
-<div class="program-icon">🔬</div>
-<div class="program-title">Science & Research</div>
-<div class="program-description">
-Explore scientific thinking, experiments and research pathways.
-</div>
-</div>
-
-<div class="info-box program-card">
-<div class="program-icon">🏗️</div>
-<div class="program-title">Engineering</div>
-<div class="program-description">
-Explore design, problem-solving, machines and technology.
-</div>
-</div>
-
-<div class="info-box program-card">
-<div class="program-icon">📈</div>
-<div class="program-title">Business & Entrepreneurship</div>
-<div class="program-description">
-Learn about business ideas, markets, finance and entrepreneurship.
-</div>
-</div>
-
-<div class="info-box program-card">
-<div class="program-icon">🎨</div>
-<div class="program-title">Creative Fields</div>
-<div class="program-description">
-Explore writing, design, media, communication and creative work.
-</div>
-</div>
-
-</div>
-
-<div class="info-box" style="margin-top:15px">
-<p class="small">
-Career exploration should help students understand different
-possibilities rather than deciding a career for them.
-</p>
-</div>
-`
-},
-
-reading:{
-title:"📖 Reading & Knowledge Club",
-subtitle:"Discover books, articles, discussions and knowledge activities.",
-content:`
-<div class="info-box">
-
-<h3>Reading Activities</h3>
-
-<p>📚 Book reading</p>
-<p>📰 Article reading</p>
-<p>💬 Book discussions</p>
-<p>🧠 Knowledge quizzes</p>
-<p>✍️ Book reviews</p>
-<p>⭐ Reading achievements</p>
-
-<hr style="border-color:var(--border)">
-
-<p class="small">
-Reading resources and quizzes can be added here as VANTARA grows.
-</p>
-
-</div>
-`
-},
-
-build:{
-title:"🛠️ Build Week",
-subtitle:"A project-based program where students create something practical.",
-content:`
-<div class="info-box">
-
-<h3>Build Ideas</h3>
-
-<p>🌐 Build a website</p>
-<p>🔬 Build a science model</p>
-<p>🎮 Build an educational game</p>
-<p>📱 Design an app concept</p>
-<p>📊 Create a useful data project</p>
-<p>📚 Create an educational resource</p>
-
-<hr style="border-color:var(--border)">
-
-<h3>Build Cycle</h3>
-
-<p>
-<strong>Plan → Build → Test → Improve → Present</strong>
-</p>
-
-</div>
-`
-},
-
-realworld:{
-title:"🌱 Real-World Problems",
-subtitle:"Explore practical problems and develop possible solutions.",
-content:`
-<div class="info-box">
-
-<h3>Problem Areas</h3>
-
-<p>💧 Water management</p>
-<p>♻️ Waste management</p>
-<p>⚡ Energy conservation</p>
-<p>🌳 Environmental protection</p>
-<p>🏫 Improving education</p>
-<p>🚦 Community problems</p>
-
-<hr style="border-color:var(--border)">
-
-<h3>Solution Showcase</h3>
-
-<p class="small">
-Students can eventually submit their problem statements,
-ideas, prototypes and solutions here.
-</p>
-
-</div>
-`
-},
-
-portfolio:{
-title:"📁 Student Portfolio",
-subtitle:"Showcase your learning journey and achievements.",
-content:`
-<div class="info-box">
-
-<h3>Portfolio Sections</h3>
-
-<p>📚 Academic achievements</p>
-<p>🏆 Competitions and awards</p>
-<p>💡 Ideas and projects</p>
-<p>🔬 Research work</p>
-<p>🚀 Skills</p>
-<p>📜 Certificates</p>
-<p>🎤 Presentations</p>
-<p>🌱 Community or real-world projects</p>
-
-<hr style="border-color:var(--border)">
-
-<p class="small">
-Personal student accounts and saved portfolios can be added in a
-future version.
-</p>
-
-</div>
-`
-},
-
-about:{
-title:"ℹ️ About VANTARA",
-subtitle:"Learn about the purpose of VANTARA EDUCATION.",
-content:`
-<div class="info-box">
-
-<h3>VANTARA EDUCATION</h3>
-
-<p>
-VANTARA EDUCATION is designed to combine academic learning
-with practical skills, creativity, research and real-world
-problem solving.
-</p>
-
-<p>
-The platform provides learning resources while also creating
-opportunities for students to explore ideas and build projects.
-</p>
-
-<h3>Our Areas</h3>
-
-<p>📚 Learning</p>
-<p>🚀 Skills</p>
-<p>🧠 Challenges</p>
-<p>🔬 Research</p>
-<p>💡 Projects</p>
-<p>🏆 Achievements</p>
-
-<p class="small">
-More features will be added as VANTARA develops.
-</p>
-
-</div>
-`
-}
-
-};
-
-
-/* =====================================================
-   NAVIGATION STATE
-===================================================== */
-
-const state={
-history:[],
-currentClass:null,
-currentSubject:null
-};
-
-
-/* =====================================================
-   BASIC HELPERS
-===================================================== */
-
-function $(id){
-return document.getElementById(id);
-}
-
-
-function showPage(id){
-
-document.querySelectorAll(".page")
-.forEach(page=>{
-page.classList.remove("active");
-});
-
-const page=$(id);
-
-if(page){
-page.classList.add("active");
-}
-
-window.scrollTo({
-top:0,
-behavior:"smooth"
-});
-}
-
-
-/* =====================================================
-   MENU
-===================================================== */
-
-function toggleMenu(){
-
-const menu=$("sideMenu");
-const overlay=$("menuOverlay");
-
-menu.classList.toggle("open");
-overlay.classList.toggle("active");
-
-}
-
-
-function closeMenu(){
-
-$("sideMenu").classList.remove("open");
-$("menuOverlay").classList.remove("active");
-
-}
-
-
-/* =====================================================
-   HOME
-===================================================== */
-
-function home(){
-
-state.history=[];
-
-state.currentClass=null;
-state.currentSubject=null;
-
-closeMenu();
-
-showPage("home");
-
-}
-
-
-/* =====================================================
-   LEARNING HUB
-===================================================== */
-
-function menuLearningHub(){
-
-closeMenu();
-
-state.history=[];
-
-showPage("learningPage");
-
-}
-
-
-function menuHome(){
-
-home();
-
-}
-
-
-/* =====================================================
-   BACK
-===================================================== */
-
-function goBack(){
-
-const previous=state.history.pop();
-
-if(previous){
-
-previous();
-
-}else{
-
-home();
-
-}
-
-}
-
-
-/* =====================================================
-   PROGRAMS
-===================================================== */
-
-function openProgram(programId){
-
-const program=PROGRAMS[programId];
-
-if(!program){
-return;
-}
-
-closeMenu();
-
-state.history.push(
-()=>showPage("home")
-);
-
-$("programTitle").textContent=program.title;
-
-$("programSubtitle").textContent=
-program.subtitle;
-
-$("programContent").innerHTML=
-program.content;
-
-showPage("programPage");
-
-}
-
-
-/* =====================================================
-   CLASS NAVIGATION
-===================================================== */
-
-function openClass(classNumber){
-
-state.history.push(
-()=>showPage("learningPage")
-);
-
-state.currentClass=classNumber;
-
-state.currentSubject=null;
-
-$("classBadge").textContent=
-"Class "+classNumber;
-
-$("subjectTitle").textContent=
-"Class "+classNumber+" — Subjects";
-
-const grid=$("subjectGrid");
-
-grid.innerHTML="";
-
-Object.keys(DATA[classNumber]).forEach(subject=>{
-
-const button=document.createElement("button");
-
-button.textContent=subject;
-
-button.onclick=()=>{
-openSubject(subject);
-};
-
-grid.appendChild(button);
-
-});
-
-showPage("subjectPage");
-
-}
-
-
-/* =====================================================
-   SUBJECT NAVIGATION
-===================================================== */
-
-function openSubject(subject){
-
-state.history.push(
-()=>openClass(state.currentClass)
-);
-
-state.currentSubject=subject;
-
-const data=
-DATA[state.currentClass][subject];
-
-$("bookBadge").textContent=
-"Class "+state.currentClass+
-" • "+subject;
-
-$("bookTitle").textContent=
-subject;
-
-$("bookSubtitle").textContent=
-"Choose the available book, part, unit, theme, or section.";
-
-renderNode(data.options);
-
-showPage("bookPage");
-
-}
-
-
-/* =====================================================
-   RENDER NODE
-===================================================== */
-
-function renderNode(node){
-
-const grid=$("bookGrid");
-
-grid.innerHTML="";
-
-Object.keys(node).forEach(key=>{
-
-const button=document.createElement("button");
-
-button.textContent=key;
-
-button.onclick=()=>{
-openNode(key,node[key]);
-};
-
-grid.appendChild(button);
-
-});
-
-}
-
-
-/* =====================================================
-   OPEN NODE
-===================================================== */
-
-function openNode(label,value){
-
-state.history.push(
-()=>{
-$("bookTitle").textContent=
-state.currentSubject;
-
-$("bookSubtitle").textContent=
-"Choose the available book, part, unit, theme, or section.";
-
-renderNode(
-DATA[state.currentClass]
-[state.currentSubject]
-.options
-);
-
-showPage("bookPage");
-}
-);
-
-
-if(Array.isArray(value)){
-
-openChapters(label,value);
-
-}else{
-
-$("bookTitle").textContent=
-label;
-
-$("bookSubtitle").textContent=
-"Choose a chapter or next section.";
-
-renderNode(value);
-
-showPage("bookPage");
-
-}
-
-}
-/* =====================================================
-   CHAPTERS
-===================================================== */
-
-function openChapters(group,chapters){
-
-$("chapterBadge").textContent=
-"Class "+state.currentClass+
-" • "+state.currentSubject;
-
-$("chapterTitle").textContent=
-group;
-
-$("chapterSubtitle").textContent=
-"Select a chapter.";
-
-const box=$("chapterContent");
-
-box.innerHTML="";
-
-
-if(chapters.length===0){
-
-const empty=document.createElement("div");
-
-empty.className="video-placeholder";
-
-empty.innerHTML=
-"<strong>Content coming soon</strong><br>"+
-"<span class='small'>"+
-"Chapters will be added here."
-+"</span>";
-
-box.appendChild(empty);
-
-}else{
-
-chapters.forEach(chapter=>{
-
-const button=document.createElement("button");
-
-button.className="chapter";
-
-const span=document.createElement("span");
-
-span.textContent=chapter;
-
-button.appendChild(span);
-
-button.onclick=()=>{
-openChapter(chapter);
-};
-
-box.appendChild(button);
-
-
-const space=document.createElement("div");
-
-space.style.height="8px";
-
-box.appendChild(space);
-
-});
-
-}
-
-showPage("chapterPage");
-
-}
-
-
-/* =====================================================
-   VIDEO DATABASE
-===================================================== */
-
-/*
-   Add YouTube VIDEO IDs here later.
-
-   Example:
-
-   VIDEOS["8|Mathematics|Rational Numbers"]="ABC123XYZ";
-
-   Do NOT put the complete YouTube URL here.
-   Only use the video ID.
-*/
-
-const VIDEOS={};
-
-
-/* =====================================================
-   CHAPTER PAGE
-===================================================== */
-
-function openChapter(chapter){
-
-state.history.push(
-()=>openChapters(
-"Back to Chapters",
-[]
-)
-);
-
-$("chapterBadge").textContent=
-"Class "+state.currentClass+
-" • "+state.currentSubject;
-
-$("chapterTitle").textContent=
-chapter;
-
-$("chapterSubtitle").textContent=
-"Learning resources for this chapter.";
-
-const box=$("chapterContent");
-
-box.innerHTML="";
-
-
-/* =========================
-   VIDEO
-========================= */
-
-const videoBox=
-document.createElement("div");
-
-videoBox.className="video-box";
-
-
-const heading=
-document.createElement("h3");
-
-heading.textContent=
-"🎥 Video Lecture";
-
-videoBox.appendChild(heading);
-
-
-const key=
-state.currentClass+
-"|"+
-state.currentSubject+
-"|"+
-chapter;
-
-
-const videoId=
-VIDEOS[key];
-
-
-if(videoId){
-
-const iframe=
-document.createElement("iframe");
-
-iframe.src=
-"https://www.youtube.com/embed/"+
-videoId;
-
-iframe.title=
-"VANTARA Education Lecture";
-
-iframe.allowFullscreen=true;
-
-iframe.setAttribute(
-"allow",
-"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-);
-
-videoBox.appendChild(iframe);
-
-}else{
-
-const placeholder=
-document.createElement("div");
-
-placeholder.className=
-"video-placeholder";
-
-placeholder.innerHTML=
-"<strong>Video not added yet</strong><br>"+
-"<span class='small'>"+
-"Video resources will be added here."
-+
-"</span>";
-
-videoBox.appendChild(
-placeholder
-);
-
-}
-
-
-box.appendChild(videoBox);
-
-
-/* =========================
-   RESOURCE INFORMATION
-========================= */
-
-const resourceBox=
-document.createElement("div");
-
-resourceBox.className=
-"info-box";
-
-resourceBox.style.marginTop=
-"15px";
-
-resourceBox.innerHTML=
-`
-<h3>📚 Chapter Resources</h3>
-
-<p>
-Learning resources for this chapter will be added here.
-</p>
-
-<p class="small">
-Future resources may include notes, PDFs, practice questions,
-activities and additional learning material.
-</p>
-`;
-
-box.appendChild(resourceBox);
-
-
-showPage("chapterPage");
-
-}
-
-
-/* =====================================================
-   INITIALIZE CLASS BUTTONS
-===================================================== */
-
-(function init(){
-
-const grid=
-$("classGrid");
-
-[8,9,10].forEach(
-classNumber=>{
-
-const button=
-document.createElement("button");
-
-button.textContent=
-"Class "+classNumber;
-
-button.onclick=()=>{
-openClass(classNumber);
-};
-
-grid.appendChild(button);
-
-});
-
-})();
-
-
-/* =====================================================
-   CLOSE MENU WITH ESCAPE
-===================================================== */
-
-document.addEventListener(
-"keydown",
-function(event){
-
-if(event.key==="Escape"){
-closeMenu();
-}
-
-});
-
-
-</script>
 
 </body>
 </html>
