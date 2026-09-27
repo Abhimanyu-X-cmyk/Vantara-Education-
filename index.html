@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Vantara Education | Learn • Explore • Achieve</title>
+  <title>Vantara Olympiad Hub</title>
 
   <style>
     * {
@@ -17,105 +17,168 @@
     body {
       background: #050505;
       color: white;
-      line-height: 1.6;
     }
 
-    header {
-      background: #0b0b0b;
-      border-bottom: 1px solid #222;
-      padding: 18px 7%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
+    /* POPUP */
 
-    .logo {
-      font-size: 24px;
-      font-weight: bold;
-      letter-spacing: 1px;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin-left: 22px;
-      font-size: 14px;
-    }
-
-    nav a:hover {
-      color: #00e5ff;
-    }
-
-    .hero {
-      min-height: 85vh;
+    .popup-bg {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.82);
       display: flex;
       justify-content: center;
       align-items: center;
+      z-index: 9999;
+      padding: 20px;
+    }
+
+    .popup {
+      width: 100%;
+      max-width: 420px;
+      background: #101010;
+      border: 1px solid #333;
+      border-radius: 22px;
+      padding: 30px 25px;
       text-align: center;
-      padding: 40px 7%;
+      box-shadow: 0 0 40px rgba(0,0,0,0.7);
+    }
+
+    .popup-icon {
+      font-size: 50px;
+      margin-bottom: 12px;
+    }
+
+    .popup h2 {
+      font-size: 25px;
+      margin-bottom: 10px;
+    }
+
+    .popup p {
+      color: #aaa;
+      line-height: 1.6;
+      margin-bottom: 25px;
+    }
+
+    .popup-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .popup-buttons a,
+    .popup-buttons button {
+      padding: 13px;
+      border-radius: 30px;
+      border: none;
+      text-decoration: none;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .main-btn {
+      background: #00e5ff;
+      color: #000;
+    }
+
+    .continue-btn {
+      background: #1b1b1b;
+      color: white;
+      border: 1px solid #333 !important;
+    }
+
+    /* HEADER */
+
+    header {
+      padding: 18px 7%;
+      background: #0b0b0b;
+      border-bottom: 1px solid #222;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 21px;
+      font-weight: bold;
+    }
+
+    .logo span {
+      color: #b7ff00;
+    }
+
+    nav a {
+      color: #aaa;
+      text-decoration: none;
+      margin-left: 20px;
+      font-size: 14px;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 50px 7%;
       background:
-        radial-gradient(circle at top, #14202a, #050505 60%);
+        radial-gradient(circle at center, #1d2b00, #050505 65%);
     }
 
     .hero h1 {
-      font-size: clamp(42px, 8vw, 80px);
+      font-size: clamp(42px, 9vw, 80px);
       margin-bottom: 10px;
     }
 
     .hero h1 span {
-      color: #00e5ff;
+      color: #b7ff00;
     }
 
     .hero p {
-      color: #bbb;
-      font-size: 18px;
+      color: #aaa;
       max-width: 650px;
       margin: auto;
+      font-size: 17px;
     }
 
-    .buttons {
+    .hero-buttons {
       margin-top: 30px;
     }
 
     .btn {
       display: inline-block;
-      padding: 13px 24px;
-      margin: 6px;
+      padding: 13px 25px;
+      margin: 5px;
       border-radius: 30px;
       text-decoration: none;
       font-weight: bold;
-      background: #00e5ff;
+      background: #b7ff00;
       color: #000;
     }
 
-    .btn.secondary {
-      background: transparent;
-      border: 1px solid #444;
-      color: white;
-    }
+    /* CARDS */
 
     section {
       padding: 70px 7%;
     }
 
-    .section-title {
+    .title {
       text-align: center;
       font-size: 34px;
       margin-bottom: 10px;
     }
 
-    .section-subtitle {
+    .subtitle {
       text-align: center;
-      color: #999;
-      margin-bottom: 40px;
+      color: #888;
+      margin-bottom: 35px;
     }
 
     .cards {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 20px;
     }
 
@@ -124,166 +187,54 @@
       border: 1px solid #222;
       border-radius: 18px;
       padding: 28px;
-      transition: 0.3s;
+      transition: .3s;
     }
 
     .card:hover {
       transform: translateY(-6px);
-      border-color: #00e5ff;
+      border-color: #b7ff00;
     }
 
-    .card .icon {
+    .icon {
       font-size: 40px;
       margin-bottom: 15px;
     }
 
     .card h3 {
-      margin-bottom: 10px;
-      font-size: 21px;
+      margin-bottom: 8px;
     }
 
     .card p {
-      color: #aaa;
+      color: #999;
       font-size: 14px;
     }
 
     .card a {
       display: inline-block;
-      margin-top: 18px;
-      color: #00e5ff;
+      margin-top: 15px;
+      color: #b7ff00;
       text-decoration: none;
       font-weight: bold;
     }
 
-    /* OLYMPIAD HUB */
-
-    .olympiad {
-      background:
-        radial-gradient(circle at center, #162400, #050505 65%);
-    }
-
-    .olympiad-box {
-      max-width: 1100px;
-      margin: auto;
-      padding: 45px 25px;
-      border: 1px solid #263d00;
-      border-radius: 25px;
-      text-align: center;
-      background: rgba(10, 15, 5, 0.8);
-    }
-
-    .olympiad-box h2 {
-      font-size: 42px;
-      color: #b7ff00;
-      margin-bottom: 10px;
-    }
-
-    .olympiad-box p {
-      color: #bbb;
-      max-width: 700px;
-      margin: auto;
-    }
-
-    .olympiad-grid {
-      margin-top: 35px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 15px;
-    }
-
-    .olympiad-item {
-      background: #111;
-      padding: 20px;
-      border-radius: 15px;
-      border: 1px solid #292929;
-    }
-
-    .olympiad-item h3 {
-      color: #b7ff00;
-      margin-bottom: 5px;
-    }
-
-    /* VIRA */
-
-    .vira {
-      background: linear-gradient(135deg, #080018, #050505);
-    }
-
-    .vira-box {
-      max-width: 900px;
-      margin: auto;
-      text-align: center;
-      padding: 45px 25px;
-      border-radius: 25px;
-      border: 1px solid #3b176d;
-      background: #0c0615;
-    }
-
-    .vira-box h2 {
-      font-size: 40px;
-      color: #c77dff;
-    }
-
-    .vira-box p {
-      color: #aaa;
-      margin: 15px auto;
-      max-width: 650px;
-    }
-
-    /* CTA */
-
-    .cta {
-      text-align: center;
-      background: #0a0a0a;
-    }
-
-    .cta h2 {
-      font-size: 38px;
-      margin-bottom: 12px;
-    }
-
-    .cta p {
-      color: #999;
-      margin-bottom: 20px;
-    }
+    /* FOOTER */
 
     footer {
       border-top: 1px solid #222;
-      padding: 30px 7%;
+      padding: 30px;
       text-align: center;
       color: #777;
       font-size: 13px;
     }
 
-    footer strong {
-      color: white;
-    }
-
-    @media (max-width: 700px) {
-
+    @media(max-width:600px) {
       header {
         padding: 15px 5%;
       }
 
       nav a {
         margin-left: 8px;
-        font-size: 12px;
-      }
-
-      section {
-        padding: 55px 5%;
-      }
-
-      .hero {
-        min-height: 75vh;
-      }
-
-      .olympiad-box h2 {
-        font-size: 32px;
-      }
-
-      .vira-box h2 {
-        font-size: 32px;
+        font-size: 11px;
       }
     }
   </style>
@@ -291,17 +242,59 @@
 
 <body>
 
+  <!-- WEBSITE NOTIFICATION -->
+
+  <div class="popup-bg" id="welcomePopup">
+
+    <div class="popup">
+
+      <div class="popup-icon">🏆</div>
+
+      <h2>Welcome to Vantara Olympiad Hub!</h2>
+
+      <p>
+        You are visiting the Olympiad section of Vantara Education.
+        Visit our main website to explore all learning sections,
+        resources and educational content.
+      </p>
+
+      <div class="popup-buttons">
+
+        <a
+          class="main-btn"
+          href="https://vantara-education.vercel.app/"
+        >
+          🌐 Visit Main Website
+        </a>
+
+        <button
+          class="continue-btn"
+          onclick="closePopup()"
+        >
+          Continue to Olympiad Hub
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
   <!-- HEADER -->
 
   <header>
-    <div class="logo">VANTARA EDUCATION</div>
+
+    <div class="logo">
+      VANTARA <span>OLYMPIAD HUB</span>
+    </div>
 
     <nav>
       <a href="#home">Home</a>
-      <a href="#olympiad">Olympiad</a>
-      <a href="#classes">Classes</a>
+      <a href="#olympiads">Olympiads</a>
       <a href="#resources">Resources</a>
     </nav>
+
   </header>
 
 
@@ -312,22 +305,18 @@
     <div>
 
       <h1>
-        Vantara <span>Education</span>
+        Vantara <span>Olympiad Hub</span>
       </h1>
 
       <p>
-        A learning platform for school education, Olympiads,
-        study resources, practice and exploration.
+        Explore Olympiad learning, problem solving,
+        practice and educational opportunities with Vantara Education.
       </p>
 
-      <div class="buttons">
+      <div class="hero-buttons">
 
-        <a class="btn" href="#olympiad">
-          Explore Olympiad Hub
-        </a>
-
-        <a class="btn secondary" href="#classes">
-          Explore Learning
+        <a class="btn" href="#olympiads">
+          Explore Olympiads
         </a>
 
       </div>
@@ -337,104 +326,79 @@
   </section>
 
 
-  <!-- OLYMPIAD HUB -->
+  <!-- OLYMPIADS -->
 
-  <section class="olympiad" id="olympiad">
+  <section id="olympiads">
 
-    <div class="olympiad-box">
+    <h2 class="title">🏆 Olympiad Programs</h2>
 
-      <h2>🏆 Olympiad Hub</h2>
-
-      <p>
-        Prepare, practise and explore Olympiad learning
-        with Vantara Education.
-      </p>
-
-      <div class="olympiad-grid">
-
-        <div class="olympiad-item">
-          <h3>IOQM</h3>
-          <p>Mathematical problem solving</p>
-        </div>
-
-        <div class="olympiad-item">
-          <h3>IMO</h3>
-          <p>International Mathematics Olympiad</p>
-        </div>
-
-        <div class="olympiad-item">
-          <h3>Science</h3>
-          <p>Explore Science Olympiad preparation</p>
-        </div>
-
-        <div class="olympiad-item">
-          <h3>More</h3>
-          <p>More Olympiad opportunities coming</p>
-        </div>
-
-      </div>
-
-      <div class="buttons">
-
-        <a class="btn" href="#">
-          Enter Olympiad Hub
-        </a>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- CLASSES -->
-
-  <section id="classes">
-
-    <h2 class="section-title">
-      📚 Classes & Subjects
-    </h2>
-
-    <p class="section-subtitle">
-      Explore learning resources for different classes and subjects.
+    <p class="subtitle">
+      Explore different areas of Olympiad preparation.
     </p>
 
     <div class="cards">
 
       <div class="card">
+
         <div class="icon">🔢</div>
-        <h3>Mathematics</h3>
+
+        <h3>IOQM</h3>
+
         <p>
-          Concepts, practice and problem-solving resources.
+          Explore mathematical problem solving
+          and Olympiad-level thinking.
         </p>
+
         <a href="#">Explore →</a>
+
       </div>
 
+
       <div class="card">
+
+        <div class="icon">➗</div>
+
+        <h3>IMO</h3>
+
+        <p>
+          Mathematics Olympiad resources,
+          practice and concepts.
+        </p>
+
+        <a href="#">Explore →</a>
+
+      </div>
+
+
+      <div class="card">
+
         <div class="icon">🔬</div>
-        <h3>Science</h3>
+
+        <h3>Science Olympiads</h3>
+
         <p>
-          Understand concepts through structured learning.
+          Explore Science-based Olympiad
+          learning and practice.
         </p>
+
         <a href="#">Explore →</a>
+
       </div>
 
-      <div class="card">
-        <div class="icon">🌍</div>
-        <h3>Social Science</h3>
-        <p>
-          History, Geography, Civics and Economics.
-        </p>
-        <a href="#">Explore →</a>
-      </div>
 
       <div class="card">
-        <div class="icon">📖</div>
-        <h3>Languages</h3>
+
+        <div class="icon">🧠</div>
+
+        <h3>Problem Solving</h3>
+
         <p>
-          English, Hindi and other language resources.
+          Strengthen logical thinking and
+          problem-solving skills.
         </p>
+
         <a href="#">Explore →</a>
+
       </div>
 
     </div>
@@ -446,92 +410,42 @@
 
   <section id="resources">
 
-    <h2 class="section-title">
-      📖 Study Resources
-    </h2>
+    <h2 class="title">📚 Olympiad Resources</h2>
 
-    <p class="section-subtitle">
-      Learn with organised and accessible educational resources.
+    <p class="subtitle">
+      Learn, practise and revise.
     </p>
 
     <div class="cards">
 
       <div class="card">
-        <div class="icon">📝</div>
-        <h3>Revision Notes</h3>
-        <p>
-          Quick revision material for important concepts.
-        </p>
-        <a href="#">View Resources →</a>
-      </div>
-
-      <div class="card">
-        <div class="icon">📚</div>
+        <div class="icon">📖</div>
         <h3>Study Modules</h3>
         <p>
-          Structured modules designed for learning.
+          Structured learning modules for Olympiad preparation.
         </p>
-        <a href="#">View Modules →</a>
+        <a href="#">Open →</a>
       </div>
 
       <div class="card">
-        <div class="icon">🎥</div>
-        <h3>Video Learning</h3>
-        <p>
-          Educational videos and concept explanations.
-        </p>
-        <a href="#">Watch →</a>
-      </div>
-
-      <div class="card">
-        <div class="icon">❓</div>
+        <div class="icon">📝</div>
         <h3>Practice</h3>
         <p>
-          Practise questions and strengthen your concepts.
+          Practice questions to strengthen your concepts.
         </p>
         <a href="#">Practise →</a>
       </div>
 
-    </div>
-
-  </section>
-
-
-  <!-- VIRA -->
-
-  <section class="vira">
-
-    <div class="vira-box">
-
-      <h2>🤖 VIRA</h2>
-
-      <p>
-        VIRA is a student-help assistant from Vantara Education,
-        designed to help students understand questions and learning concepts.
-      </p>
-
-      <a class="btn" href="#">
-        Explore VIRA
-      </a>
+      <div class="card">
+        <div class="icon">🎥</div>
+        <h3>Video Classes</h3>
+        <p>
+          Concept-focused educational videos.
+        </p>
+        <a href="#">Watch →</a>
+      </div>
 
     </div>
-
-  </section>
-
-
-  <!-- CTA -->
-
-  <section class="cta">
-
-    <h2>Start Your Learning Journey</h2>
-
-    <p>
-      Learn • Explore • Practise • Achieve
-    </p>
-
-    <a class="btn" href="#olympiad">
-      Explore Vantara Education
-    </a>
 
   </section>
 
@@ -540,20 +454,25 @@
 
   <footer>
 
-    <p>
-      <strong>VANTARA EDUCATION</strong>
-    </p>
+    <strong>VANTARA OLYMPIAD HUB</strong>
 
-    <p>
-      Learn • Explore • Achieve
-    </p>
+    <br><br>
 
-    <p>
-      © 2026 Vantara Education. All Rights Reserved.
-    </p>
+    A section of Vantara Education
 
+    <br><br>
+
+    © 2026 Vantara Education
   </footer>
 
+
+  <script>
+
+    function closePopup() {
+      document.getElementById("welcomePopup").style.display = "none";
+    }
+
+  </script>
 
 </body>
 </html>
