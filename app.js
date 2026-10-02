@@ -1,43 +1,101 @@
-const D={
-8:{Mathematics:{"NEW BOOK":{"Part 1":["A Square and A Cube","Power Play","A Story of Numbers","Quadrilaterals","Number Play","We Distribute, Yet Things Multiply","Proportional Reasoning - 1"],"Part 2":["Fractions in Disguise (Percentages & Applications)","The Baudhayana-Pythagoras Theorem","Proportional Reasoning-2","Exploring Some Geometric Themes (3D Geometry & Fractals)","Tales by Dots and Lines (Statistics, Mean, & Median)","Algebra Play","Area"]},"OLD BOOK":["Rational Numbers","Linear Equations in One Variable","Understanding Quadrilaterals","Practical Geometry","Data Handling","Squares and Square Roots","Cubes and Cube Roots","Comparing Quantities","Algebraic Expressions and Identities","Visualising Solid Shapes","Mensuration","Exponents and Powers","Direct and Inverse Proportions","Factorisation","Introduction to Graphs","Playing with Numbers"]},
-Science:{"NEW BOOK":["Exploring the Investigative World of Science","The Invisible Living World: Beyond Our Naked Eye","Health: The Ultimate Treasure","Electricity: Magnetic and Heating Effects","Exploring Forces","Pressure, Winds, Storms, and Cyclones","Particulate Nature of Matter","Nature of Matter: Elements, Compounds, and Mixtures","The Amazing World of Solutes, Solvents, and Solutions","Light: Mirrors and Lenses","Keeping Time with the Skies","How Nature Works in Harmony","Our Home: Earth, a Unique Life Sustaining Planet"],"OLD BOOK":["Exploring the Investigative World of Science","Parts of an Organism—Cell and its Structure","Microorganisms: Friend and Foe","Combustion and Flame","Conservation of Plants and Animals","Force and Pressure","Friction","Sound","Chemical Effects of Electric Current","Some Natural Phenomena","Light","Earth: Its Dynamics and Internal Structures","Stars and the Solar System"]},
-SST:{"NEW BOOK":{"Part 1":["India’s Geographical Location and Physical Features","Land, Soil, and Water Resources","Dynamic Earth: Movements and Landforms","The Tapestry of Ancient Indian Civilisations","Medieval Transitions and Society","Colonial Impact and Economic Disruptions","Understanding Governance and the Indian Constitution","Secularism and the Judiciary"],"Part 2":{"Theme A — India & the World: Land & People":["Chapter 1: World Geography: Some Glimpses"],"Theme B — Tapestry of the Past":["Chapter 2: India’s Long Road to Independence"],"Theme C — Our Cultural Heritage & Traditions":["Chapter 3: A Journey Through Indian Architecture"],"Theme D — Governance and Democracy":["Chapter 4: The Role of the Judiciary in Our Society","Chapter 5: Citizenship: Rights and Duties"],"Theme E — Economic Life Around Us":["Chapter 6: Dynamics of Population","Chapter 7: India’s Urban Landscape","Chapter 8: Cultural Currents: 13th to 17th Centuries"]}},"OLD NCERT":{"History":["Chapter 1: How, When and Where","Chapter 2: From Trade to Territory (The Company Establishes Power)","Chapter 3: Ruling the Countryside","Chapter 4: Tribals, Dikus and the Vision of a Golden Age","Chapter 5: When People Rebel (1857 and After)","Chapter 6: Weavers, Iron Smelters and Factory Owners","Chapter 7: Civilising the \"Native\", Educating the Nation","Chapter 8: Women, Caste and Reform","Chapter 9: The Making of the National Movement: 1870s–1947","Chapter 10: India After Independence"],Geography:["Chapter 1: Resources","Chapter 2: Land, Soil, Water, Natural Vegetation and Wildlife Resources","Chapter 3: Mineral and Power Resources","Chapter 4: Agriculture","Chapter 5: Industries","Chapter 6: Human Resources"],Civics:{"Unit 1 — The Indian Constitution and Secularism":["Chapter 1: The Indian Constitution","Chapter 2: Understanding Secularism"],"Unit 2 — Parliament and the Making of Laws":["Chapter 3: Why do we need a Parliament?","Chapter 4: Understanding Laws"],"Unit 3 — The Judiciary":["Chapter 5: Judiciary","Chapter 6: Understanding Our Criminal Justice System"],"Unit 4 — Social Justice and the Marginalised":["Chapter 7: Understanding Marginalisation","Chapter 8: Confronting Marginalisation"],"Unit 5 — Economic Presence of the Government":["Chapter 9: Public Facilities","Chapter 10: Law and Social Justice"]}}},
-Hindi:{"NEW BOOK":["स्वदेश (कविता)","दो गौरैया (कहानी)","एक आशीर्वाद (कविता)","हरिद्वार (पत्र)","कबीर के दोहे","एक टोकरी भर मिट्टी (कहानी)","मत बाँधो (कविता)","नए मेहमान (एकांकी)","आदमी का अनुपात (कविता)","तरुण के स्वप्न (उद्बोधन)"],"OLD BOOK":{"वसंत भाग-3":["अध्याय 1: ध्वनि (कविता)","अध्याय 2: लाख की चूड़ियाँ (कहानी)","अध्याय 3: बस की यात्रा (व्यंग्य)","अध्याय 4: दीवानों की हस्ती (कविता)","अध्याय 5: चिट्ठियों की अनूठी दुनिया (निबंध)","अध्याय 6: भगवान के डाकिए (कविता)","अध्याय 7: क्या निराश हुआ जाए (निबंध)","अध्याय 8: यह सबसे कठिन समय नहीं (कविता)","अध्याय 9: कबीर की साखियाँ (साखियाँ)","अध्याय 10: कामचोर (कहानी)","अध्याय 11: जब सिनेमा ने बोलना सीखा (निबंध)","अध्याय 12: सुदामा चरित (कविता)","अध्याय 13: जहाँ पहिया है (रिपोर्ताज)","अध्याय 14: अकबरी लोटा (कहानी)","अध्याय 15: सूरदास के पद (कविता)","अध्याय 16: पानी की कहानी (निबंध)","अध्याय 17: बाज और साँप (कहानी)","अध्याय 18: टोपी (कहानी)"],"भारत की खोज":["अध्याय 1: अहमनगर का किला","अध्याय 2: तलाश","अध्याय 3: सिंधु घाटी सभ्यता","अध्याय 4: युगों का दौर","अध्याय 5: नयी समस्याएँ","अध्याय 6: अंतिम दौर - एक","अध्याय 7: अंतिम दौर - दो","अध्याय 8: तनाव","अध्याय 9: दो पृष्ठभूमियाँ - भारतीय और अंग्रेजी"]}},
-English:{"NEW BOOK":{"Unit 1: Wit and Wisdom":["The Wit that Won Hearts","A Concrete Example","Wisdom Paves the Way"],"Unit 2: Values and Dispositions":["A Tale of Valour: Major Somnath Sharma and the Battle of Badgam","Somebody's Mother","Verghese Kurien-I Too Had A Dream"],"Unit 3: Mystery and Magic":["The Case of the Fifth Word","The Magic Brush of Dreams","Spectacular Wonders"],"Unit 4: Environment":["The Cherry Tree","Harvest Hymn","Waiting for the Rain"],"Unit 5: Science and Curiosity":["Feathered Friend","Magnifying Glass","Bibha Chowdhuri: The Beam of Light that Lit the Path for Women in Indian Science"]},"OLD BOOK":{"Honeydew — Prose":["Chapter 1: The Best Christmas Present in the World","Chapter 2: The Tsunami","Chapter 3: Glimpses of the Past","Chapter 4: Bepin Choudhury's Lapse of Memory","Chapter 5: The Summit Within","Chapter 6: This is Jody's Fawn","Chapter 7: A Visit to Cambridge","Chapter 8: A Short Monsoon Diary","Chapter 9: The Great Stone Face - I","Chapter 10: The Great Stone Face - II"],"Honeydew — Poetry":["The Ant and the Cricket","Geography Lesson","Macavity - The Mystery Cat","The Last Bargain","The School Boy","The Duck and the Kangaroo","When I Set Out For Lyonnesse","On the Grasshopper and Cricket"],"It So Happened":["Chapter 1: How the Camel got his hump","Chapter 2: Children At Work","Chapter 3: The Selfish Giant","Chapter 4: The Treasure Within","Chapter 5: Princess September","Chapter 6: The Fight","Chapter 7: The Open Window","Chapter 8: Jalebi","Chapter 9: The Comet - I","Chapter 10: The Comet - II"]}}},
-9:{Mathematics:{"NEW BOOK":{"Part 1":["Orienting Yourself: The Use of Coordinates","Introduction to Linear Polynomials","The World of Numbers","Exploring Algebraic Identities","I'm Up and Down, and Round and Round (Circles)","Measuring Space: Perimeter and Area","The Mathematics of Maybe: Introduction to Probability","Predicting What Comes Next: Exploring Sequences and Progressions"],"Part 2":["Propositions and their Converses","How Quantities Combine: Understanding Data","The World of Algorithms","Quadrilaterals","Two Variables, One Line","Math of Space: Surface Area and Volume"]},"OLD BOOK":["Number Systems","Polynomials","Linear Equations in Two Variables","Coordinate Geometry","Introduction to Euclid’s Geometry","Lines and Angles","Triangles","Quadrilaterals","Circles","Heron’s Formula","Surface Areas and Volumes","Statistics"]},Science:{"NEW BOOK":["Exploration: Entering the World of Secondary Science","Cell: The Building Block of Life","Functional Tissues","Describing Motion Around Us","Exploring Mixtures and their Separation","Structure of the Atom","Atoms and Molecules","Gravitation","Work, Energy, and Power","Sound and Wave Motion","Diversity in the Living World","Reproduction and Continuity of Life","Our Environment and Natural Resources"],"OLD BOOK":{"Physics":["Motion (Chapter 8)","Force and Laws of Motion (Chapter 9)","Gravitation (Chapter 10)","Work and Energy (Chapter 11)","Sound (Chapter 12)"],Chemistry:["Matter","Purity of Matter","Atoms and Molecules","Atomic Structure"],Biology:["The Fundamental Unit of Life (Cells) — Chapter 5","Tissues — Chapter 6","Diversity in Living Organisms — Chapter 7","Why Do We Fall Ill? — Chapter 13","Natural Resources — Chapter 14","Improvement in Food Resources — Chapter 15"]}},SST:{"NEW BOOK":{"Part 1":["Understanding Social Science","Shaping of the Earth's Surface","Atmosphere and Climate","Early Humans and Beginning of Civilisation","State and Society up to 1000 CE","Democracy","Elections","Building Blocks in Economics: The Problem of Choice","The Price Puzzle: What Drives the Market","Oceans and Life","Life on Earth","Resistance and Resilience (1000 CE–1700 CE)","India and the World-I (1900 BCE–1200 CE)","Authority","From Ideas to Startups","Smart Ways to Manage Your Finances"],"Part 2":[]},"OLD BOOK":{"History":["The French Revolution","Socialism in Europe and the Russian Revolution","Nazism and the Rise of Hitler","Forest Society and Colonialism","Pastoralists in the Modern World","Peasants and Farmers","History and Sport: The Story of Cricket","Clothing: A Social History"],Geography:["India – Size and Location","Physical Features of India","Drainage (Rivers and Lakes)","Climate","Natural Vegetation and Wildlife","Population"],Civics:["Democracy in the Contemporary World","What is Democracy? Why Democracy?","Constitutional Design","Electoral Politics","Working of Institutions","Democratic Rights"],Economics:["The Story of Village Palampur","People as Resource","Poverty as a Challenge","Food Security in India"]}},English:{"NEW BOOK":["How I Taught My Grandmother to Read / Bharat Our Land","The Pot Maker / Gifts of Grace: Honouring Our Vocations","Winds of Change / Canvas of Soil","Vitamin-M / I Cannot Remember My Mother","The World of Limitless Possibilities / Nine Gold Medals","Twin Melodies / A Friend Found in Music","Follow That Dream / Believe in Yourself"],"OLD BOOK":{"Beehive — Prose":["The Fun They Had","The Sound of Music (I. Evelyn Glennie, II. Bismillah Khan)","The Little Girl","A Truly Beautiful Mind","The Snake and the Mirror","My Childhood","Packing","Reach for the Top (I. Santosh Yadav, II. Maria Sharapova)","The Bond of Love","Kathmandu","If I Were You"],"Beehive — Poetry":["The Road Not Taken","Wind","Rain on the Roof","The Lake Isle of Innisfree","A Legend of the Northland","No Men Are Foreign","The Duck and the Kangaroo","On Killing a Tree","The Snake Trying","A Slumber Did My Spirit Seal"],Moments:["The Lost Child","The Adventures of Toto","Iswaran the Storyteller","In the Kingdom of Fools","The Happy Prince","Weathering the Storm in Ersama","The Last Leaf","A House Is Not a Home","The Accidental Tourist","The Beggar"]}},Hindi:{"NEW BOOK":["दो बैलों की कथा","क्या लिखूँ?","संवादहीन","ऐसी भी बातें होती हैं","आखिरी चट्टान तक","रीढ़ की हड्डी","मैं और मेरा देश","रैदास के पद","राम-परशुराम-लक्ष्मण संवाद","भारति, जय, विजयकरे!","झाँसी की रानी","घर की याद"]}},
-10:{Mathematics:{"CHAPTERS":["Real Numbers","Polynomials","Pair of Linear Equations in Two Variables","Quadratic Equations","Arithmetic Progressions","Triangles","Coordinate Geometry","Introduction to Trigonometry","Some Applications of Trigonometry","Circles","Constructions","Areas Related to Circles","Surface Areas and Volumes","Statistics","Probability"]},Science:{"CHAPTERS":["Chemical Reactions and Equations","Acids, Bases and Salts","Metals and Non-metals","Carbon and Its Compounds","Periodic Classification of Elements","Life Processes","Control and Coordination","How Do Organisms Reproduce?","Heredity and Evolution","Light Reflection and Refraction","The Human Eye and Colourful World","Electricity","Magnetic Effects of Electric Current","Our Environment"]},"Social Science":{"CHAPTERS":["History","Geography","Civics","Economics"]},Hindi:{"Course A":[],"Course B":[]},AI:{"Part A — Employability Skills":["Communication Skills-II","Self-management Skills-II","Information and Communication Technology (ICT) Skills-II","Entrepreneurial Skills-II","Green Skills-II"],"Part B — Subject-Specific Skills":["Revisiting AI Project Cycle & Ethical Frameworks for AI","Advanced Concepts of Modeling in AI (Includes Machine Learning & Deep Learning)","Evaluating Models (Includes Confusion Matrix, Accuracy, Precision, Recall)","Statistical Data","Computer Vision","Natural Language Processing (NLP)","Advance Python"]}}
+const $=s=>document.querySelector(s), $$=s=>document.querySelectorAll(s);
+
+const programs=[
+  ["Learning Hub","Central learning space"],
+  ["Classes 6–10","Class-wise learning"],
+  ["Subjects & Chapters","Subject and chapter learning"],
+  ["Olympiad Hub","IOQM, IMO, IOM and Science Olympiads"],
+  ["AI Learning","AI Learning Tools"],
+  ["AI Editing Program","AI-assisted creative editing"],
+  ["Skill Labs","Coding, AI and practical skills"],
+  ["Practice Zone","Questions and practice"],
+  ["Resource Library","Notes and worksheets"],
+  ["Student Progress","Learning progress"],
+  ["Faculty / Mentors","Mentor information"],
+  ["Research Program","Student research"],
+  ["Idea-to-Project","Build projects"],
+  ["Communication Lab","Communication skills"],
+  ["Career Explorer","Future pathways"],
+  ["Challenge Arena","Competitions and challenges"],
+  ["Announcements","VANTARA updates"]
+];
+
+function closeWelcome(){
+  $("#welcomeScreen").classList.add("hidden");
+  localStorage.setItem("vantaraWelcomeSeen","1");
+}
+if(localStorage.getItem("vantaraWelcomeSeen")==="1") closeWelcome();
+
+$("#skipBtn").onclick=closeWelcome;
+$("#continueBtn").onclick=async()=>{
+  const email=$("#emailInput").value.trim();
+  if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){
+    $("#emailMessage").textContent="Please enter a valid email address.";
+    return;
+  }
+  localStorage.setItem("vantaraEmail",email);
+  $("#emailMessage").textContent="Thanks! Welcome to VANTARA EDUCATION.";
+  setTimeout(closeWelcome,600);
+  // Connect this endpoint to a real subscriber database when backend is ready.
+  try{ await fetch("/api/subscribe",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({email})}); }catch(e){}
 };
-let hist=[],cls,sub;
-const $=id=>document.getElementById(id);function page(id){document.querySelectorAll('.page').forEach(x=>x.classList.remove('active'));$(id).classList.add('active')}function cards(el,items,fn){$(el).innerHTML='';Object.keys(items).forEach(k=>{let b=document.createElement('button');b.textContent=k;b.onclick=()=>fn(k,items[k]);$(el).appendChild(b)})}function back(){let f=hist.pop();f?f():page('home')}function openClass(c){hist.push(()=>page('home'));cls=c;cards('sg',D[c],openSub);$('st').textContent='Class '+c+' — Subjects';page('subjects')}function openSub(s){hist.push(()=>openClass(cls));sub=s;render(D[cls][s],s)}function render(obj,title){$('ot').textContent=title;cards('og',obj,(k,v)=>{hist.push(()=>render(obj,title));if(Array.isArray(v)){openCh(k,v)}else render(v,k)});page('options')}function openCh(title,arr){hist.push(()=>page('options'));$('ct').textContent=title;cards('cg',Object.fromEntries(arr.map(x=>[x,x])),(_,v)=>openChapter(v));page('chapters')}function openChapter(ch){hist.push(()=>page('chapters'));$('cht').textContent=ch;let key=cls+'|'+sub+'|'+ch,id=VIDEOS[key];$('video').innerHTML=id?`<div class="video"><h3>🎥 Video Lecture</h3><iframe src="https://www.youtube.com/embed/${id}" allowfullscreen></iframe></div>`:`<div class="video"><h3>🎥 Video Lecture</h3><p class="muted">Video not added yet. Add the YouTube video ID in the VIDEOS object in this file when your own/authorized lecture is ready.</p></div>`;page('chapter')}
-const VIDEOS={};[8,9,10].forEach(c=>{let b=document.createElement('button');b.textContent='Class '+c;b.onclick=()=>openClass(c);$('classes').appendChild(b)});
 
+$("#footerSubscribe").onsubmit=e=>{
+  e.preventDefault();
+  const email=$("#footerEmail").value.trim();
+  if(email){localStorage.setItem("vantaraEmail",email);$("#footerMessage").textContent="You're on the VANTARA update list on this device. Backend connection can be added later.";}
+};
 
-// ===== VANTARA PROFESSIONAL PLATFORM FEATURES =====
-const showPage = (id) => { document.querySelectorAll('.page').forEach(p=>p.classList.remove('active')); const p=document.getElementById(id); if(p)p.classList.add('active'); window.scrollTo({top:0,behavior:'smooth'}); document.querySelectorAll('#mainNav [data-page]').forEach(b=>b.classList.toggle('active',b.dataset.page===id)); };
-document.querySelectorAll('[data-page]').forEach(b=>b.addEventListener('click',()=>{ const id=b.dataset.page; if(id==='learning'){showPage('learning');resetLearningView?.();} else showPage(id); }));
-document.getElementById('menuBtn')?.addEventListener('click',()=>document.getElementById('mainNav')?.classList.toggle('open'));
+$("#menuBtn").onclick=()=>$("#mainNav").classList.toggle("open");
+$$('#mainNav a').forEach(a=>a.onclick=()=>$("#mainNav").classList.remove("open"));
 
-// Global search
-const searchIndex=[['Class 8 Mathematics','learning'],['Class 8 Science','learning'],['Class 9 Mathematics','learning'],['Class 10 Mathematics','learning'],['IOQM','olympiad'],['Number Theory','resources'],['Practice Zone','practice'],['Resource Library','resources'],['Student Progress','progress'],['Faculty / Mentors','faculty'],['Announcements','announcements']];
-document.getElementById('globalSearch')?.addEventListener('input',e=>{const q=e.target.value.toLowerCase().trim(),box=document.getElementById('searchResults');if(!q){box.innerHTML='';box.classList.remove('show');return}const hits=searchIndex.filter(x=>x[0].toLowerCase().includes(q));box.innerHTML=hits.map(x=>`<button data-sp="${x[1]}"><b>${x[0]}</b><small>Open VANTARA section</small></button>`).join('')||'<p class="muted">No result found.</p>';box.classList.add('show');box.querySelectorAll('[data-sp]').forEach(b=>b.onclick=()=>{showPage(b.dataset.sp);box.classList.remove('show')});});
+const classSubjects={
+  6:["Mathematics","Science","English","Social Science","Computer"],
+  7:["Mathematics","Science","English","Social Science","Computer"],
+  8:["Mathematics","Science","English","Social Science","Computer"],
+  9:["Mathematics","Science","English","Social Science","Computer"],
+  10:["Mathematics","Science","English","Social Science","Computer"]
+};
+$$(".class-card").forEach(btn=>btn.onclick=()=>{
+  const c=btn.dataset.class;
+  $("#classPanel").innerHTML=`<strong>Class ${c}</strong><div class="welcome-points" style="margin-top:12px">${classSubjects[c].map(s=>`<span>${s}</span>`).join("")}</div><p>Chapter pages and resources can be connected here as you add your content.</p>`;
+});
 
-const practiceData=[['Which number is prime?',['21','29','39','51'],1,'Mathematics','Easy'],['Remainder when 17 is divided by 5?',['1','2','3','4'],1,'Olympiad','Easy'],['Which is a perfect square?',['18','24','36','50'],2,'Olympiad','Easy'],['A force can change an object’s motion. This belongs to:',['Physics','History','Grammar','Economics'],0,'Science','Easy'],['Which is a conjunction?',['quickly','and','beautiful','student'],1,'English','Easy'],['A number divisible by 6 must be divisible by:',['2 and 3','4 and 5','7 only','9 only'],0,'Olympiad','Medium']];
-let practiceStats=JSON.parse(localStorage.getItem('vantaraPracticeStats')||'{"attempted":0,"correct":0}');
-function renderPractice(){const s=document.getElementById('practiceSubject')?.value||'All',d=document.getElementById('practiceDifficulty')?.value||'All',list=practiceData.filter(x=>(s==='All'||x[3]===s)&&(d==='All'||x[4]===d));const box=document.getElementById('practiceList');if(!box)return;box.innerHTML=list.map((x,i)=>`<article class="question-card"><span class="tag">${x[3]} • ${x[4]}</span><h3>${x[0]}</h3><div class="options">${x[1].map((o,j)=>`<button data-pq="${i}" data-pa="${j}">${o}</button>`).join('')}</div><p id="pf${i}"></p></article>`).join('');box.querySelectorAll('[data-pq]').forEach(b=>b.onclick=()=>{const x=list[+b.dataset.pq],f=document.getElementById('pf'+b.dataset.pq);if(f.textContent)return;practiceStats.attempted++;if(+b.dataset.pa===x[2]){practiceStats.correct++;f.textContent='✓ Correct!';f.className='correct'}else{f.textContent='✗ Try again. Review the concept.';f.className='wrong'}localStorage.setItem('vantaraPracticeStats',JSON.stringify(practiceStats));updateProgress();});}
-document.getElementById('practiceSubject')?.addEventListener('change',renderPractice);document.getElementById('practiceDifficulty')?.addEventListener('change',renderPractice);
+const questions=[
+  {s:"Maths",l:"Foundation",q:"Find the smallest prime number greater than 20."},
+  {s:"Maths",l:"Olympiad",q:"What invariant would you look for in a parity problem?"},
+  {s:"Science",l:"Foundation",q:"Name the force that pulls objects toward Earth."},
+  {s:"Logic",l:"Intermediate",q:"Complete the pattern: 2, 6, 12, 20, __."},
+  {s:"English",l:"Foundation",q:"Identify the tense: 'She has completed her work.'"},
+  {s:"Coding",l:"Intermediate",q:"What is a loop used for in programming?"}
+];
+function renderQuestions(){
+  const s=$("#practiceSubject").value,l=$("#practiceLevel").value;
+  const list=questions.filter(x=>(s==="all"||x.s===s)&&(l==="all"||x.l===l));
+  $("#practiceList").innerHTML=list.map((x,i)=>`<article class="question-card"><span class="tag">${x.s} • ${x.l}</span><h3>Question ${i+1}</h3><p>${x.q}</p><button class="secondary-btn practice-done" data-index="${i}" style="margin-top:14px">Mark Practised</button></article>`).join("")||"<p>No questions match these filters yet.</p>";
+  $$(".practice-done").forEach(b=>b.onclick=()=>{
+    const n=Number(localStorage.getItem("vantaraPractised")||0)+1;
+    localStorage.setItem("vantaraPractised",n);
+    updateProgress();
+    b.textContent="✓ Practised";
+  });
+}
+$("#practiceSubject").onchange=renderQuestions;
+$("#practiceLevel").onchange=renderQuestions;
+renderQuestions();
 
-const resources=[['Number Theory — Chapter 1','Notes','Olympiad'],['Number Theory Practice Set','Questions','Olympiad'],['IOQM Preparation Material','PDF','Olympiad'],['Class 10 Mathematics','Notes','Mathematics'],['Science Learning Resources','Video','Science'],['Solutions & Explanations','Solutions','All']];
-function renderResources(){const q=(document.getElementById('resourceSearch')?.value||'').toLowerCase(),t=document.getElementById('resourceType')?.value||'All',box=document.getElementById('resourceList');if(!box)return;box.innerHTML=resources.filter(x=>(t==='All'||x[1]===t)&&x.join(' ').toLowerCase().includes(q)).map(x=>`<article class="resource-card"><span class="tag">${x[1]}</span><h3>${x[0]}</h3><small>${x[2]}</small><p class="muted">Add your authorized VANTARA resource link here.</p><button onclick="alert('Add the resource URL in app.js for this resource.')">Open Resource</button></article>`).join('');}
-document.getElementById('resourceSearch')?.addEventListener('input',renderResources);document.getElementById('resourceType')?.addEventListener('change',renderResources);
+function updateProgress(){
+  const n=Math.min(Number(localStorage.getItem("vantaraPractised")||0),20);
+  const pct=Math.round(n/20*100);
+  $("#progressBar").style.width=pct+"%";
+  $("#progressText").textContent=`${pct}% completed • ${n} practice items`;
+}
+updateProgress();
 
-const progressTopics=['Number Theory — Foundations','Divisibility & Division Algorithm','Prime Numbers','HCF & LCM','Modular Arithmetic','Diophantine Equations'];let completed=JSON.parse(localStorage.getItem('vantaraCompleted')||'[]');
-function updateProgress(){document.getElementById('completedCount').textContent=completed.length;document.getElementById('practiceCount').textContent=practiceStats.attempted;document.getElementById('accuracyCount').textContent=practiceStats.attempted?Math.round(practiceStats.correct/practiceStats.attempted*100)+'%':'0%';const box=document.getElementById('progressList');if(!box)return;box.innerHTML=progressTopics.map((x,i)=>`<label class="progress-row"><input type="checkbox" data-prog="${i}" ${completed.includes(i)?'checked':''}><span>${x}</span><b>${completed.includes(i)?'Completed':'Not started'}</b></label>`).join('');box.querySelectorAll('[data-prog]').forEach(c=>c.onchange=()=>{const i=+c.dataset.prog;completed=c.checked?[...new Set([...completed,i])]:completed.filter(x=>x!==i);localStorage.setItem('vantaraCompleted',JSON.stringify(completed));updateProgress();});}
-document.getElementById('resetProgress')?.addEventListener('click',()=>{if(!confirm('Reset your VANTARA progress on this device?'))return;completed=[];practiceStats={attempted:0,correct:0};localStorage.removeItem('vantaraCompleted');localStorage.setItem('vantaraPracticeStats',JSON.stringify(practiceStats));updateProgress();});
-
-const announcements=[['Olympiad Hub','VANTARA Olympiad Hub — structured Olympiad Mathematics learning.','Olympiad'],['Number Theory','Chapter 1 — Number Theory learning resources.','Learning'],['Practice Zone','Practice questions are available for concept practice.','Practice'],['Resource Library','More VANTARA notes, PDFs, videos and solutions can be added here.','Resources']];
-function renderAnnouncements(){const box=document.getElementById('announcementList');if(box)box.innerHTML=announcements.map(a=>`<article class="announcement"><span class="tag">${a[2]}</span><h3>${a[0]}</h3><p class="muted">${a[1]}</p></article>`).join('');}
-
-// Email popup: sends to your future /api/subscribe endpoint.
-const popup=document.getElementById('vantaraEmailPopup');function closeEmailPopup(){if(popup)popup.style.display='none';localStorage.setItem('vantaraEmailPopupClosed','1')}document.getElementById('skipEmailPopup')?.addEventListener('click',closeEmailPopup);document.getElementById('skipEmailPopup2')?.addEventListener('click',closeEmailPopup);document.getElementById('vantaraEmailContinue')?.addEventListener('click',async()=>{const input=document.getElementById('vantaraEmail'),msg=document.getElementById('vantaraEmailMessage'),email=input.value.trim();if(!input.checkValidity()){msg.textContent='Please enter a valid email address.';msg.className='popup-message error';return}msg.textContent='Saving your email...';try{const r=await fetch('/api/subscribe',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email})});const data=await r.json();if(!r.ok)throw new Error(data.error||'Failed');msg.textContent='Thank you for joining VANTARA EDUCATION!';msg.className='popup-message success';localStorage.setItem('vantaraVisitorEmail',email);setTimeout(closeEmailPopup,1200)}catch(e){msg.textContent='Email registration is not connected yet.';msg.className='popup-message error'}});if(localStorage.getItem('vantaraEmailPopupClosed')==='1'&&popup)popup.style.display='none';
-
-renderPractice();renderResources();renderAnnouncements();updateProgress();
+const searchInput=$("#globalSearch");
+function search(){
+  const q=searchInput.value.toLowerCase().trim();
+  const matches=q?programs.filter(x=>(x[0]+" "+x[1]).toLowerCase().includes(q)):[];
+  $("#searchResults").innerHTML=matches.map(x=>`<a class="search-result" href="#programs">${x[0]} — ${x[1]}</a>`).join("")||(q?"No matching section found.":"");
+}
+searchInput.oninput=search;

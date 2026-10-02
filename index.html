@@ -1,14 +1,214 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#0b0b0f"><meta name="description" content="VANTARA EDUCATION — school learning and Olympiad preparation."><title>VANTARA EDUCATION</title><link rel="stylesheet" href="style.css"></head><body><header class="site-header"><div class="brand"><div class="logo">V</div><div><b>VANTARA EDUCATION</b><small>Learn • Explore • Build • Achieve</small></div></div><button class="menu-btn" id="menuBtn">☰</button><nav id="mainNav"><button data-page="home">Home</button><button data-page="learning">Classes</button><button data-page="olympiad">Olympiad Hub</button><button data-page="practice">Practice Zone</button><button data-page="resources">Resource Library</button><button data-page="progress">Student Progress</button><button data-page="faculty">Faculty / Mentors</button><button data-page="announcements">Announcements</button></nav></header><main><section id="home" class="page active"><div class="hero"><span class="eyebrow">VANTARA EDUCATION</span><h2>Build concepts. Think deeper. Solve better.</h2><p>School learning and Olympiad preparation in one structured platform.</p><div class="hero-actions"><button class="primary" data-page="learning">Start Learning</button><button data-page="olympiad">Explore Olympiad Hub</button></div></div><div class="search-wrap"><input id="globalSearch" type="search" placeholder="🔎 Search classes, chapters, resources or Olympiad topics..."><div id="searchResults" class="search-results"></div></div><h2>Choose Class</h2><div id="classes" class="grid"></div></section><div class="feature-grid"><button class="feature-card" data-page="learning">📚 <b>Classes</b><small>Subjects and chapters</small></button><button class="feature-card" data-page="olympiad">🏆 <b>Olympiad Hub</b><small>IOQM and Olympiad learning</small></button><button class="feature-card" data-page="practice">📝 <b>Practice Zone</b><small>Practice by subject and level</small></button><button class="feature-card" data-page="resources">📖 <b>Resource Library</b><small>Notes, PDFs, videos and solutions</small></button><button class="feature-card" data-page="progress">🎯 <b>Student Progress</b><small>Track learning on this device</small></button><button class="feature-card" data-page="announcements">📢 <b>Announcements</b><small>Latest VANTARA updates</small></button></div></section><section id="subjects" class="page"><button class="back" onclick="back()">← Back</button><h2 id="st"></h2><div id="sg" class="grid"></div></section><section id="options" class="page"><button class="back" onclick="back()">← Back</button><h2 id="ot"></h2><p class="muted">Choose a book, part, unit, theme or section.</p><div id="og" class="grid"></div></section><section id="chapters" class="page"><button class="back" onclick="back()">← Back</button><h2 id="ct"></h2><div id="cg" class="grid"></div></section><section id="chapter" class="page"><button class="back" onclick="back()">← Back</button><h2 id="cht"></h2><p class="muted">Learning resources</p><div id="video"></div></section><section id="learning" class="page"><h2>📚 Classes</h2><p class="muted">Choose a class below.</p><div id="classLaunch" class="grid"></div></section><section id="olympiad" class="page"><div class="hero compact"><span class="eyebrow">VANTARA OLYMPIAD HUB</span><h2>Think. Solve. Explore. Excel.</h2><p>IOQM and Olympiad Mathematics learning for Classes 6–10.</p></div><div class="feature-grid"><button class="feature-card" data-page="practice">🧮 <b>IOQM Practice</b><small>Patterns, reasoning and problem solving</small></button><button class="feature-card" data-page="resources">📚 <b>Olympiad Resources</b><small>Notes and problem sets</small></button></div></section><section id="practice" class="page"><h2>📝 Practice Zone</h2><div class="toolbar"><select id="practiceSubject"><option>All</option><option>Mathematics</option><option>Science</option><option>Olympiad</option></select><select id="practiceDifficulty"><option>All</option><option>Easy</option><option>Medium</option><option>Hard</option></select></div><div id="practiceList" class="question-grid"></div></section><section id="resources" class="page"><h2>📖 Resource Library</h2><div class="toolbar"><input id="resourceSearch" placeholder="Search resources..."><select id="resourceType"><option>All</option><option>Notes</option><option>PDF</option><option>Video</option><option>Questions</option><option>Solutions</option></select></div><div id="resourceList" class="resource-grid"></div></section><section id="progress" class="page"><h2>🎯 Student Progress</h2><div class="progress-summary"><div class="stat"><b id="completedCount">0</b><span>Completed</span></div><div class="stat"><b id="practiceCount">0</b><span>Questions</span></div><div class="stat"><b id="accuracyCount">0%</b><span>Accuracy</span></div></div><div id="progressList" class="progress-card"></div><button id="resetProgress" class="danger">Reset Progress</button></section><section id="faculty" class="page"><h2>👨‍🏫 Faculty / Mentors</h2><div class="faculty-grid"><article class="faculty-card"><div class="avatar">RM</div><h3>Mr. Rajesh Mehra</h3><p class="role">Olympiad Mathematics Mentor</p><p>B.Sc. Mathematics • M.Sc. Mathematics • B.Ed.</p><p>Certificate in Advanced Problem Solving & Mathematical Reasoning.</p></article><article class="faculty-card"><div class="avatar">VE</div><h3>VANTARA EDUCATION</h3><p class="role">Learning & Content Team</p><p>Structured school learning, Olympiad preparation and student resources.</p></article></div></section><section id="announcements" class="page"><h2>📢 Announcement Center</h2><div id="announcementList" class="announcement-list"></div></section></main><script>
-const D={
-8:{Mathematics:{"NEW BOOK":{"Part 1":["A Square and A Cube","Power Play","A Story of Numbers","Quadrilaterals","Number Play","We Distribute, Yet Things Multiply","Proportional Reasoning - 1"],"Part 2":["Fractions in Disguise (Percentages & Applications)","The Baudhayana-Pythagoras Theorem","Proportional Reasoning-2","Exploring Some Geometric Themes (3D Geometry & Fractals)","Tales by Dots and Lines (Statistics, Mean, & Median)","Algebra Play","Area"]},"OLD BOOK":["Rational Numbers","Linear Equations in One Variable","Understanding Quadrilaterals","Practical Geometry","Data Handling","Squares and Square Roots","Cubes and Cube Roots","Comparing Quantities","Algebraic Expressions and Identities","Visualising Solid Shapes","Mensuration","Exponents and Powers","Direct and Inverse Proportions","Factorisation","Introduction to Graphs","Playing with Numbers"]},
-Science:{"NEW BOOK":["Exploring the Investigative World of Science","The Invisible Living World: Beyond Our Naked Eye","Health: The Ultimate Treasure","Electricity: Magnetic and Heating Effects","Exploring Forces","Pressure, Winds, Storms, and Cyclones","Particulate Nature of Matter","Nature of Matter: Elements, Compounds, and Mixtures","The Amazing World of Solutes, Solvents, and Solutions","Light: Mirrors and Lenses","Keeping Time with the Skies","How Nature Works in Harmony","Our Home: Earth, a Unique Life Sustaining Planet"],"OLD BOOK":["Exploring the Investigative World of Science","Parts of an Organism—Cell and its Structure","Microorganisms: Friend and Foe","Combustion and Flame","Conservation of Plants and Animals","Force and Pressure","Friction","Sound","Chemical Effects of Electric Current","Some Natural Phenomena","Light","Earth: Its Dynamics and Internal Structures","Stars and the Solar System"]},
-SST:{"NEW BOOK":{"Part 1":["India’s Geographical Location and Physical Features","Land, Soil, and Water Resources","Dynamic Earth: Movements and Landforms","The Tapestry of Ancient Indian Civilisations","Medieval Transitions and Society","Colonial Impact and Economic Disruptions","Understanding Governance and the Indian Constitution","Secularism and the Judiciary"],"Part 2":{"Theme A — India & the World: Land & People":["Chapter 1: World Geography: Some Glimpses"],"Theme B — Tapestry of the Past":["Chapter 2: India’s Long Road to Independence"],"Theme C — Our Cultural Heritage & Traditions":["Chapter 3: A Journey Through Indian Architecture"],"Theme D — Governance and Democracy":["Chapter 4: The Role of the Judiciary in Our Society","Chapter 5: Citizenship: Rights and Duties"],"Theme E — Economic Life Around Us":["Chapter 6: Dynamics of Population","Chapter 7: India’s Urban Landscape","Chapter 8: Cultural Currents: 13th to 17th Centuries"]}},"OLD NCERT":{"History":["Chapter 1: How, When and Where","Chapter 2: From Trade to Territory (The Company Establishes Power)","Chapter 3: Ruling the Countryside","Chapter 4: Tribals, Dikus and the Vision of a Golden Age","Chapter 5: When People Rebel (1857 and After)","Chapter 6: Weavers, Iron Smelters and Factory Owners","Chapter 7: Civilising the \"Native\", Educating the Nation","Chapter 8: Women, Caste and Reform","Chapter 9: The Making of the National Movement: 1870s–1947","Chapter 10: India After Independence"],Geography:["Chapter 1: Resources","Chapter 2: Land, Soil, Water, Natural Vegetation and Wildlife Resources","Chapter 3: Mineral and Power Resources","Chapter 4: Agriculture","Chapter 5: Industries","Chapter 6: Human Resources"],Civics:{"Unit 1 — The Indian Constitution and Secularism":["Chapter 1: The Indian Constitution","Chapter 2: Understanding Secularism"],"Unit 2 — Parliament and the Making of Laws":["Chapter 3: Why do we need a Parliament?","Chapter 4: Understanding Laws"],"Unit 3 — The Judiciary":["Chapter 5: Judiciary","Chapter 6: Understanding Our Criminal Justice System"],"Unit 4 — Social Justice and the Marginalised":["Chapter 7: Understanding Marginalisation","Chapter 8: Confronting Marginalisation"],"Unit 5 — Economic Presence of the Government":["Chapter 9: Public Facilities","Chapter 10: Law and Social Justice"]}}},
-Hindi:{"NEW BOOK":["स्वदेश (कविता)","दो गौरैया (कहानी)","एक आशीर्वाद (कविता)","हरिद्वार (पत्र)","कबीर के दोहे","एक टोकरी भर मिट्टी (कहानी)","मत बाँधो (कविता)","नए मेहमान (एकांकी)","आदमी का अनुपात (कविता)","तरुण के स्वप्न (उद्बोधन)"],"OLD BOOK":{"वसंत भाग-3":["अध्याय 1: ध्वनि (कविता)","अध्याय 2: लाख की चूड़ियाँ (कहानी)","अध्याय 3: बस की यात्रा (व्यंग्य)","अध्याय 4: दीवानों की हस्ती (कविता)","अध्याय 5: चिट्ठियों की अनूठी दुनिया (निबंध)","अध्याय 6: भगवान के डाकिए (कविता)","अध्याय 7: क्या निराश हुआ जाए (निबंध)","अध्याय 8: यह सबसे कठिन समय नहीं (कविता)","अध्याय 9: कबीर की साखियाँ (साखियाँ)","अध्याय 10: कामचोर (कहानी)","अध्याय 11: जब सिनेमा ने बोलना सीखा (निबंध)","अध्याय 12: सुदामा चरित (कविता)","अध्याय 13: जहाँ पहिया है (रिपोर्ताज)","अध्याय 14: अकबरी लोटा (कहानी)","अध्याय 15: सूरदास के पद (कविता)","अध्याय 16: पानी की कहानी (निबंध)","अध्याय 17: बाज और साँप (कहानी)","अध्याय 18: टोपी (कहानी)"],"भारत की खोज":["अध्याय 1: अहमनगर का किला","अध्याय 2: तलाश","अध्याय 3: सिंधु घाटी सभ्यता","अध्याय 4: युगों का दौर","अध्याय 5: नयी समस्याएँ","अध्याय 6: अंतिम दौर - एक","अध्याय 7: अंतिम दौर - दो","अध्याय 8: तनाव","अध्याय 9: दो पृष्ठभूमियाँ - भारतीय और अंग्रेजी"]}},
-English:{"NEW BOOK":{"Unit 1: Wit and Wisdom":["The Wit that Won Hearts","A Concrete Example","Wisdom Paves the Way"],"Unit 2: Values and Dispositions":["A Tale of Valour: Major Somnath Sharma and the Battle of Badgam","Somebody's Mother","Verghese Kurien-I Too Had A Dream"],"Unit 3: Mystery and Magic":["The Case of the Fifth Word","The Magic Brush of Dreams","Spectacular Wonders"],"Unit 4: Environment":["The Cherry Tree","Harvest Hymn","Waiting for the Rain"],"Unit 5: Science and Curiosity":["Feathered Friend","Magnifying Glass","Bibha Chowdhuri: The Beam of Light that Lit the Path for Women in Indian Science"]},"OLD BOOK":{"Honeydew — Prose":["Chapter 1: The Best Christmas Present in the World","Chapter 2: The Tsunami","Chapter 3: Glimpses of the Past","Chapter 4: Bepin Choudhury's Lapse of Memory","Chapter 5: The Summit Within","Chapter 6: This is Jody's Fawn","Chapter 7: A Visit to Cambridge","Chapter 8: A Short Monsoon Diary","Chapter 9: The Great Stone Face - I","Chapter 10: The Great Stone Face - II"],"Honeydew — Poetry":["The Ant and the Cricket","Geography Lesson","Macavity - The Mystery Cat","The Last Bargain","The School Boy","The Duck and the Kangaroo","When I Set Out For Lyonnesse","On the Grasshopper and Cricket"],"It So Happened":["Chapter 1: How the Camel got his hump","Chapter 2: Children At Work","Chapter 3: The Selfish Giant","Chapter 4: The Treasure Within","Chapter 5: Princess September","Chapter 6: The Fight","Chapter 7: The Open Window","Chapter 8: Jalebi","Chapter 9: The Comet - I","Chapter 10: The Comet - II"]}}},
-9:{Mathematics:{"NEW BOOK":{"Part 1":["Orienting Yourself: The Use of Coordinates","Introduction to Linear Polynomials","The World of Numbers","Exploring Algebraic Identities","I'm Up and Down, and Round and Round (Circles)","Measuring Space: Perimeter and Area","The Mathematics of Maybe: Introduction to Probability","Predicting What Comes Next: Exploring Sequences and Progressions"],"Part 2":["Propositions and their Converses","How Quantities Combine: Understanding Data","The World of Algorithms","Quadrilaterals","Two Variables, One Line","Math of Space: Surface Area and Volume"]},"OLD BOOK":["Number Systems","Polynomials","Linear Equations in Two Variables","Coordinate Geometry","Introduction to Euclid’s Geometry","Lines and Angles","Triangles","Quadrilaterals","Circles","Heron’s Formula","Surface Areas and Volumes","Statistics"]},Science:{"NEW BOOK":["Exploration: Entering the World of Secondary Science","Cell: The Building Block of Life","Functional Tissues","Describing Motion Around Us","Exploring Mixtures and their Separation","Structure of the Atom","Atoms and Molecules","Gravitation","Work, Energy, and Power","Sound and Wave Motion","Diversity in the Living World","Reproduction and Continuity of Life","Our Environment and Natural Resources"],"OLD BOOK":{"Physics":["Motion (Chapter 8)","Force and Laws of Motion (Chapter 9)","Gravitation (Chapter 10)","Work and Energy (Chapter 11)","Sound (Chapter 12)"],Chemistry:["Matter","Purity of Matter","Atoms and Molecules","Atomic Structure"],Biology:["The Fundamental Unit of Life (Cells) — Chapter 5","Tissues — Chapter 6","Diversity in Living Organisms — Chapter 7","Why Do We Fall Ill? — Chapter 13","Natural Resources — Chapter 14","Improvement in Food Resources — Chapter 15"]}},SST:{"NEW BOOK":{"Part 1":["Understanding Social Science","Shaping of the Earth's Surface","Atmosphere and Climate","Early Humans and Beginning of Civilisation","State and Society up to 1000 CE","Democracy","Elections","Building Blocks in Economics: The Problem of Choice","The Price Puzzle: What Drives the Market","Oceans and Life","Life on Earth","Resistance and Resilience (1000 CE–1700 CE)","India and the World-I (1900 BCE–1200 CE)","Authority","From Ideas to Startups","Smart Ways to Manage Your Finances"],"Part 2":[]},"OLD BOOK":{"History":["The French Revolution","Socialism in Europe and the Russian Revolution","Nazism and the Rise of Hitler","Forest Society and Colonialism","Pastoralists in the Modern World","Peasants and Farmers","History and Sport: The Story of Cricket","Clothing: A Social History"],Geography:["India – Size and Location","Physical Features of India","Drainage (Rivers and Lakes)","Climate","Natural Vegetation and Wildlife","Population"],Civics:["Democracy in the Contemporary World","What is Democracy? Why Democracy?","Constitutional Design","Electoral Politics","Working of Institutions","Democratic Rights"],Economics:["The Story of Village Palampur","People as Resource","Poverty as a Challenge","Food Security in India"]}},English:{"NEW BOOK":["How I Taught My Grandmother to Read / Bharat Our Land","The Pot Maker / Gifts of Grace: Honouring Our Vocations","Winds of Change / Canvas of Soil","Vitamin-M / I Cannot Remember My Mother","The World of Limitless Possibilities / Nine Gold Medals","Twin Melodies / A Friend Found in Music","Follow That Dream / Believe in Yourself"],"OLD BOOK":{"Beehive — Prose":["The Fun They Had","The Sound of Music (I. Evelyn Glennie, II. Bismillah Khan)","The Little Girl","A Truly Beautiful Mind","The Snake and the Mirror","My Childhood","Packing","Reach for the Top (I. Santosh Yadav, II. Maria Sharapova)","The Bond of Love","Kathmandu","If I Were You"],"Beehive — Poetry":["The Road Not Taken","Wind","Rain on the Roof","The Lake Isle of Innisfree","A Legend of the Northland","No Men Are Foreign","The Duck and the Kangaroo","On Killing a Tree","The Snake Trying","A Slumber Did My Spirit Seal"],Moments:["The Lost Child","The Adventures of Toto","Iswaran the Storyteller","In the Kingdom of Fools","The Happy Prince","Weathering the Storm in Ersama","The Last Leaf","A House Is Not a Home","The Accidental Tourist","The Beggar"]}},Hindi:{"NEW BOOK":["दो बैलों की कथा","क्या लिखूँ?","संवादहीन","ऐसी भी बातें होती हैं","आखिरी चट्टान तक","रीढ़ की हड्डी","मैं और मेरा देश","रैदास के पद","राम-परशुराम-लक्ष्मण संवाद","भारति, जय, विजयकरे!","झाँसी की रानी","घर की याद"]}},
-10:{Mathematics:{"CHAPTERS":["Real Numbers","Polynomials","Pair of Linear Equations in Two Variables","Quadratic Equations","Arithmetic Progressions","Triangles","Coordinate Geometry","Introduction to Trigonometry","Some Applications of Trigonometry","Circles","Constructions","Areas Related to Circles","Surface Areas and Volumes","Statistics","Probability"]},Science:{"CHAPTERS":["Chemical Reactions and Equations","Acids, Bases and Salts","Metals and Non-metals","Carbon and Its Compounds","Periodic Classification of Elements","Life Processes","Control and Coordination","How Do Organisms Reproduce?","Heredity and Evolution","Light Reflection and Refraction","The Human Eye and Colourful World","Electricity","Magnetic Effects of Electric Current","Our Environment"]},"Social Science":{"CHAPTERS":["History","Geography","Civics","Economics"]},Hindi:{"Course A":[],"Course B":[]},AI:{"Part A — Employability Skills":["Communication Skills-II","Self-management Skills-II","Information and Communication Technology (ICT) Skills-II","Entrepreneurial Skills-II","Green Skills-II"],"Part B — Subject-Specific Skills":["Revisiting AI Project Cycle & Ethical Frameworks for AI","Advanced Concepts of Modeling in AI (Includes Machine Learning & Deep Learning)","Evaluating Models (Includes Confusion Matrix, Accuracy, Precision, Recall)","Statistical Data","Computer Vision","Natural Language Processing (NLP)","Advance Python"]}}
-};
-let hist=[],cls,sub;
-const $=id=>document.getElementById(id);function page(id){document.querySelectorAll('.page').forEach(x=>x.classList.remove('active'));$(id).classList.add('active')}function cards(el,items,fn){$(el).innerHTML='';Object.keys(items).forEach(k=>{let b=document.createElement('button');b.textContent=k;b.onclick=()=>fn(k,items[k]);$(el).appendChild(b)})}function back(){let f=hist.pop();f?f():page('home')}function openClass(c){hist.push(()=>page('home'));cls=c;cards('sg',D[c],openSub);$('st').textContent='Class '+c+' — Subjects';page('subjects')}function openSub(s){hist.push(()=>openClass(cls));sub=s;render(D[cls][s],s)}function render(obj,title){$('ot').textContent=title;cards('og',obj,(k,v)=>{hist.push(()=>render(obj,title));if(Array.isArray(v)){openCh(k,v)}else render(v,k)});page('options')}function openCh(title,arr){hist.push(()=>page('options'));$('ct').textContent=title;cards('cg',Object.fromEntries(arr.map(x=>[x,x])),(_,v)=>openChapter(v));page('chapters')}function openChapter(ch){hist.push(()=>page('chapters'));$('cht').textContent=ch;let key=cls+'|'+sub+'|'+ch,id=VIDEOS[key];$('video').innerHTML=id?`<div class="video"><h3>🎥 Video Lecture</h3><iframe src="https://www.youtube.com/embed/${id}" allowfullscreen></iframe></div>`:`<div class="video"><h3>🎥 Video Lecture</h3><p class="muted">Video not added yet. Add the YouTube video ID in the VIDEOS object in this file when your own/authorized lecture is ready.</p></div>`;page('chapter')}
-const VIDEOS={};[8,9,10].forEach(c=>{let b=document.createElement('button');b.textContent='Class '+c;b.onclick=()=>openClass(c);$('classes').appendChild(b)});
-</script><script src="app.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="VANTARA EDUCATION — Learn. Grow. Achieve. Education Without Limits.">
+  <title>VANTARA EDUCATION</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Stay Updated / Sign In -->
+  <div id="welcomeScreen" class="welcome-screen">
+    <div class="welcome-card">
+      <div class="brand-mark">V</div>
+      <p class="eyebrow">VANTARA EDUCATION</p>
+      <h1>Learn. Grow. Achieve.</h1>
+      <p class="welcome-text">Education Without Limits.</p>
+      <div class="welcome-points">
+        <span>📚 Learning</span><span>🏆 Olympiads</span><span>💡 Skills</span>
+      </div>
+      <label for="emailInput">Stay Updated</label>
+      <input id="emailInput" type="email" placeholder="Enter your email address" autocomplete="email">
+      <button id="continueBtn" class="primary-btn">Continue</button>
+      <button id="skipBtn" class="text-btn">Skip for now</button>
+      <p id="emailMessage" class="form-message"></p>
+      <small>We only use your email for VANTARA updates.</small>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <a href="#home" class="logo">VANTARA <span>EDUCATION</span></a>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+    <nav id="mainNav">
+      <a href="#home">Home</a>
+      <a href="#learning">Learning Hub</a>
+      <a href="#classes">Classes</a>
+      <a href="#olympiad">Olympiad Hub</a>
+      <a href="#ai">AI Learning</a>
+      <a href="#programs">Programs</a>
+      <a href="#practice">Practice</a>
+      <a href="#resources">Resources</a>
+      <a href="#more">More</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" class="hero section">
+      <div class="hero-copy">
+        <p class="eyebrow">VANTARA EDUCATION</p>
+        <h1>Learn. <span>Grow.</span> Achieve.</h1>
+        <p>One learning platform for academics, Olympiads, AI, skills, research, projects and future-ready learning.</p>
+        <div class="hero-actions">
+          <a class="primary-btn" href="#learning">Explore Learning</a>
+          <a class="secondary-btn" href="#olympiad">Explore Olympiad Hub</a>
+        </div>
+      </div>
+      <div class="hero-panel">
+        <div class="hero-badge">EDUCATION WITHOUT LIMITS</div>
+        <div class="orbit-card">📚 Learn</div>
+        <div class="orbit-card">🏆 Compete</div>
+        <div class="orbit-card">💡 Create</div>
+        <div class="orbit-card">🚀 Explore</div>
+      </div>
+    </section>
+
+    <section id="search" class="search-section">
+      <div>
+        <p class="eyebrow">GLOBAL SEARCH</p>
+        <h2>Find anything in VANTARA</h2>
+      </div>
+      <input id="globalSearch" type="search" placeholder="Search programs, Olympiads, classes, resources...">
+      <div id="searchResults" class="search-results"></div>
+    </section>
+
+    <section id="learning" class="section">
+      <div class="section-heading">
+        <p class="eyebrow">📚 LEARNING HUB</p>
+        <h2>Your central learning space</h2>
+        <p>Explore class-wise learning, subjects, chapters and supporting resources.</p>
+      </div>
+      <div class="feature-grid">
+        <article class="feature-card"><div class="icon">🎓</div><h3>Classes 6–10</h3><p>Organised learning pathways for school students.</p><a href="#classes">Open Classes →</a></article>
+        <article class="feature-card"><div class="icon">📖</div><h3>Subjects & Chapters</h3><p>Move from subject to chapter and build concepts step by step.</p><a href="#subjects">Explore Subjects →</a></article>
+        <article class="feature-card"><div class="icon">🧠</div><h3>Practice Zone</h3><p>Practice questions with topic and difficulty filters.</p><a href="#practice">Start Practice →</a></article>
+        <article class="feature-card"><div class="icon">📚</div><h3>Resource Library</h3><p>Keep notes, worksheets and study material in one place.</p><a href="#resources">Open Library →</a></article>
+      </div>
+    </section>
+
+    <section id="classes" class="section alt">
+      <div class="section-heading"><p class="eyebrow">🎓 CLASSES 6–10</p><h2>Choose your class</h2></div>
+      <div class="class-grid">
+        <button class="class-card" data-class="6">Class 6</button>
+        <button class="class-card" data-class="7">Class 7</button>
+        <button class="class-card" data-class="8">Class 8</button>
+        <button class="class-card" data-class="9">Class 9</button>
+        <button class="class-card" data-class="10">Class 10</button>
+      </div>
+      <div id="classPanel" class="dynamic-panel"><p>Select a class to view subjects.</p></div>
+    </section>
+
+    <section id="subjects" class="section">
+      <div class="section-heading"><p class="eyebrow">📖 SUBJECTS & CHAPTERS</p><h2>Build strong fundamentals</h2></div>
+      <div class="subject-grid">
+        <div class="subject-card"><h3>Mathematics</h3><p>Concepts • Practice • Problem Solving</p></div>
+        <div class="subject-card"><h3>Science</h3><p>Physics • Chemistry • Biology</p></div>
+        <div class="subject-card"><h3>English</h3><p>Grammar • Literature • Writing</p></div>
+        <div class="subject-card"><h3>Social Science</h3><p>History • Geography • Civics • Economics</p></div>
+        <div class="subject-card"><h3>Computer</h3><p>Computing • Coding • Digital Skills</p></div>
+        <div class="subject-card"><h3>Olympiad Mathematics</h3><p>Reasoning • Number Theory • Advanced Problems</p></div>
+      </div>
+    </section>
+
+    <section id="olympiad" class="section olympiad">
+      <div class="section-heading"><p class="eyebrow">🏆 OLYMPIAD HUB</p><h2>Think beyond the textbook</h2><p>Dedicated spaces for mathematical and science Olympiad preparation.</p></div>
+      <div class="program-grid">
+        <article class="program-card olympiad-card"><span>01</span><h3>IOQM</h3><p>Indian Olympiad Qualifier in Mathematics preparation.</p><button>Explore IOQM</button></article>
+        <article class="program-card olympiad-card"><span>02</span><h3>IMO</h3><p>International Mathematical Olympiad learning pathway.</p><button>Explore IMO</button></article>
+        <article class="program-card olympiad-card"><span>03</span><h3>IOM</h3><p>International Olympiad Mathematics practice and reasoning.</p><button>Explore IOM</button></article>
+        <article class="program-card olympiad-card"><span>04</span><h3>Science Olympiads</h3><p>Physics, Chemistry and Biology Olympiad preparation.</p><button>Explore Science</button></article>
+      </div>
+    </section>
+
+    <section id="ai" class="section">
+      <div class="section-heading"><p class="eyebrow">🤖 AI LEARNING</p><h2>Learn with modern tools</h2><p>AI learning tools will be introduced as they become ready. VIRA is not included in this version.</p></div>
+      <div class="feature-grid">
+        <article class="feature-card"><div class="icon">🧩</div><h3>AI Learning Tools</h3><p>Future-ready tools for explanations, practice and learning workflows.</p><span class="status">Coming Soon</span></article>
+        <article class="feature-card"><div class="icon">🧠</div><h3>Smart Study Workflows</h3><p>Use structured prompts, revision methods and study organisation.</p><span class="status">Planned</span></article>
+      </div>
+    </section>
+
+    <section id="programs" class="section alt">
+      <div class="section-heading"><p class="eyebrow">🚀 PROGRAMS</p><h2>Build skills beyond academics</h2></div>
+      <div class="program-grid">
+        <article class="program-card"><span>🎨</span><h3>AI Editing Program</h3><p>Learn modern AI-assisted editing workflows, creative tools and practical projects.</p><a href="#contact">Join Program →</a></article>
+        <article class="program-card"><span>💻</span><h3>Skill Labs</h3><p>Coding, AI, communication, research and practical digital skills.</p><a href="#more">Explore Skills →</a></article>
+        <article class="program-card"><span>🔬</span><h3>Research Program</h3><p>Explore questions, research methods and student-led investigations.</p><a href="#more">Explore Research →</a></article>
+        <article class="program-card"><span>💡</span><h3>Idea-to-Project</h3><p>Turn an idea into a structured project with clear goals and outputs.</p><a href="#more">Build an Idea →</a></article>
+        <article class="program-card"><span>🗣️</span><h3>Communication Lab</h3><p>Practice speaking, writing, presentation and communication skills.</p><a href="#more">Open Lab →</a></article>
+        <article class="program-card"><span>🚀</span><h3>Career Explorer</h3><p>Discover careers, skills and learning pathways for the future.</p><a href="#more">Explore Careers →</a></article>
+      </div>
+    </section>
+
+    <section id="practice" class="section">
+      <div class="section-heading"><p class="eyebrow">🧠 PRACTICE ZONE</p><h2>Practice. Improve. Repeat.</h2></div>
+      <div class="filters">
+        <select id="practiceSubject"><option value="all">All Subjects</option><option>Maths</option><option>Science</option><option>English</option><option>Logic</option><option>Coding</option></select>
+        <select id="practiceLevel"><option value="all">All Levels</option><option>Foundation</option><option>Intermediate</option><option>Olympiad</option></select>
+      </div>
+      <div id="practiceList" class="question-grid"></div>
+    </section>
+
+    <section id="resources" class="section alt">
+      <div class="section-heading"><p class="eyebrow">📚 RESOURCE LIBRARY</p><h2>Everything you need, organised</h2></div>
+      <div class="resource-grid">
+        <article class="resource-card"><h3>📄 Revision Notes</h3><p>Quick revision material.</p><button>Open Library</button></article>
+        <article class="resource-card"><h3>📝 Worksheets</h3><p>Topic-based practice sheets.</p><button>Open Worksheets</button></article>
+        <article class="resource-card"><h3>🎥 Video Lessons</h3><p>Video learning collection.</p><button>View Lessons</button></article>
+        <article class="resource-card"><h3>🏆 Olympiad Material</h3><p>Advanced problem-solving resources.</p><button>Explore</button></article>
+      </div>
+    </section>
+
+    <section id="more" class="section">
+      <div class="section-heading"><p class="eyebrow">🌟 VANTARA EXPERIENCES</p><h2>Explore, compete and create</h2></div>
+      <div class="feature-grid">
+        <article class="feature-card"><div class="icon">🎯</div><h3>Student Progress</h3><p>Track practice, completed learning and personal milestones.</p><div class="progress"><i id="progressBar"></i></div><small id="progressText">0% completed</small></article>
+        <article class="feature-card"><div class="icon">👨‍🏫</div><h3>Faculty / Mentors</h3><p>Meet the educators and mentors supporting VANTARA programmes.</p><a href="#faculty">Meet Mentors →</a></article>
+        <article class="feature-card"><div class="icon">🏆</div><h3>Challenge Arena</h3><p>Maths, science, logic, coding and writing challenges.</p><a href="#challenge">Enter Arena →</a></article>
+        <article class="feature-card"><div class="icon">📢</div><h3>Announcements</h3><p>Important courses, Olympiad and VANTARA updates.</p><a href="#announcements">View Updates →</a></article>
+      </div>
+    </section>
+
+    <section id="faculty" class="section alt">
+      <div class="section-heading"><p class="eyebrow">👨‍🏫 FACULTY / MENTORS</p><h2>Learn with guidance</h2></div>
+      <div class="mentor-card">
+        <div class="mentor-avatar">RM</div>
+        <div><h3>Mr. Rajesh Mehra</h3><p class="mentor-role">Olympiad Mathematics Mentor</p><p>B.Sc. Mathematics • M.Sc. Mathematics • B.Ed. • Certificate in Advanced Problem Solving & Mathematical Reasoning</p></div>
+      </div>
+      <p class="note">Additional faculty profiles can be added later.</p>
+    </section>
+
+    <section id="challenge" class="section">
+      <div class="section-heading"><p class="eyebrow">🏆 CHALLENGE ARENA</p><h2>Challenge your thinking</h2></div>
+      <div class="challenge-grid">
+        <button>➗ Maths Challenge</button><button>🔬 Science Challenge</button><button>🧩 Logic Challenge</button><button>💻 Coding Challenge</button><button>✍️ Writing Challenge</button>
+      </div>
+    </section>
+
+    <section id="announcements" class="section alt">
+      <div class="section-heading"><p class="eyebrow">📢 ANNOUNCEMENTS</p><h2>What's happening at VANTARA?</h2></div>
+      <div class="announcement-list">
+        <article><span>NEW</span><div><h3>VANTARA Olympiad Hub</h3><p>IOQM and Olympiad learning pathways are being developed.</p></div></article>
+        <article><span>UPDATE</span><div><h3>AI Editing Program</h3><p>Programme resources and practical modules will be added here.</p></div></article>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact">
+      <div class="section-heading"><p class="eyebrow">📩 STAY UPDATED</p><h2>Be part of VANTARA</h2><p>Get updates about new courses, Olympiads, resources and programmes.</p></div>
+      <form id="footerSubscribe" class="subscribe-form">
+        <input id="footerEmail" type="email" placeholder="Your email address" required>
+        <button class="primary-btn" type="submit">Stay Updated</button>
+      </form>
+      <p id="footerMessage" class="form-message"></p>
+    </section>
+  </main>
+
+  <footer>
+    <div><strong>VANTARA EDUCATION</strong><p>Learn. Grow. Achieve. • Education Without Limits.</p></div>
+    <div class="footer-links"><a href="#home">Home</a><a href="#olympiad">Olympiad Hub</a><a href="#programs">Programs</a><a href="#contact">Stay Updated</a></div>
+    <p class="copyright">© 2026 VANTARA EDUCATION. All rights reserved.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
